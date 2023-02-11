@@ -5,17 +5,17 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>App Recipes</title>
+        <title>Register | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="CAMELLonCASE" name="author" />
-        
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <!-- App css -->
-        <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="/assets/css/app-creative.min.css" rel="stylesheet" type="text/css" id="light-style" />
-        <link href="/assets/css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app-creative.min.css" rel="stylesheet" type="text/css" id="light-style" />
+        <link href="assets/css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
 
     </head>
 
@@ -37,26 +37,33 @@
                             </a>
                         </div>
 
-                        <!-- User pic with title-->
-                        <div class="text-center w-75 m-auto">
-                            <!-- <img src="assets/images/users/avatar-1.jpg" height="64" alt="user-image" class="rounded-circle shadow">-->
-                            <h4 class="text-dark-50 text-center mt-3 fw-bold">App Recipes </h4>
-                            <p class="text-muted mb-4">Which task do you want to do?</p>
-                        </div>
+                        <!-- title-->
+                        <h4 class="mt-3">Chef register</h4>
+                        <p class="text-muted mb-4">Don't have an account? Create your account, it takes less than a minute</p>
 
                         <!-- form -->
-                        <form action="#">
-                            <div class="mb-3 text-center d-grid">
-                                <a href="/chef" class="btn btn-primary" >
-                                	<i class="mdi mdi-account-plus"></i> Register a Chef </button>
-                                </a>
+                        <form action="/chef/add" method="post">
+                            <div class="mb-3">
+                                <label for="fullname" class="form-label">Full Name</label>
+                                <input class="form-control" type="text" id="name" name="name" value="Francisco Camello" placeholder="Enter your name" required>
                             </div>
-                            <div class="mb-0 text-center d-grid">
-                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-login"></i> Log In </button>
+                            <div class="mb-3">
+                                <label for="restaurant" class="form-label">Restaurant</label>
+                                <input class="form-control" type="text" id="restaurant" name="restaurant"  value="Boteco do Chico Bala"  placeholder="Enter your restaurant name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailaddress" class="form-label">Email address</label>
+                                <input class="form-control" type="email" id="email" name="email" value="chicobala@email.com" required placeholder="Enter your email">
+                            </div>
+                            <div class="mb-3 d-grid text-center">
+                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-account"></i> Register </button>
+                            </div>
+                            <div class="mb-0 d-grid text-center">
+                            	<a href="/" class="form-control btn btn-danger" ><i class="mdi mdi-account-cancel"></i> Cancel </a>
                             </div>
                             <!-- social-->
                             <div class="text-center mt-4">
-                                <p class="text-muted font-16">Authentication in with</p>
+                                <p class="text-muted font-16">Sign up using</p>
                                 <ul class="social-list list-inline mt-3">
                                     <li class="list-inline-item">
                                         <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
@@ -77,7 +84,7 @@
 
                         <!-- Footer-->
                         <footer class="footer footer-alt">
-                            <p class="text-muted">Not you? return <a href="pages-login-2.html" class="text-muted ms-1"><b>Sign In</b></a></p>
+                            <p class="text-muted">Already have account? <a href="pages-login-2.html" class="text-muted ms-1"><b>Log In</b></a></p>
                         </footer>
 
                     </div> <!-- end .card-body -->
