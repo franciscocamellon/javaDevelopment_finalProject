@@ -7,7 +7,7 @@ br\edu\infnet\apprecipes\model\domain\Spice.class
 br\edu\infnet\apprecipes\model\domain\PlantBased.class
 br\edu\infnet\apprecipes\model\domain\AnimalBased.class
 br\edu\infnet\apprecipes\model\tests\IngredientTest.class
-br\edu\infnet\apprecipes\controller\ChefController.class
+br\edu\infnet\apprecipes\controller\UserController.class
 br\edu\infnet\apprecipes\model\exceptions\NullOrEmptyAttributeException.class
 br\edu\infnet\apprecipes\model\tests\AnimalBasedTest.class
 br\edu\infnet\apprecipes\model\tests\FileTest.class
@@ -19,3 +19,4 @@ br\edu\infnet\apprecipes\model\domain\Recipe.class
 br\edu\infnet\apprecipes\model\tests\SpiceTest.class
 br\edu\infnet\apprecipes\ApprecipesApplication.class
 br\edu\infnet\apprecipes\model\domain\Ingredient.class
+br\edu\infnet\apprecipes\model\domain\AppRecipesUser.class

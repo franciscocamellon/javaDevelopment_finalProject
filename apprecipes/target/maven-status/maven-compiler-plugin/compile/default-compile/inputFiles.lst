@@ -2,7 +2,6 @@ D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\s
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\exceptions\ChefInvalidAttributesException.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\domain\PlantBased.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\ApprecipesApplication.java
-D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\controller\ChefController.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\tests\RecipeTest.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\domain\AnimalBased.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\controller\AppController.java
@@ -13,7 +12,9 @@ D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\s
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\exceptions\RecipeWithoutIngredientsException.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\tests\AnimalBasedTest.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\domain\Recipe.java
+D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\domain\AppRecipesUser.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\tests\ChefTest.java
+D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\controller\UserController.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\tests\SpiceTest.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\domain\Ingredient.java
 D:\_infnet\bloco_java\projeto_de_bloco\javaDevelopment_finalProject\apprecipes\src\main\java\br\edu\infnet\apprecipes\model\tests\PlantBasedTest.java

@@ -47,8 +47,8 @@
                         <!-- form -->
                         <form action="#">
                             <div class="mb-3 text-center d-grid">
-                                <a href="/chef" class="btn btn-primary" >
-                                	<i class="mdi mdi-account-plus"></i> Register a Chef </button>
+                                <a href="/user" class="btn btn-primary" >
+                                	<i class="mdi mdi-account-plus"></i> Register a User
                                 </a>
                             </div>
                             <div class="mb-0 text-center d-grid">
