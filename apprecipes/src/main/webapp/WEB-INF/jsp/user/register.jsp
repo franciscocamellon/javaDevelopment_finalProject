@@ -5,7 +5,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Register | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+        <title>Register | AppRecipes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -69,11 +69,11 @@
                            		<label class="form-label">Characteristics:</label>
                            		<div class="row g-2">
 								    <div class="col-md">
-								        <input type="checkbox" name="characteristics" check class="form-check-input" value="De">
+								        <input type="checkbox" name="characteristics" checked class="form-check-input" value="De">
 								        <label class="form-check-label">Developer</label>
 								    </div>
 								    <div class="col-md">
-								        <input type="checkbox" name="characteristics" class="form-check-input" value="An">
+								        <input type="checkbox" name="characteristics" checked class="form-check-input" value="An">
 								        <label class="form-check-label" for="customCheck2">Analyst</label>
 								    </div>
 								    <div class="col-md">
@@ -90,7 +90,7 @@
 								        <label class="form-check-label">Padrão</label>
 								    </div>
 								    <div class="form-check col-md">
-								        <input type="radio" name="type" class="form-check-input" value="D">
+								        <input type="radio" name="type" checked class="form-check-input" value="D">
 								        <label class="form-check-label" for="customCheck2">Diretor</label>
 								    </div>
 								    <div class="form-check col-md">
@@ -111,32 +111,14 @@
                                 <button class="btn btn-primary" type="submit"><i class="mdi mdi-account"></i> Register </button>
                             </div>
                             <div class="mb-0 d-grid text-center">
-                            	<a href="/" class="form-control btn btn-danger" ><i class="mdi mdi-account-cancel"></i> Cancel </a>
-                            </div>
-                            <!-- social-->
-                            <div class="text-center mt-4">
-                                <p class="text-muted font-16">Sign up using</p>
-                                <ul class="social-list list-inline mt-3">
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
-                                    </li>
-                                </ul>
+                            	<a href="/user/list" class="form-control btn btn-danger" ><i class="mdi mdi-account-cancel"></i> Cancel </a>
                             </div>
                         </form>
                         <!-- end form-->
 
                         <!-- Footer-->
                         <footer class="footer footer-alt">
-                            <p class="text-muted">Already have account? <a href="pages-login-2.html" class="text-muted ms-1"><b>Log In</b></a></p>
+                            
                         </footer>
 
                     </div> <!-- end .card-body -->

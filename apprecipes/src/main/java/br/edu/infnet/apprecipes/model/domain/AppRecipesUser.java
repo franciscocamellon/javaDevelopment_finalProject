@@ -11,9 +11,19 @@ public class AppRecipesUser {
 	private int age;
 	private float salary;
 	
-	public AppRecipesUser(String name, String email) {
-		this.setName(name);
+	public AppRecipesUser() {
+		
+	}
+	
+	public AppRecipesUser(String email, String password) {
+		this();
 		this.setEmail(email);
+		this.setPassword(password);
+	}
+	
+	public AppRecipesUser(String name, String email, String password) {
+		this(email, password);
+		this.setName(name);
 	}
 	
 
