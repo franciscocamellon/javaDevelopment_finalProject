@@ -29,10 +29,10 @@
 
                         <!-- Logo -->
                         <div class="auth-brand text-center text-lg-start">
-                            <a href="index.html" class="logo-dark">
+                            <a href="#" class="logo-dark">
                                 <span><img src="assets/images/logo-dark.png" alt="" height="18"></span>
                             </a>
-                            <a href="index.html" class="logo-light">
+                            <a href="#" class="logo-light">
                                 <span><img src="assets/images/logo.png" alt="" height="18"></span>
                             </a>
                         </div>
@@ -40,45 +40,31 @@
                         <!-- User pic with title-->
                         <div class="text-center w-75 m-auto">
                             <!-- <img src="assets/images/users/avatar-1.jpg" height="64" alt="user-image" class="rounded-circle shadow">-->
-                            <h4 class="text-dark-50 text-center mt-3 fw-bold">App Recipes </h4>
+                            <h4 class="text-dark-50 text-center mt-3 fw-bold">Menu </h4>
                             <p class="text-muted mb-4">Which task do you want to do?</p>
                         </div>
 
                         <!-- form -->
                         <form action="#">
                             <div class="mb-3 text-center d-grid">
-                                <a href="/user" class="btn btn-primary" >
+                                <a href="/user/list" class="btn btn-primary" >
                                 	<i class="mdi mdi-account-plus"></i> Register a User
                                 </a>
                             </div>
-                            <div class="mb-0 text-center d-grid">
-                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-login"></i> Log In </button>
-                            </div>
-                            <!-- social-->
-                            <div class="text-center mt-4">
-                                <p class="text-muted font-16">Authentication in with</p>
-                                <ul class="social-list list-inline mt-3">
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                            
                         </form>
                         <!-- end form-->
 
                         <!-- Footer-->
                         <footer class="footer footer-alt">
-                            <p class="text-muted">Not you? return <a href="pages-login-2.html" class="text-muted ms-1"><b>Sign In</b></a></p>
-                        </footer>
+		                    <div class="container-fluid">
+		                        <div class="row">
+		                            <div class="col-md">
+		                                <script>document.write(new Date().getFullYear())</script> © AppRecipes - Francisco Camello
+		                            </div>
+		                        </div>
+		                    </div>
+		                </footer>
 
                     </div> <!-- end .card-body -->
                 </div> <!-- end .align-items-center.d-flex.h-100-->

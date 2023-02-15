@@ -1,13 +1,16 @@
 br\edu\infnet\apprecipes\model\tests\ChefTest.class
 br\edu\infnet\apprecipes\model\domain\Chef.class
 br\edu\infnet\apprecipes\model\exceptions\RecipeWithoutIngredientsException.class
+br\edu\infnet\apprecipes\model\repository\UserRepository.class
 br\edu\infnet\apprecipes\model\exceptions\ZeroCostException.class
 br\edu\infnet\apprecipes\model\tests\PlantBasedTest.class
 br\edu\infnet\apprecipes\model\domain\Spice.class
 br\edu\infnet\apprecipes\model\domain\PlantBased.class
+br\edu\infnet\apprecipes\model\repository\AccessRepository.class
 br\edu\infnet\apprecipes\model\domain\AnimalBased.class
 br\edu\infnet\apprecipes\model\tests\IngredientTest.class
 br\edu\infnet\apprecipes\controller\UserController.class
+br\edu\infnet\apprecipes\controller\AccessController.class
 br\edu\infnet\apprecipes\model\exceptions\NullOrEmptyAttributeException.class
 br\edu\infnet\apprecipes\model\tests\AnimalBasedTest.class
 br\edu\infnet\apprecipes\model\tests\FileTest.class
