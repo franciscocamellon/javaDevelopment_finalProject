@@ -111,7 +111,7 @@
                                 <button class="btn btn-primary" type="submit"><i class="mdi mdi-account"></i> Register </button>
                             </div>
                             <div class="mb-0 d-grid text-center">
-                            	<a href="/" class="form-control btn btn-danger" ><i class="mdi mdi-account-cancel"></i> Cancel </a>
+                            	<a href="/user/list" class="form-control btn btn-danger" ><i class="mdi mdi-account-cancel"></i> Cancel </a>
                             </div>
                         </form>
                         <!-- end form-->
