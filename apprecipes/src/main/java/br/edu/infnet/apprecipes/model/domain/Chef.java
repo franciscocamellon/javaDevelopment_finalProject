@@ -5,17 +5,17 @@ import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 public class Chef {
 	
 	public String name;
-	public String restaurant;
+	public String clientType;
 	public String email;
 	
 	
-	public Chef(String name, String restaurant, String email) throws NullOrEmptyAttributeException {
+	public Chef(String name, String clientType, String email) throws NullOrEmptyAttributeException {
 		
 		if (name == null || name.isBlank()) {
-			throw new NullOrEmptyAttributeException("O nome do chef deve ser preenchido!");
+			throw new NullOrEmptyAttributeException("O nome do cliente deve ser preenchido!");
 		}
 		
-		if (restaurant == null || restaurant.isBlank()) {
+		if (clientType == null || clientType.isBlank()) {
 			throw new NullOrEmptyAttributeException("O nome do restaurante deve ser preenchido!");
 		}
 		
@@ -24,7 +24,7 @@ public class Chef {
 		}
 		
 		this.name = name;
-		this.restaurant = restaurant;
+		this.clientType = clientType;
 		this.email = email;
 	}
 	
@@ -34,7 +34,7 @@ public class Chef {
 		StringBuilder sb = new StringBuilder();
 		sb.append(name);
 		sb.append(";");
-		sb.append(restaurant);
+		sb.append(clientType);
 		sb.append(";");
 		sb.append(email);
 		
@@ -44,8 +44,8 @@ public class Chef {
 	public String getName() {
 		return name;
 	}
-	public String getRestaurant() {
-		return restaurant;
+	public String getClientType() {
+		return clientType;
 	}
 	public String getEmail() {
 		return email;
