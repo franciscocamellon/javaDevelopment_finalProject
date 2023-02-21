@@ -4,42 +4,42 @@ import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 import br.edu.infnet.apprecipes.model.exceptions.ZeroCostException;
 
-public class SpiceTest {
+public class TrainingConsultancyTest {
 
 	public static void main(String[] args) {
 
 		try {
-		TrainingConsultancy sp1 = new TrainingConsultancy("Páprica", 0.1f, 1, "Avermelhado");
-		sp1.setSpiceForm("Moído");
-		sp1.setTaste("Agridoce");
-		System.out.println(sp1);
+		TrainingConsultancy tc1 = new TrainingConsultancy("Projeto", 30, 20000, 15);
+		tc1.setTrainingType("Boas práticas");
+		tc1.setQtyPeople(20);
+		System.out.println(tc1);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
 		try {
-		TrainingConsultancy sp2 = new TrainingConsultancy("Pimenta do reino", 0.15f, -0.5f, "Incolor");
-		sp2.setSpiceForm("Moído");
-		sp2.setTaste("Apimentado");
-		System.out.println(sp2);
+		TrainingConsultancy tc2 = new TrainingConsultancy("Indeterminado", 1000, 100000, 300);
+		tc2.setTrainingType("Mudança de praça");
+		tc2.setQtyPeople(5);
+		System.out.println(tc2);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
 		try {
-		TrainingConsultancy sp3 = new TrainingConsultancy("Aniz estrelado", 0.20f, 0, "Incolor");
-		sp3.setSpiceForm("Fresco");
-		sp3.setTaste("Azedo");
-		System.out.println(sp3);
+		TrainingConsultancy tc3 = new TrainingConsultancy("Tempo Fixo", 100, 15000, 70);
+		tc3.setTrainingType("Novo cardápio");
+		tc3.setQtyPeople(30);
+		System.out.println(tc3);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
 		try {
-			TrainingConsultancy sp3 = new TrainingConsultancy(" ", 0.20f, 1, "Incolor");
-			sp3.setSpiceForm("Fresco");
-			sp3.setTaste("Azedo");
-			System.out.println(sp3);
+			TrainingConsultancy tc4 = new TrainingConsultancy(" ", 350, 125600, 200);
+			tc4.setTrainingType("Estoque");
+			tc4.setQtyPeople(20);
+			System.out.println(tc4);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
