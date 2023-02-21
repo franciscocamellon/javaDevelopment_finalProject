@@ -2,14 +2,14 @@ package br.edu.infnet.apprecipes.model.domain;
 
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 
-public class Chef {
+public class Client {
 	
 	public String name;
 	public String clientType;
 	public String email;
 	
 	
-	public Chef(String name, String clientType, String email) throws NullOrEmptyAttributeException {
+	public Client(String name, String clientType, String email) throws NullOrEmptyAttributeException {
 		
 		if (name == null || name.isBlank()) {
 			throw new NullOrEmptyAttributeException("O nome do cliente deve ser preenchido!");
