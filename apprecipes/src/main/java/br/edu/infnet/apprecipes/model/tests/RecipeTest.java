@@ -7,8 +7,8 @@ import br.edu.infnet.apprecipes.model.domain.AnimalBased;
 import br.edu.infnet.apprecipes.model.domain.Chef;
 import br.edu.infnet.apprecipes.model.domain.Ingredient;
 import br.edu.infnet.apprecipes.model.domain.PlantBased;
-import br.edu.infnet.apprecipes.model.domain.Recipe;
-import br.edu.infnet.apprecipes.model.domain.Spice;
+import br.edu.infnet.apprecipes.model.domain.Consultancy;
+import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 import br.edu.infnet.apprecipes.model.exceptions.RecipeWithoutChefException;
 import br.edu.infnet.apprecipes.model.exceptions.RecipeWithoutIngredientsException;
@@ -24,7 +24,7 @@ public class RecipeTest {
 		List<Ingredient> ingredients4 = new ArrayList<Ingredient>();
 		
 		try {
-			Spice sp1 = new Spice("Páprica", 0.1f, 1, "Avermelhado");
+			TrainingConsultancy sp1 = new TrainingConsultancy("Páprica", 0.1f, 1, "Avermelhado");
 			sp1.setSpiceForm("Moído");
 			sp1.setTaste("Agridoce");
 			
@@ -36,7 +36,7 @@ public class RecipeTest {
 		}
 			
 		try {
-			Spice sp2 = new Spice("Pimenta do reino", 0.15f, 0.5f, "Incolor");
+			TrainingConsultancy sp2 = new TrainingConsultancy("Pimenta do reino", 0.15f, 0.5f, "Incolor");
 			sp2.setSpiceForm("Moído");
 			sp2.setTaste("Apimentado");
 			
@@ -50,7 +50,7 @@ public class RecipeTest {
 		}
 			
 		try {
-			Spice sp3 = new Spice("Aniz estrelado", 0.20f, 1, "Incolor");
+			TrainingConsultancy sp3 = new TrainingConsultancy("Aniz estrelado", 0.20f, 1, "Incolor");
 			sp3.setSpiceForm("Fresco");
 			sp3.setTaste("Azedo");
 			
@@ -137,7 +137,7 @@ public class RecipeTest {
 		}
 		
 		try {
-			Recipe r1 = new Recipe(new Chef("Joao", "Almeria", "joao.almeria@email.com"), ingredients1);
+			Consultancy r1 = new Consultancy(new Chef("Joao", "Almeria", "joao.almeria@email.com"), ingredients1);
 			r1.setName("Primeira receita");
 			r1.setQuantity(3);
 			r1.printReport();
@@ -146,7 +146,7 @@ public class RecipeTest {
 		}
 		
 		try {
-			Recipe r2 = new Recipe(new Chef("Maria", "Cantucci Osteria", "maria@email.com"), ingredients2);
+			Consultancy r2 = new Consultancy(new Chef("Maria", "Cantucci Osteria", "maria@email.com"), ingredients2);
 			r2.setName("Segunda receita");
 			r2.setQuantity(4);
 			r2.printReport();
@@ -155,7 +155,7 @@ public class RecipeTest {
 		}
 		
 		try {
-			Recipe r3 = new Recipe(new Chef("Manel", "Quanto Café", "manel@email.com"), ingredients3);
+			Consultancy r3 = new Consultancy(new Chef("Manel", "Quanto Café", "manel@email.com"), ingredients3);
 			r3.setName("Terceira receita");
 			r3.setQuantity(1);
 			r3.printReport();
@@ -164,7 +164,7 @@ public class RecipeTest {
 		}
 		
 		try {
-			Recipe r4 = new Recipe(new Chef("Francisco", "Pizza Dominos", "chico.bala@email.com"),ingredients4);
+			Consultancy r4 = new Consultancy(new Chef("Francisco", "Pizza Dominos", "chico.bala@email.com"),ingredients4);
 			r4.setName("Quarta receita");
 			r4.setQuantity(1);
 			r4.printReport();
@@ -173,7 +173,7 @@ public class RecipeTest {
 		}
 		
 		try {
-			Recipe r5 = new Recipe(null,ingredients4);
+			Consultancy r5 = new Consultancy(null,ingredients4);
 			r5.setName("Quarta receita");
 			r5.setQuantity(1);
 			r5.printReport();
@@ -184,7 +184,7 @@ public class RecipeTest {
 		try {
 			Chef s6 = new Chef("Francisco", "Pizza Dominos", "chico.bala@email.com");
 			
-			Recipe r6 = new Recipe(s6, null);
+			Consultancy r6 = new Consultancy(s6, null);
 			r6.setName("Quarta receita");
 			r6.setQuantity(1);
 			r6.printReport();

@@ -12,8 +12,8 @@ import br.edu.infnet.apprecipes.model.domain.AnimalBased;
 import br.edu.infnet.apprecipes.model.domain.Chef;
 import br.edu.infnet.apprecipes.model.domain.Ingredient;
 import br.edu.infnet.apprecipes.model.domain.PlantBased;
-import br.edu.infnet.apprecipes.model.domain.Recipe;
-import br.edu.infnet.apprecipes.model.domain.Spice;
+import br.edu.infnet.apprecipes.model.domain.Consultancy;
+import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 import br.edu.infnet.apprecipes.model.exceptions.RecipeWithoutChefException;
 import br.edu.infnet.apprecipes.model.exceptions.RecipeWithoutIngredientsException;
@@ -38,10 +38,10 @@ public class FileTest {
 				String[] fields = null;
 				
 				List<Ingredient> ingredients = new ArrayList<Ingredient>();
-				Recipe recipe = null;
+				Consultancy recipe = null;
 				AnimalBased animalBased = null;
 				PlantBased plantBased = null;
-				Spice spice = null;
+				TrainingConsultancy spice = null;
 				
 				while (fileLine != null) {
 					
@@ -50,7 +50,7 @@ public class FileTest {
 					switch (fields[0]) {
 					case "R":
 						try {
-							recipe = new Recipe(new Chef(fields[1], fields[2], fields[3]), ingredients);
+							recipe = new Consultancy(new Chef(fields[1], fields[2], fields[3]), ingredients);
 							recipe.setName(fields[4]);
 							recipe.setQuantity(Integer.valueOf(fields[5]));
 						} catch (NullOrEmptyAttributeException | RecipeWithoutChefException | RecipeWithoutIngredientsException e) {
@@ -86,7 +86,7 @@ public class FileTest {
 						
 					case "S":
 						try {
-							spice = new Spice(fields[2], Float.valueOf(fields[2]), Float.valueOf(fields[3]), fields[4]);
+							spice = new TrainingConsultancy(fields[2], Float.valueOf(fields[2]), Float.valueOf(fields[3]), fields[4]);
 							spice.setSpiceForm(fields[5]);
 							spice.setTaste(fields[6]);
 							
