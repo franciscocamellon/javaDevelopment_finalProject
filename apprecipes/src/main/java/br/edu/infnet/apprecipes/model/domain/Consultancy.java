@@ -46,12 +46,24 @@ public abstract class Consultancy {
 		return contractType;
 	}
 
-	public float getCost() {
-		return cost;
+	public void setContractType(String contractType) {
+		this.contractType = contractType;
 	}
 
 	public float getQtyHours() {
 		return qtyHours;
 	}
-	
+
+	public void setQtyHours(float qtyHours) {
+		this.qtyHours = qtyHours;
+	}
+
+	public float getCost() {
+		return cost;
+	}
+
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
+
 }
