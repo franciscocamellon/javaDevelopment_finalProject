@@ -11,75 +11,87 @@ public class ConsultancyTest {
 	public static void main(String[] args) {
 
 		try {
-			TrainingConsultancy sp1 = new TrainingConsultancy("Páprica", 0.1f, 1, "Avermelhado");
-			sp1.setSpiceForm("Moído");
-			sp1.setTaste("Agridoce");
-			} catch (ZeroCostException | NullOrEmptyAttributeException e) {
-				System.out.println("[ERRO] " + e.getMessage());
-			}
-			
-			try {
-			TrainingConsultancy sp2 = new TrainingConsultancy("Pimenta do reino", 0.15f, -0.5f, "Incolor");
-			sp2.setSpiceForm("Moído");
-			sp2.setTaste("Apimentado");
-			} catch (ZeroCostException | NullOrEmptyAttributeException e) {
-				System.out.println("[ERRO] " + e.getMessage());
-			}
-			
-			try {
-			TrainingConsultancy sp3 = new TrainingConsultancy("Aniz estrelado", 0.20f, 0, "Incolor");
-			sp3.setSpiceForm("Fresco");
-			sp3.setTaste("Azedo");
-			} catch (ZeroCostException | NullOrEmptyAttributeException e) {
-				System.out.println("[ERRO] " + e.getMessage());
-			}
-		
-		try {
-			MenuConsultancy pb1;
-			pb1 = new MenuConsultancy("Alho poró", 0.2f, 20, false);
-			pb1.setForm("Cru");
-			pb1.setUnit("Maço");
+			TrainingConsultancy tc1 = new TrainingConsultancy("Projeto", 30, 20000, 15);
+			tc1.setTrainingType("Boas práticas");
+			tc1.setQtyPeople(20);
+			System.out.println(tc1);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
 		try {
-			MenuConsultancy pb2 = new MenuConsultancy("Brócolis", 1, 15, true);
-			pb2.setForm("Cru");
-			pb2.setUnit("Maço");
+			TrainingConsultancy tc2 = new TrainingConsultancy("Indeterminado", 1000, 100000, 300);
+			tc2.setTrainingType("Mudança de praça");
+			tc2.setQtyPeople(5);
+			System.out.println(tc2);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
 		try {
-			MenuConsultancy pb3 = new MenuConsultancy("Batata", 1.5f, 10, false);
-			pb3.setForm("Pré-cozido");
-			pb3.setUnit("Kilo");
+			TrainingConsultancy tc3 = new TrainingConsultancy("Tempo Fixo", 100, 15000, 70);
+			tc3.setTrainingType("Novo cardápio");
+			tc3.setQtyPeople(30);
+			System.out.println(tc3);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
 		try {
-			LayoutConsultancy ab1;
-			ab1 = new LayoutConsultancy("Salmão", 2, 20, false);
-			ab1.setOrigin("Pesca");
-			ab1.setMeatForm("Fresco");
+			MenuConsultancy mc1;
+			mc1 = new MenuConsultancy("Projeto", 30, 20000, false);
+			mc1.setMenuType("Comida");
+			mc1.setCuisine("Brasileira");
+			System.out.println(mc1);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
 		try {
-			LayoutConsultancy ab2 = new LayoutConsultancy("Javali", 2, 30, true);
-			ab2.setOrigin("Caça");
-			ab2.setMeatForm("Congelado");
+			MenuConsultancy mc2 = new MenuConsultancy("Indeterminado", 1000, 100000, true);
+			mc2.setMenuType("Sobremesa");
+			mc2.setCuisine("Francesa");
+			System.out.println(mc2);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
 		try {
-			LayoutConsultancy ab3 = new LayoutConsultancy("Wagyu", 1, 200, false);
-			ab3.setOrigin("Manejo");
-			ab3.setMeatForm("Refrigerado");
+			MenuConsultancy mc3 = new MenuConsultancy("Tempo Fixo", 100, 15000, false);
+			mc3.setMenuType("Bebidas");
+			mc3.setCuisine("Marroquina");
+			System.out.println(mc3);
+		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
+			System.out.println("[ERRO] " + e.getMessage());
+		}
+		
+		try {
+			LayoutConsultancy lc1;
+			lc1 = new LayoutConsultancy("Projeto", 30, 20000, false);
+			lc1.setLayoutType("Construção");
+			lc1.setKitchenType("Quente");
+			lc1.toString();
+			System.out.println(lc1);
+		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
+			System.out.println("[ERRO] " + e.getMessage());
+		}
+		
+		try {
+			LayoutConsultancy lc2 = new LayoutConsultancy("Indeterminado", 1000, 100000, false);
+			lc2.setLayoutType("Construção");
+			lc2.setKitchenType("Mista");
+			lc2.toString();
+			System.out.println(lc2);
+		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
+			System.out.println("[ERRO] " + e.getMessage());
+		}
+		
+		try {
+			LayoutConsultancy lc3 = new LayoutConsultancy("Tempo Fixo", 100, 15000, true);
+			lc3.setLayoutType("Reforma");
+			lc3.setKitchenType("Quente");
+			lc3.toString();
+			System.out.println(lc3);
 		} catch (ZeroCostException | NullOrEmptyAttributeException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
