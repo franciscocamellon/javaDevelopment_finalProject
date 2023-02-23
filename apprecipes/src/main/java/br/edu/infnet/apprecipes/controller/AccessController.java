@@ -1,6 +1,7 @@
 package br.edu.infnet.apprecipes.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +18,7 @@ public class AccessController {
 	}
 	
 	@PostMapping(value = "/login")
-	public String login(@RequestParam String email, @RequestParam String password) {
+	public String login(Model model, @RequestParam String email, @RequestParam String password) {
 		
 		AppRecipesUser user = new AppRecipesUser(email, password);
 		
@@ -25,7 +26,10 @@ public class AccessController {
 			return "redirect:/home";
 		}
 		
-		return "redirect:/login";
+		model.addAttribute("mensagem", "As credenciais para o email "+ email + " estão incorretas");
+		
+		//return "redirect:/login";
+		return loginScreen();
 	}
 
 }

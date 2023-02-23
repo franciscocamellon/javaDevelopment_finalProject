@@ -2,6 +2,7 @@ package br.edu.infnet.apprecipes.model.domain;
 
 public class AppRecipesUser {
 	
+	private Integer id;
 	private String name;
 	private String password;
 	private String email;
@@ -42,6 +43,14 @@ public class AppRecipesUser {
 				sector,
 				characteristics.length
 			);
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
