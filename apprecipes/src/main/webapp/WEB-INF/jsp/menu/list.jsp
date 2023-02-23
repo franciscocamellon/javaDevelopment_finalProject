@@ -9,19 +9,19 @@
 
         <!-- start page title -->
         <div class="row">
-            <div class="col-12">
-                <div class="page-title-box">
-                   <div class="page-title-right">
-                       <ol class="breadcrumb m-0">
-                           <li class="breadcrumb-item"><a href="javascript: void(0);">App</a></li>
-                           <li class="breadcrumb-item"><a href="javascript: void(0);">Client</a></li>
-                           <li class="breadcrumb-item active">List</li>
-                       </ol>
-                   </div>
-                   <h4 class="page-title">Clients</h4>
-               </div>
-            </div>
-        </div>
+             <div class="col-12">
+                 <div class="page-title-box">
+                     <div class="page-title-right">
+                         <ol class="breadcrumb m-0">
+                             <li class="breadcrumb-item"><a href="javascript: void(0);">App</a></li>
+                             <li class="breadcrumb-item"><a href="javascript: void(0);">Consultancy</a></li>
+                             <li class="breadcrumb-item active">Menu</li>
+                         </ol>
+                     </div>
+                     <h4 class="page-title">Lista das Consultorias de Menu</h4>
+                 </div>
+             </div>
+         </div>
         <!-- end page title -->
 
         <div class="row">
@@ -32,10 +32,10 @@
                         <c:if test="${empty users}">
                         	<div class="clearfix">
 		                        <div class="float-start">
-		                            <h5 class="page-title">Não existem usuários cadastrados!</h5>
+		                            <h5 class="page-title">Não existem consultorias cadastradas!</h5>
 		                        </div>
 		                        <div class="float-end">
-		                            <a href="/user"> <button type="button" class="btn btn-primary btn-md">
+		                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
 		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
 		                            </a>
 		                        </div>
@@ -43,13 +43,19 @@
                         </c:if>
                         
                         <c:if test="${not empty users}">
-                        <h5 class="page-title">Quantidade de usuários cadastrados: ${users.size()}!</h5>                                        
+                        <h5 class="page-title">Quantidade de consultorias cadastradas: ${users.size()}!</h5>                                        
 
                         <div class="table-responsive">
                             <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>ID</th>
+                                    	<th class="all" style="width: 20px;">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                <label class="form-check-label" for="customCheck1">&nbsp;</label>
+                                            </div>
+                                        </th>
+                                        <th class="all">ID</th>
                                         <th>Name</th>
                                         <th>Password</th>
                                         <th>Email</th>
@@ -64,6 +70,12 @@
                                 <tbody>
                                 	<c:forEach var="u" items="${users}">
                                      <tr>
+                                     		<td>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck2">
+                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                                            </div>
+                                        	</td>
                                      	<td>${u.id}</td>
                                          <td class="table-user">
                                              <img src="/assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
