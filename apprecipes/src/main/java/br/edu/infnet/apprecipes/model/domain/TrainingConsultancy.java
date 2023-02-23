@@ -5,6 +5,7 @@ import br.edu.infnet.apprecipes.model.exceptions.ZeroCostException;
 
 public class TrainingConsultancy extends Consultancy {
 	
+	private Integer id;
 	private String trainingType;
 	private int qtyPeople;
 	private float qtyTrainingHours;
@@ -32,6 +33,14 @@ public class TrainingConsultancy extends Consultancy {
 		sb.append(qtyTrainingHours);
 		
 		return sb.toString();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getTrainingType() {

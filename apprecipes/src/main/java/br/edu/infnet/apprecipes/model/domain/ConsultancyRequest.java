@@ -9,6 +9,7 @@ import br.edu.infnet.apprecipes.model.exceptions.RecipeWithoutIngredientsExcepti
 
 public class ConsultancyRequest {
 	
+	private Integer id;
 	private List<Consultancy> service;
 	private float totalCost;
 	private Client client;
@@ -63,6 +64,14 @@ public class ConsultancyRequest {
 
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 		return String.format("%s;%s;%s", this.getClient().getName(), "Qtde:" + this.consultancyTotalCostCalculator(service), requestDate.format(format));
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public List<Consultancy> getService() {

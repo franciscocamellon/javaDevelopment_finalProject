@@ -4,7 +4,9 @@ import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 
 public class Client {
 	
+	private Integer id;
 	public String name;
+	public String enterpriseName;
 	public String clientType;
 	public String email;
 	
@@ -41,6 +43,14 @@ public class Client {
 		return sb.toString();
 	}
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -49,6 +59,14 @@ public class Client {
 	}
 	public String getEmail() {
 		return email;
+	}
+
+	public String getEnterpriseName() {
+		return enterpriseName;
+	}
+
+	public void setEnterpriseName(String enterpriseName) {
+		this.enterpriseName = enterpriseName;
 	}
 
 }

@@ -5,6 +5,7 @@ import br.edu.infnet.apprecipes.model.exceptions.ZeroCostException;
 
 public class MenuConsultancy extends Consultancy {
 	
+	private Integer id;
 	private String menuType;
 	private String cuisine;
 	private boolean vegan;
@@ -35,6 +36,14 @@ public class MenuConsultancy extends Consultancy {
 		sb.append(cuisine);
 		
 		return sb.toString();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getMenuType() {

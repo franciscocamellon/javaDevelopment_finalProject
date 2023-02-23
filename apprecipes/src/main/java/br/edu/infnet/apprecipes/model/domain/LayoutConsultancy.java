@@ -5,6 +5,7 @@ import br.edu.infnet.apprecipes.model.exceptions.ZeroCostException;
 
 public class LayoutConsultancy extends Consultancy {
 
+	private Integer id;
 	private String layoutType;
 	private String kitchenType;
 	private boolean delivery;
@@ -35,6 +36,14 @@ public class LayoutConsultancy extends Consultancy {
 		sb.append(delivery ? "Delivery" : "Restaurante");
 		
 		return sb.toString();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getLayoutType() {
