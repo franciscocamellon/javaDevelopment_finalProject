@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +21,6 @@
     </head>
 
     <body class="authentication-bg pb-0" data-layout-config='{"darkMode":false}'>
-
         <div class="auth-fluid">
             <!--Auth fluid left content -->
             <div class="auth-fluid-form-box">
@@ -40,10 +41,12 @@
                         <h4 class="mt-0">Sign In</h4>
                         <p class="text-muted mb-4">Enter your email address and password to access account.</p>
                         
-                        <div class="alert alert-danger" role="alert">
-						    <i class="dripicons-wrong me-2"></i><strong>Atenção!</strong> alert - check it out!
-						</div>
-
+                        <c:if test="${not empty mensagem}">
+	                        <div class="alert alert-danger" role="alert">
+							    <i class="dripicons-wrong me-2"></i><strong>Atenção!</strong> ${mensagem}
+							</div>
+						</c:if>
+						
                         <!-- form -->
                         <form action="/login" method="post">
                             <div class="mb-3">
