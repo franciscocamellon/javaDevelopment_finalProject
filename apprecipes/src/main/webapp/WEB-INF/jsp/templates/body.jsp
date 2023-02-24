@@ -50,6 +50,8 @@
                         <img src="/assets/images/logo_sm_dark.png" alt="" height="16">
                     </span>
                 </a>
+                
+                <c:if test="${not empty user}">
     
                 <div class="h-100" id="leftside-menu-container" data-simplebar>
 
@@ -111,15 +113,16 @@
                         </li>
                     </ul>
                     <!-- End Sidebar -->
+                    
 
                     <div class="clearfix"></div>
 
                 </div>
                 <!-- Sidebar -left -->
-
+				</c:if>
             </div>
             <!-- Left Sidebar End -->
-
+			
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
@@ -153,13 +156,13 @@
                                         <img src="/assets/images/users/camellon.jpg" alt="user-image" class="rounded-circle">
                                     </span>
                                     <span>
-                                        <span class="account-user-name">Francisco Camello</span>
+                                        <span class="account-user-name">${user.name}</span>
                                         <span class="account-position">Founder</span>
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                     <!-- item-->
-                                    <a href="/login" class="dropdown-item notify-item">
+                                    <a href="/logout" class="dropdown-item notify-item">
                                         <i class="mdi mdi-logout me-1"></i>
                                         <span>Logout</span>
                                     </a>

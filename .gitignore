@@ -89,3 +89,14 @@ local.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+.metadata/version.ini
+.metadata/version.ini
+.metadata/.plugins/org.eclipse.core.resources/.projects/apprecipes/.indexes/e4/b9/22/50/b6/e4/64/9c/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/apprecipes/.indexes/e4/b9/b3/a8/47/history.index
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+.metadata/.plugins/org.eclipse.jdt.core/1173421775.index
+.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
+.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
+.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1840433409.index
