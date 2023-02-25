@@ -29,7 +29,7 @@
                 <div class="card">
                     <div class="card-body">
                         
-                        <c:if test="${empty users}">
+                        <c:if test="${empty requests}">
 	                        <div class="clearfix">
 		                        <div class="float-start">
 		                            <h5 class="page-title">Não existem consultorias cadastradas!</h5>
@@ -42,9 +42,17 @@
 		                    </div>
                         </c:if>
                         
-                        <c:if test="${not empty users}">
-                        	<h5 class="page-title">Quantidade de consultorias cadastradas: ${users.size()}!</h5>                                        
-
+                        <c:if test="${not empty requests}">
+                        	<div class="clearfix">
+		                        <div class="float-start">
+		                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${requests.size()}!</h5>
+		                        </div>
+		                        <div class="float-end">
+		                            <a href="/consultancy/request"> <button type="button" class="btn btn-primary btn-md">
+		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
+		                            </a>
+		                        </div>
+		                    </div>
 	                        <div class="table-responsive">
 	                            <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
 	                                <thead class="table-light">
@@ -56,19 +64,15 @@
 	                                            </div>
 	                                        </th>
 	                                        <th class="all">ID</th>
-	                                        <th>Name</th>
-	                                        <th>Password</th>
-	                                        <th>Email</th>
-	                                        <th>Characteristics</th>
-	                                        <th>Type</th>
-	                                        <th>Sector</th>
-	                                        <th>Age</th>
-	                                        <th>Salary</th>
+	                                        <th>Cliente</th>
+	                                        <th>Consultoria</th>
+	                                        <th>Custo total</th>
+	                                        <th>Data da requisição</th>
 	                                        <th style="width: 75px;">Action</th>
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
-	                                	<c:forEach var="u" items="${users}">
+	                                	<c:forEach var="u" items="${requests}">
 	                                     <tr>
 	                                     		<td>
 	                                            <div class="form-check">
@@ -79,18 +83,14 @@
 	                                     	<td>${u.id}</td>
 	                                         <td class="table-user">
 	                                             <img src="/assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
-	                                             <a href="javascript:void(0);" class="text-body fw-semibold">${u.name}</a>
+	                                             <a href="javascript:void(0);" class="text-body fw-semibold">${u.client.name}</a>
 	                                         </td>
-	                                         <td>${u.password}</td>
-	                                         <td>${u.email}</td>
-	                                         <td>${u.characteristics}</td>
-	                                         <td>${u.type}</td>
-	                                         <td>${u.sector}</td>
-	                                         <td>${u.age}</td>
-	                                         <td>${u.salary}</td>
+	                                         <td>${u.service}</td>
+	                                         <td>${u.totalCost}</td>
+	                                         <td>${u.requestDate}</td>
 	                                         <td>
 	                                             <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-	                                             <a href="/usuario/${u.id}/excluir" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+	                                             <a href="/consultancy/request/${u.id}/delete" class="action-icon"> <i class="mdi mdi-delete"></i></a>
 	                                         </td>
 	                                     </tr>
 	                                    </c:forEach>

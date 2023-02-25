@@ -10373,6 +10373,8 @@ body[data-leftbar-theme="dark"][data-leftbar-compact-mode="condensed"] .side-nav
   .nav-user .account-user-name {
     display: block;
     font-weight: 600; }
+  .nav-user .account-logout {
+    font-weight: 600; }
 
 .button-menu-mobile {
   border: none;

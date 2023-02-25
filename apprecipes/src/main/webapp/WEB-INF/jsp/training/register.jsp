@@ -39,43 +39,55 @@
 
                                                         <p class="text-muted mb-4">Preencha o formulário abaixo a fim de criar uma consultoria de treinamento.</p>
 
-                                                        <form>
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Solicitação de Consultoria</label>
-                                                                        <select data-toggle="select2" title="ClientType">
-                                                                            <option value="En">Coco Bambu - 12/12/22</option>
-                                                                            <option value="Re">Almeria - 10/08/22</option>
-                                                                            <option value="Re">Cantucci - 26/11/22</option>
-                                                                            <option value="Re">Almeria - 30/11/22</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div> <!-- end row -->
+                                                        <form action="/consultancy/training/add" method="post">
                                                             <div class="row">
                                                             	<div class="col-md-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Tipo de Treinamento</label>
-                                                                        <select data-toggle="select2" title="ClientType">
-                                                                            <option value="En">Treinamento para promoção</option>
-                                                                            <option value="En">Treinamento de boas práticas</option>
-                                                                            <option value="En">Treinamento de cardápio</option>
-                                                                            <option value="En">Treinamento de estoque</option>
-                                                                            <option value="En">Treinamento para mudança de praça</option>
+                                                                        <select class="form-select mb-3" name="trainingType">
+                                                                            <option value="Treinamento para promoção">Treinamento para promoção</option>
+                                                                            <option value="Treinamento de boas práticas" selected>Treinamento de boas práticas</option>
+                                                                            <option value="Treinamento de cardápio">Treinamento de cardápio</option>
+                                                                            <option value="Treinamento de estoque">Treinamento de estoque</option>
+                                                                            <option value="Treinamento para mudança de praça">Treinamento para mudança de praça</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-3">
                                                                     <div class="mb-3">
 																	    <label class="form-label">Número de pessoas no treinamento <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" name="number">
+																	    <input class="form-control" type="number" value="26" name="qtyPeople">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5">
                                                                     <div class="mb-3">
-                                                                        <label for="billing-phone" class="form-label">Quantidade de dias de treinamento <span class="text-danger">*</span></label>
-                                                                        <input type="text" class="form-control date" id="singledaterange" data-toggle="date-picker" data-cancel-class="btn-warning">
+                                                                        <label class="form-label">Quantidade de horas de treinamento <span class="text-danger">*</span></label>
+                                                                        <input class="form-control" type="number" value="72" name="qtyTrainingHours">
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- end row -->
+                                                            
+                                                            <div class="row">
+                                                            	<div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Tipo de contrato</label>
+                                                                        <select class="form-select mb-3" name="contractType">
+                                                                            <option value="Projeto">Projeto</option>
+                                                                            <option value="Tempo certo">Tempo certo</option>
+                                                                            <option value="Tempo indeterminado">Tempo indeterminado</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                	<div class="mb-3">
+																	    <label class="form-label">Número de horas <span class="text-danger">*</span></label>
+																	    <input class="form-control" id="example-number" type="number" value="55" name="qtyHours">
+                                                                    </div>
+                                                               	</div>
+                                                                <div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                         <label class="form-label">Custo da consultoria <span class="text-danger">*</span></label>
+																	    <input class="form-control" id="example-number" type="number" value="55000" name="cost">
                                                                     </div>
                                                                 </div>
                                                             </div> <!-- end row -->
@@ -87,8 +99,9 @@
                                                                 </div> <!-- end col -->
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
-                                                                        <a href="/consultancy/training/list" class="btn btn-primary">
-                                                                            <i class="mdi mdi-content-save me-1"></i> Save </a>
+                                                                        <button class="btn btn-primary" type="submit">
+                                                                        	<i class="mdi mdi-content-save me-1"></i> Save
+                                                                       	</button>
                                                                     </div>
                                                                 </div> <!-- end col -->
                                                             </div> <!-- end row -->

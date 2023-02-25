@@ -40,24 +40,24 @@
                                                         <p class="text-muted mb-4">Fill the form below in order to
                                                             register a new client.</p>
 
-                                                        <form>
+                                                        <form action="/consultancy/layout/add" method="post">
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Layout type</label>
-                                                                        <select data-toggle="select2" title="ClientType">
-                                                                            <option value="En">Construção</option>
-                                                                            <option value="Re">Reforma</option>
+                                                                        <select class="form-select mb-3" name="layoutType">
+                                                                            <option value="Construção" selected>Construção</option>
+                                                                            <option value="Reforma">Reforma</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
                                                                        <label class="form-label">Typo da cozinha</label>
-                                                                        <select data-toggle="select2" title="ClientType">
-                                                                            <option value="En">Quente</option>
-                                                                            <option value="Re">Fria</option>
-                                                                            <option value="Re">Mista</option>
+                                                                        <select class="form-select mb-3" name="kitchenType">
+                                                                            <option value="Quente">Quente</option>
+                                                                            <option value="Fria">Fria</option>
+                                                                            <option value="Mista" selected>Mista</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -65,11 +65,11 @@
                                                                 <label class="form-label">Delivery</label>
                                                                     <div class="mt-1 mb-3">
                                                                         <div class="form-check form-check-inline">
-																	        <input type="checkbox" class="form-check-input" id="customCheck3">
+																	        <input type="checkbox" value="true" name="delivery" class="form-check-input" id="customCheck3">
 																	        <label class="form-check-label" for="customCheck3">Sim</label>
 																	    </div>
                                                                         <div class="form-check form-check-inline">
-																	        <input type="checkbox" class="form-check-input" id="customCheck3">
+																	        <input type="checkbox" value="false" name="delivery"  checked class="form-check-input" id="customCheck3">
 																	        <label class="form-check-label" for="customCheck3">Não</label>
 																	    </div>
                                                                     </div>
@@ -80,23 +80,23 @@
                                                             	<div class="col-md-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Tipo de contrato</label>
-                                                                        <select data-toggle="select2" title="ConsultancyType">
-                                                                            <option value="Pr">Projeto</option>
-                                                                            <option value="Tc">Tempo certo</option>
-                                                                            <option value="Ti">Tempo indeterminado</option>
+                                                                        <select class="form-select mb-3" name="contractType">
+                                                                            <option value="Projeto">Projeto</option>
+                                                                            <option value="Tempo certo">Tempo certo</option>
+                                                                            <option value="Tempo indeterminado">Tempo indeterminado</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                 	<div class="mb-3">
 																	    <label class="form-label">Número de horas <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" name="number">
+																	    <input class="form-control" id="example-number" type="number" value="55" name="qtyHours">
                                                                     </div>
                                                                	</div>
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
                                                                          <label class="form-label">Custo da consultoria <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" name="number">
+																	    <input class="form-control" id="example-number" type="number" value="55000" name="cost">
                                                                     </div>
                                                                 </div>
                                                             </div> <!-- end row -->
@@ -108,8 +108,9 @@
                                                                 </div> <!-- end col -->
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
-                                                                        <a href="/consultancy/layout/list" class="btn btn-primary">
-                                                                            <i class="mdi mdi-content-save me-1"></i> Save </a>
+                                                                    	<button class="btn btn-primary" type="submit">
+                                                                        	<i class="mdi mdi-content-save me-1"></i> Save
+                                                                       	</button>
                                                                     </div>
                                                                 </div> <!-- end col -->
                                                             </div> <!-- end row -->

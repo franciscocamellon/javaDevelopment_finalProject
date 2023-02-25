@@ -39,53 +39,98 @@
 
                                                         <p class="text-muted mb-4">Fill the form below in order to
                                                             register a new consultancy request.</p>
-
-                                                        <form>
+														
+                                                        <form action="/consultancy/request/add" method="post">
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Cliente</label>
-                                                                        <select data-toggle="select2" title="Client">
-                                                                            <option value="1">Jeremy Tomlinson</option>
-                                                                            <option value="2">Kathleen Thomas</option>
-                                                                            <option value="3">Brandon Smith</option>
+                                                                        <select name="client" class="form-select mb-3">
+                                                                        
+                                                                        	<c:if test="${not empty clients}">
+                                                                        	
+                                                                        		<c:forEach var="u" items="${clients}">
+                                                                        			<option value="${u}">${u.name}</option>
+                                                                        		</c:forEach>
+	                                                                            
+                                                                            </c:if>
+                                                                            
+                                                                            <c:if test="${empty clients}">
+                                                                            	<option value="null" selected>Não há clientes cadastrados</option>
+                                                                            </c:if>
+                                                                            
                                                                         </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                            		<label class="form-label">Consultoria em</label>
-                                                                    <div class="mt-1 mb-3">
-                                                                        <div class="form-check form-check-inline">
-																	        <input type="checkbox" class="form-check-input" id="customCheck3">
-																	        <label class="form-check-label" for="customCheck3">Layout</label>
-																	    </div>
-																	    <div class="form-check form-check-inline">
-																	        <input type="checkbox" class="form-check-input" id="customCheck4">
-																	        <label class="form-check-label" for="customCheck4">Cardápio</label>
-																	    </div>
-																	    <div class="form-check form-check-inline">
-																	        <input type="checkbox" class="form-check-input" id="customCheck4">
-																	        <label class="form-check-label" for="customCheck4">Treinamento</label>
-																	    </div>
                                                                     </div>
                                                                 </div>
                                                             </div> <!-- end row -->
                                                             <div class="row">
-                                                            	
-                                                                <div class="col-md-4">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Tipo de contrato</label>
-                                                                        <select data-toggle="select2" title="ConsultancyType">
-                                                                            <option value="Pr">Projeto</option>
-                                                                            <option value="Tc">Tempo certo</option>
-                                                                            <option value="Ti">Tempo indeterminado</option>
+                                                            	<div class="col-md-4">
+                                                            		<div class="mb-3">
+                                                                        <label class="form-label">Consultorias em cardápio</label>
+                                                                        <select name="service" class="form-select mb-3">
+                                                                        
+                                                                        	<c:if test="${not empty menus}">
+                                                                        	
+                                                                        		<c:forEach var="u" items="${menus}">
+                                                                        			<option value="${u}">${u.menuType} - ${u.cuisine}</option>
+                                                                        		</c:forEach>
+	                                                                            
+                                                                            </c:if>
+                                                                            
+                                                                            <c:if test="${empty menus}">
+                                                                            	<option value="null" selected>Não há consultorias cadastradas</option>
+                                                                            </c:if>
+                                                                            
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
+	                                                         		<div class="mb-3">
+	                                                                     <label class="form-label">Consultorias em layout</label>
+	                                                                     <select name="service" class="form-select mb-3">
+	                                                                     
+	                                                                     	<c:if test="${not empty layouts}">
+	                                                                     	
+	                                                                     		<c:forEach var="u" items="${layouts}">
+	                                                                     			<option value="${u}">${u.layoutType} - ${u.kitchenType}</option>
+	                                                                     		</c:forEach>
+	                                                                          
+	                                                                         </c:if>
+	                                                                         
+	                                                                         <c:if test="${empty layouts}">
+	                                                                         	<option value="null" selected>Não há consultorias cadastradas</option>
+	                                                                         </c:if>
+	                                                                         
+	                                                                     </select>
+                                                                	</div>
+                                                                </div>
+                                                                <div class="col-md-4">
+	                                                         		<div class="mb-3">
+	                                                                     <label class="form-label">Consultorias em treinamento</label>
+	                                                                     <select name="service" class="form-select mb-3">
+	                                                                     
+	                                                                     	<c:if test="${not empty trainings}">
+	                                                                     	
+	                                                                     		<c:forEach var="u" items="${trainings}">
+	                                                                     			<option value="${u}">${u.trainingType} - ${u.qtyPeople} pessoas</option>
+	                                                                     		</c:forEach>
+	                                                                          
+	                                                                         </c:if>
+	                                                                         
+	                                                                         <c:if test="${empty trainings}">
+	                                                                         	<option value="null" selected>Não há consultorias cadastradas</option>
+	                                                                         </c:if>
+	                                                                         
+	                                                                     </select>
+	                                                                </div>
+                                                                </div>
+                                                        	</div>
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-md-4">
                                                                     <div class="mb-3">
-                                                                        <label class="form-label">Data da requisição</label>
-    																	<input type="text" class="form-control date" id="birthdatepicker" data-toggle="date-picker" data-single-date-picker="true">
+                                                                         <label class="form-label">Custo total <span class="text-danger">*</span></label>
+																	    <input class="form-control" value="20000" type="number" name="totalCost">
                                                                     </div>
                                                                 </div>
                                                             </div> <!-- end row -->
@@ -97,8 +142,7 @@
                                                                 </div> <!-- end col -->
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
-                                                                        <a href="/consultancy/request/list" class="btn btn-primary">
-                                                                            <i class="mdi mdi-content-save me-1"></i> Save </a>
+                                                                    	<button class="btn btn-primary" type="submit"><i class="mdi mdi-content-save me-1"></i> Save </button>
                                                                     </div>
                                                                 </div> <!-- end col -->
                                                             </div> <!-- end row -->

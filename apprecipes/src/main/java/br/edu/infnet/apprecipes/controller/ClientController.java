@@ -1,17 +1,23 @@
 package br.edu.infnet.apprecipes.controller;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.Client;
+import br.edu.infnet.apprecipes.model.domain.Consultancy;
 import br.edu.infnet.apprecipes.model.repository.ClientRepository;
 import br.edu.infnet.apprecipes.model.repository.UserRepository;
 
 @Controller
+@SessionAttributes("clients")
 public class ClientController {
 	
 	private String msg;
@@ -24,7 +30,9 @@ public class ClientController {
 	@GetMapping(value = "/client/list")
 	public String clientList(Model model) {
 		
-		model.addAttribute("clients", ClientRepository.getClientList());
+		Collection<Client> clients = ClientRepository.getClientList();
+		
+		model.addAttribute("clients", clients);
 		
 		model.addAttribute("message", msg);
 		
