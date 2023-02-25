@@ -1,10 +1,10 @@
 package br.edu.infnet.apprecipes.model.exceptions;
 
-public class RecipeWithoutIngredientsException extends Exception {
+public class RequestWithoutClientException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 	
-	public RecipeWithoutIngredientsException(String message) {
+	public RequestWithoutClientException(String message) {
 		super(message);
 	}
 

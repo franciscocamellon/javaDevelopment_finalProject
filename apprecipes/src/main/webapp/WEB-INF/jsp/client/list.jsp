@@ -57,12 +57,6 @@
                             <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
                                 <thead class="table-light">
                                     <tr>
-                                    	<th class="all" style="width: 20px;">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck1">
-                                                <label class="form-check-label" for="customCheck1">&nbsp;</label>
-                                            </div>
-                                        </th>
                                         <th class="all">ID</th>
                                         <th>Nome</th>
                                         <th>Tipo</th>
@@ -74,13 +68,7 @@
                                 <tbody>
                                 	<c:forEach var="u" items="${clients}">
                                      <tr>
-                                     		<td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        	</td>
-                                     	<td>${u.id}</td>
+                                   		 <td>${u.id}</td>
                                          <td>${u.name}</td>
                                          <td>${u.clientType}</td>
                                          <td>${u.enterpriseName}</td>

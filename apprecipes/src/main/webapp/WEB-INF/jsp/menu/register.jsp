@@ -40,36 +40,40 @@
                                                         <p class="text-muted mb-4">Fill the form below in order to
                                                             register a new client.</p>
 
-                                                        <form>
+                                                        <form action="/consultancy/menu/add" method="post">
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Tipo de Cardápio</label>
-                                                                        <select data-toggle="select2" title="Menu">
-                                                                            <option value="0">Comida</option>
-                                                                            <option value="AF">Bebida</option>
-                                                                            <option value="AL">Sobremesa</option>
-                                                                            <option value="DZ">Completo</option>
+                                                                        <select class="form-select mb-3" name="menuType">
+                                                                            <option value="Comida">Comida</option>
+                                                                            <option value="Bebida">Bebida</option>
+                                                                            <option value="Sobremesa">Sobremesa</option>
+                                                                            <option value="Completo">Completo</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Cozinha</label>
-                                                                        <select data-toggle="select2" title="Menu">
-                                                                            <option value="0">Tailandesa</option>
-                                                                            <option value="AF">Francesa</option>
-                                                                            <option value="AL">Italiana</option>
-                                                                            <option value="DZ">Brasileira</option>
+                                                                        <select class="form-select mb-3" name="cuisine">
+                                                                            <option value="Tailandesa">Tailandesa</option>
+                                                                            <option value="Francesa">Francesa</option>
+                                                                            <option value="Italiana">Italiana</option>
+                                                                            <option value="Brasileira">Brasileira</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
-                                                                	<label class="form-label">Tipo do cardápio</label>
+                                                                	<label class="form-label">Vegano</label>
                                                                     <div class="mt-1 mb-3">
                                                                         <div class="form-check form-check-inline">
-																	        <input type="checkbox" class="form-check-input" id="customCheck3">
-																	        <label class="form-check-label" for="customCheck3">Vegano</label>
+																	        <input type="radio" id="customRadio3" value="true" name="vegan" class="form-check-input">
+																	        <label class="form-check-label" for="customRadio3">Sim</label>
+																	    </div>
+																	    <div class="form-check form-check-inline">
+																	        <input type="radio" id="customRadio4" value="false" name="vegan" checked class="form-check-input">
+																	        <label class="form-check-label" for="customRadio4">Não</label>
 																	    </div>
                                                                     </div>
                                                                 </div>
@@ -78,23 +82,23 @@
                                                             	<div class="col-md-4">
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Tipo de contrato</label>
-                                                                        <select data-toggle="select2" title="ConsultancyType">
-                                                                            <option value="Pr">Projeto</option>
-                                                                            <option value="Tc">Tempo certo</option>
-                                                                            <option value="Ti">Tempo indeterminado</option>
+                                                                        <select class="form-select mb-3" name="contractType">
+                                                                            <option value="Projeto">Projeto</option>
+                                                                            <option value="Tempo certo">Tempo certo</option>
+                                                                            <option value="Tempo indeterminado">Tempo indeterminado</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                 	<div class="mb-3">
 																	    <label class="form-label">Número de horas <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" name="number">
+																	    <input class="form-control" id="example-number" type="number" value="55" name="qtyHours">
                                                                     </div>
                                                                	</div>
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
                                                                          <label class="form-label">Custo da consultoria <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" name="number">
+																	    <input class="form-control" id="example-number" type="number" value="55000" name="cost">
                                                                     </div>
                                                                 </div>
                                                             </div> <!-- end row -->
@@ -106,8 +110,9 @@
                                                                 </div> <!-- end col -->
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
-                                                                        <a href="/consultancy/menu/list" class="btn btn-primary">
-                                                                            <i class="mdi mdi-content-save me-1"></i> Save </a>
+                                                                        <button class="btn btn-primary" type="submit">
+                                                                        	<i class="mdi mdi-content-save me-1"></i> Save
+                                                                       	</button>
                                                                     </div>
                                                                 </div> <!-- end col -->
                                                             </div> <!-- end row -->
