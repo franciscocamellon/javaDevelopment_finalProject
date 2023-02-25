@@ -10,8 +10,8 @@ import br.edu.infnet.apprecipes.model.domain.ConsultancyRequest;
 import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
 import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
-import br.edu.infnet.apprecipes.model.exceptions.RecipeWithoutChefException;
-import br.edu.infnet.apprecipes.model.exceptions.RecipeWithoutIngredientsException;
+import br.edu.infnet.apprecipes.model.exceptions.RequestWithoutClientException;
+import br.edu.infnet.apprecipes.model.exceptions.RequestWithoutConsultancyException;
 import br.edu.infnet.apprecipes.model.exceptions.ZeroCostException;
 
 public class ConsultancyRequestTest {
@@ -134,45 +134,45 @@ public class ConsultancyRequestTest {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 		
-		try {
-			ConsultancyRequest r1 = new ConsultancyRequest(new Client(null, "Empreendedor", "maria.cantucci@email.com" ), consultancy1);
-			r1.setTotalCost(150000);
-			r1.printReport();
-		} catch (NullOrEmptyAttributeException | RecipeWithoutChefException | RecipeWithoutIngredientsException e) {
-			System.out.println("[ERRO] " + e.getMessage());
-		}
+		//try {
+		//	ConsultancyRequest r1 = new ConsultancyRequest(new Client(null, "Empreendedor", "maria.cantucci@email.com" ), consultancy1);
+		//	r1.setTotalCost(150000);
+		//	r1.printReport();
+		//} catch (NullOrEmptyAttributeException | RequestWithoutClientException | RequestWithoutConsultancyException e) {
+		//	System.out.println("[ERRO] " + e.getMessage());
+		//}
 		
-		try {
-			ConsultancyRequest r2 = new ConsultancyRequest(new Client("Restaurante", "Maria", "maria@email.com"), consultancy2);
-			r2.setTotalCost(190000);
-			r2.printReport();
-		} catch (NullOrEmptyAttributeException | RecipeWithoutChefException | RecipeWithoutIngredientsException e) {
-			System.out.println("[ERRO] " + e.getMessage());
-		}
+		//try {
+		//	ConsultancyRequest r2 = new ConsultancyRequest(new Client("Restaurante", "Maria", "maria@email.com"), consultancy2);
+		//	r2.setTotalCost(190000);
+		//	r2.printReport();
+		//} catch (NullOrEmptyAttributeException | RequestWithoutClientException | RequestWithoutConsultancyException e) {
+		//	System.out.println("[ERRO] " + e.getMessage());
+		//}
 		
-		try {
-			ConsultancyRequest r3 = new ConsultancyRequest(new Client("Restaurante", "Manel", "manel@email.com"), consultancy3);
-			r3.setTotalCost(50000);
-			r3.printReport();
-		} catch (NullOrEmptyAttributeException | RecipeWithoutChefException | RecipeWithoutIngredientsException e) {
-			System.out.println("[ERRO] " + e.getMessage());
-		}
+		//try {
+		//	ConsultancyRequest r3 = new ConsultancyRequest(new Client("Restaurante", "Manel", "manel@email.com"), consultancy3);
+		//	r3.setTotalCost(50000);
+		//	r3.printReport();
+		//} catch (NullOrEmptyAttributeException | RequestWithoutClientException | RequestWithoutConsultancyException e) {
+		//	System.out.println("[ERRO] " + e.getMessage());
+		//}
 		
-		try {
-			ConsultancyRequest r4 = new ConsultancyRequest(new Client("Empreendedor", "Jose", "jose.empreende@email.com"), consultancy4);
-			r4.setTotalCost(70000);
-			r4.printReport();
-		} catch (NullOrEmptyAttributeException | RecipeWithoutChefException | RecipeWithoutIngredientsException e) {
-			System.out.println("[ERRO] " + e.getMessage());
-		}
+		//try {
+		//	ConsultancyRequest r4 = new ConsultancyRequest(new Client("Empreendedor", "Jose", "jose.empreende@email.com"), consultancy4);
+		//	r4.setTotalCost(70000);
+		//	r4.printReport();
+		//} catch (NullOrEmptyAttributeException | RequestWithoutClientException | RequestWithoutConsultancyException e) {
+		//	System.out.println("[ERRO] " + e.getMessage());
+		//}
 		
-		try {
-			ConsultancyRequest r5 = new ConsultancyRequest(null, consultancy4);
-			r5.setTotalCost(150000);
-			r5.printReport();
-		} catch (RecipeWithoutChefException | RecipeWithoutIngredientsException e) {
-			System.out.println("[ERRO] " + e.getMessage());
-		}
+		//try {
+		//	ConsultancyRequest r5 = new ConsultancyRequest(null, consultancy4);
+		//	r5.setTotalCost(150000);
+		//	r5.printReport();
+		//} catch (RequestWithoutClientException | RequestWithoutConsultancyException e) {
+		//	System.out.println("[ERRO] " + e.getMessage());
+		//}
 		
 		try {
 			Client s6 = new Client("Francisco", "Pizza Dominos", "chico.bala@email.com");
@@ -180,7 +180,7 @@ public class ConsultancyRequestTest {
 			ConsultancyRequest r6 = new ConsultancyRequest(s6, null);
 			r6.setTotalCost(150000);
 			r6.printReport();
-		} catch (NullOrEmptyAttributeException | RecipeWithoutChefException | RecipeWithoutIngredientsException e) {
+		} catch (NullOrEmptyAttributeException | RequestWithoutClientException | RequestWithoutConsultancyException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 	}

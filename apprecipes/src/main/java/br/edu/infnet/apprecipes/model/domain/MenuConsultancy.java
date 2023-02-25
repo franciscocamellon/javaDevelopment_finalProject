@@ -28,11 +28,11 @@ public class MenuConsultancy extends Consultancy {
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
-		sb.append(";");
+		sb.append(" - ");
 		sb.append(vegan ? "Menu Vegano" : "Menu Normal");
-		sb.append(";");
+		sb.append(" - ");
 		sb.append(menuType);
-		sb.append(";");
+		sb.append(" - ");
 		sb.append(cuisine);
 		
 		return sb.toString();

@@ -10,9 +10,9 @@ public class TrainingConsultancy extends Consultancy {
 	private int qtyPeople;
 	private float qtyTrainingHours;
 
-	public TrainingConsultancy(String contractType, float qtyHours, float cost, float trainingHours) throws ZeroCostException, NullOrEmptyAttributeException {
+	public TrainingConsultancy(String contractType, float qtyHours, float cost, float qtyTrainingHours) throws ZeroCostException, NullOrEmptyAttributeException {
 		super(contractType, qtyHours, cost);
-		this.qtyTrainingHours = trainingHours;
+		this.qtyTrainingHours = qtyTrainingHours;
 	}
 
 	@Override
