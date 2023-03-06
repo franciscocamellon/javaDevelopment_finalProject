@@ -6,11 +6,9 @@ public class AppRecipesUser {
 	private String name;
 	private String password;
 	private String email;
-	private String[] characteristics;
-	private String type;
-	private String sector;
 	private int age;
-	private float salary;
+	private String zip;
+	private String address;
 	
 	public AppRecipesUser() {
 		
@@ -32,16 +30,14 @@ public class AppRecipesUser {
 	public String toString() {
 
 		return String.format(
-				"O usuário %s tem as credenciais %s e %s, %d anos e ganha R$%.2f. "
-				+ "é um usuário do tipo %s, atua no setor %s e tem %d características", 
+				"O usuário %s tem as credenciais %s e %s, %d anos e seu endereço "
+				+ "%s, e seu CEP: %s", 
 				name,
 				email,
 				password,
 				age,
-				salary,
-				type,
-				sector,
-				characteristics.length
+				address,
+				zip
 			);
 	}
 
@@ -82,37 +78,7 @@ public class AppRecipesUser {
 		this.email = email;
 	}
 
-
-	public String[] getCharacteristics() {
-		return characteristics;
-	}
-
-
-	public void setCharacteristics(String[] characteristics) {
-		this.characteristics = characteristics;
-	}
-
-
-	public String getType() {
-		return type;
-	}
-
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-
-	public String getSector() {
-		return sector;
-	}
-
-
-	public void setSector(String sector) {
-		this.sector = sector;
-	}
-
-
+	
 	public int getAge() {
 		return age;
 	}
@@ -122,13 +88,19 @@ public class AppRecipesUser {
 		this.age = age;
 	}
 
-
-	public float getSalary() {
-		return salary;
+	public String getZip() {
+		return zip;
 	}
 
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
 
-	public void setSalary(float salary) {
-		this.salary = salary;
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 }
