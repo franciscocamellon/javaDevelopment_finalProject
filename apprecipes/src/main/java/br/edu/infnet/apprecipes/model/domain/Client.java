@@ -30,6 +30,11 @@ public class Client {
 		this.email = email;
 	}
 	
+	public Client(String name, String clientType, String email, String enterpriseName) throws NullOrEmptyAttributeException {
+		this(name, clientType, email);
+		this.enterpriseName = enterpriseName;
+	}
+	
 	@Override
 	public String toString() {
 		
