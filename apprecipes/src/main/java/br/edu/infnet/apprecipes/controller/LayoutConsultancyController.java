@@ -1,5 +1,6 @@
 package br.edu.infnet.apprecipes.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,13 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.apprecipes.model.domain.LayoutConsultancy;
-import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
-import br.edu.infnet.apprecipes.model.repository.LayoutConsultancyRepository;
-import br.edu.infnet.apprecipes.model.repository.MenuConsultancyRepository;
+import br.edu.infnet.apprecipes.model.service.LayoutConsultancyService;
 
 @Controller
 @SessionAttributes("layouts")
 public class LayoutConsultancyController {
+	
+	@Autowired
+	private LayoutConsultancyService layoutService;
 	
 	private String msg;
 	
@@ -26,7 +28,7 @@ public class LayoutConsultancyController {
 	@GetMapping(value = "/consultancy/layout/list")
 	public String layoutConsultancyList(Model model) {
 		
-		model.addAttribute("layouts", LayoutConsultancyRepository.getLayoutConsultancyList());
+		model.addAttribute("layouts", layoutService.getLayoutConsultancyList());
 		
 		model.addAttribute("message", msg);
 		
@@ -40,7 +42,7 @@ public class LayoutConsultancyController {
 		
 		System.out.println("Inclusão realizada com sucesso!" + layoutConsultancy);
 		
-		LayoutConsultancyRepository.addLayoutConsultancy(layoutConsultancy);
+		layoutService.addLayoutConsultancy(layoutConsultancy);
 		
 		msg = "A consultoria de layout "+layoutConsultancy+" foi adicionada com sucesso!";
 		
@@ -50,7 +52,7 @@ public class LayoutConsultancyController {
 	@GetMapping(value = "/consultancy/layout/{id}/delete")
 	public String removeLayoutConsultancy(@PathVariable Integer id) {
 		
-		LayoutConsultancy layout = LayoutConsultancyRepository.removeLayoutConsultancy(id);
+		LayoutConsultancy layout = layoutService.removeLayoutConsultancy(id);
 		
 		msg = "A consultoria de layout "+layout+" foi deletada com sucesso!";
 		
