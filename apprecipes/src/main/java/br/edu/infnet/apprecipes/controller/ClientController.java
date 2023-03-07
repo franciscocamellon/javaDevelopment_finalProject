@@ -55,9 +55,9 @@ public class ClientController {
 	@GetMapping(value = "/client/{id}/delete")
 	public String removeClient(@PathVariable Integer id) {
 		
-		Client client = clientService.removeClient(id);
+		clientService.removeClient(id);
 		
-		msg = "A exclusão do usuário "+client.getName()+" foi realizada com sucesso!";
+		msg = "A exclusão do usuário "+id+" foi realizada com sucesso!";
 		
 		return "redirect:/client/list";
 	}
