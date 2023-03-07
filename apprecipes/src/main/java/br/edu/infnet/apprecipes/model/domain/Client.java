@@ -1,17 +1,34 @@
 package br.edu.infnet.apprecipes.model.domain;
 
+import java.lang.reflect.Constructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 
+@Entity
+@Table(name = "TableClient")
 public class Client {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	public String name;
 	public String enterpriseName;
 	public String clientType;
 	public String email;
 	
+	public Client() {
+		
+	}
 	
 	public Client(String name, String clientType, String email) throws NullOrEmptyAttributeException {
+		
+		this();
 		
 		if (name == null || name.isBlank()) {
 			throw new NullOrEmptyAttributeException("O nome do cliente deve ser preenchido!");
@@ -72,6 +89,18 @@ public class Client {
 
 	public void setEnterpriseName(String enterpriseName) {
 		this.enterpriseName = enterpriseName;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setClientType(String clientType) {
+		this.clientType = clientType;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

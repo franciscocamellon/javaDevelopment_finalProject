@@ -14,16 +14,17 @@ public class ClientService {
 	@Autowired
 	private ClientRepository clientRepository;
 	
-	public boolean addClient(Client client) {
-		return clientRepository.addClient(client);
+	public Client addClient(Client client) {
+		return clientRepository.save(client);
 	}
 	
-	public Client removeClient(Integer userId) {
-		return clientRepository.removeClient(userId);
+	public void removeClient(Integer userId) {
+		clientRepository.deleteById(userId);
+		return;
 	}
 	
 	public Collection<Client> getClientList() {
-		return clientRepository.getClientList();
+		return (Collection<Client>) clientRepository.findAll();
 	}
 
 }
