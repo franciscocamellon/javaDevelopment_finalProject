@@ -4,15 +4,18 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 
+@Repository
 public class TrainingConsultancyRepository {
 	
 	private static Integer id = 1;
 	
 	private static Map<Integer, TrainingConsultancy> mapLayoutList = new HashMap<Integer, TrainingConsultancy>();
 	
-	public static boolean addTrainingConsultancy(TrainingConsultancy trainingConsultancy) {
+	public boolean addTrainingConsultancy(TrainingConsultancy trainingConsultancy) {
 		
 		trainingConsultancy.setId(id++);
 		
@@ -24,13 +27,13 @@ public class TrainingConsultancyRepository {
 		}
 	}
 	
-	public static TrainingConsultancy removeTrainingConsultancy(Integer menuId) {
+	public TrainingConsultancy removeTrainingConsultancy(Integer trainingId) {
 		
-		return mapLayoutList.remove(menuId);
+		return mapLayoutList.remove(trainingId);
 		
 	}
 	
-	public static Collection<TrainingConsultancy> getTrainingConsultancyList() {
+	public Collection<TrainingConsultancy> getTrainingConsultancyList() {
 		return mapLayoutList.values();
 	}
 

@@ -14,6 +14,12 @@ public class MenuConsultancy extends Consultancy {
 		super(contractType, qtyHours, cost);
 		this.vegan = vegan;
 	}
+	
+	public MenuConsultancy(String contractType, float qtyHours, float cost, boolean vegan, String menuType, String cuisine) throws ZeroCostException, NullOrEmptyAttributeException {
+		this(contractType, qtyHours, cost, vegan);
+		this.menuType = menuType;
+		this.cuisine = cuisine;
+	}
 
 	@Override
 	public float costCalculator() {

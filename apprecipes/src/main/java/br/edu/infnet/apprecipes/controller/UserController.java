@@ -1,5 +1,6 @@
 package br.edu.infnet.apprecipes.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,10 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
-import br.edu.infnet.apprecipes.model.repository.UserRepository;
+import br.edu.infnet.apprecipes.model.service.UserService;
 
 @Controller
 public class UserController {
+	
+	@Autowired
+	private UserService userService;
 	
 	private String msg;
 	
@@ -22,7 +26,7 @@ public class UserController {
 	@GetMapping(value = "/user/list")
 	public String userList(Model model) {
 		
-		model.addAttribute("users", UserRepository.getUserList());
+		model.addAttribute("users", userService.getUserList());
 		
 		model.addAttribute("message", msg);
 		
@@ -35,7 +39,7 @@ public class UserController {
 	public String addUser(AppRecipesUser user) {
 		System.out.println("Inclusão realizada com sucesso!" + user);
 		
-		UserRepository.addUser(user);
+		userService.addUser(user);
 		
 		msg = "A inclusão do usuário "+user.getName()+" foi realizada com sucesso!";
 		
@@ -45,7 +49,7 @@ public class UserController {
 	@GetMapping(value = "/usuario/{id}/excluir")
 	public String removeUser(@PathVariable Integer id) {
 		
-		AppRecipesUser user = UserRepository.removeUser(id);
+		AppRecipesUser user = userService.removeUser(id);
 		
 		msg = "A exclusão do usuário "+user.getName()+" foi realizada com sucesso!";
 		

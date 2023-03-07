@@ -14,6 +14,12 @@ public class TrainingConsultancy extends Consultancy {
 		super(contractType, qtyHours, cost);
 		this.qtyTrainingHours = qtyTrainingHours;
 	}
+	
+	public TrainingConsultancy(String contractType, float qtyHours, float cost, float qtyTrainingHours, String trainingType, int qtyPeople) throws ZeroCostException, NullOrEmptyAttributeException {
+		this(contractType, qtyHours, cost, qtyTrainingHours);
+		this.trainingType = trainingType;
+		this.qtyPeople = qtyPeople;
+	}
 
 	@Override
 	public float costCalculator() {
