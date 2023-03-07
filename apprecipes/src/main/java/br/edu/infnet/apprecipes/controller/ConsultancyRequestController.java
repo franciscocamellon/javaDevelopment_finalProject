@@ -15,7 +15,6 @@ import br.edu.infnet.apprecipes.model.domain.ConsultancyRequest;
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 import br.edu.infnet.apprecipes.model.exceptions.RequestWithoutClientException;
 import br.edu.infnet.apprecipes.model.exceptions.RequestWithoutConsultancyException;
-import br.edu.infnet.apprecipes.model.repository.ClientRepository;
 import br.edu.infnet.apprecipes.model.repository.ConsultancyRequestRepository;
 
 @Controller
