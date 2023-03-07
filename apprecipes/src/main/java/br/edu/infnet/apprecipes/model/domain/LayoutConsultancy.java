@@ -14,6 +14,12 @@ public class LayoutConsultancy extends Consultancy {
 		super(contractType, qtyHours, cost);
 		this.delivery = delivery;
 	}
+	
+	public LayoutConsultancy(String contractType, float qtyHours, float cost, boolean delivery, String layoutType, String kitchenType) throws ZeroCostException, NullOrEmptyAttributeException {
+		this(contractType, qtyHours, cost, delivery);
+		this.layoutType = layoutType;
+		this.kitchenType = kitchenType;
+	}
 
 	@Override
 	public float costCalculator() {

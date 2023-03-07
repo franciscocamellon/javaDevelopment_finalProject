@@ -1,5 +1,6 @@
 package br.edu.infnet.apprecipes.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,11 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
-import br.edu.infnet.apprecipes.model.repository.MenuConsultancyRepository;
+import br.edu.infnet.apprecipes.model.service.MenuConsultancyService;
 
 @Controller
 @SessionAttributes("menus")
 public class MenuConsultancyController {
+	
+	@Autowired
+	private MenuConsultancyService menuService;
 	
 	private String msg;
 	
@@ -24,7 +28,7 @@ public class MenuConsultancyController {
 	@GetMapping(value = "/consultancy/menu/list")
 	public String menuConsultancyList(Model model) {
 		
-		model.addAttribute("menus", MenuConsultancyRepository.getMenuConsultancyList());
+		model.addAttribute("menus", menuService.getMenuConsultancyList());
 		
 		model.addAttribute("message", msg);
 		
@@ -38,7 +42,7 @@ public class MenuConsultancyController {
 		
 		System.out.println("Inclusão realizada com sucesso!" + menuConsultancy);
 		
-		MenuConsultancyRepository.addMenuConsultancy(menuConsultancy);
+		menuService.addMenuConsultancy(menuConsultancy);
 		
 		msg = "A consultoria de menu "+menuConsultancy+" foi adicionada com sucesso!";
 		
@@ -48,7 +52,7 @@ public class MenuConsultancyController {
 	@GetMapping(value = "/consultancy/menu/{id}/delete")
 	public String removeMenuConsultancy(@PathVariable Integer id) {
 		
-		MenuConsultancy menu = MenuConsultancyRepository.removeMenuConsultancy(id);
+		MenuConsultancy menu = menuService.removeMenuConsultancy(id);
 		
 		msg = "A consultoria de menu "+menu+" foi deletada com sucesso!";
 		

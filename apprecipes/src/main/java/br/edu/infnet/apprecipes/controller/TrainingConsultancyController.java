@@ -1,5 +1,6 @@
 package br.edu.infnet.apprecipes.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,14 +8,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
 import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
-import br.edu.infnet.apprecipes.model.repository.MenuConsultancyRepository;
-import br.edu.infnet.apprecipes.model.repository.TrainingConsultancyRepository;
+import br.edu.infnet.apprecipes.model.service.TrainingConsultancyService;
 
 @Controller
 @SessionAttributes("trainings")
 public class TrainingConsultancyController {
+	
+	@Autowired
+	private TrainingConsultancyService trainingService;
 	
 	private String msg;
 	
@@ -26,7 +28,7 @@ public class TrainingConsultancyController {
 	@GetMapping(value = "/consultancy/training/list")
 	public String trainingConsultancyList(Model model) {
 		
-		model.addAttribute("trainings", TrainingConsultancyRepository.getTrainingConsultancyList());
+		model.addAttribute("trainings", trainingService.getTrainingConsultancyList());
 		
 		model.addAttribute("message", msg);
 		
@@ -40,7 +42,7 @@ public class TrainingConsultancyController {
 		
 		System.out.println("Inclusão realizada com sucesso!" + trainingConsultancy);
 		
-		TrainingConsultancyRepository.addTrainingConsultancy(trainingConsultancy);
+		trainingService.addTrainingConsultancy(trainingConsultancy);
 		
 		msg = "A consultoria de treinamento "+trainingConsultancy+" foi adicionada com sucesso!";
 		
@@ -50,7 +52,7 @@ public class TrainingConsultancyController {
 	@GetMapping(value = "/consultancy/training/{id}/delete")
 	public String removeTrainingConsultancy(@PathVariable Integer id) {
 		
-		TrainingConsultancy training = TrainingConsultancyRepository.removeTrainingConsultancy(id);
+		TrainingConsultancy training = trainingService.removeTrainingConsultancy(id);
 		
 		msg = "A consultoria de treinamento "+training+" foi deletada com sucesso!";
 		

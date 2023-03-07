@@ -4,15 +4,18 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import br.edu.infnet.apprecipes.model.domain.LayoutConsultancy;
 
+@Repository
 public class LayoutConsultancyRepository {
 	
 	private static Integer id = 1;
 	
 	private static Map<Integer, LayoutConsultancy> mapLayoutList = new HashMap<Integer, LayoutConsultancy>();
 	
-	public static boolean addLayoutConsultancy(LayoutConsultancy layoutConsultancy) {
+	public boolean addLayoutConsultancy(LayoutConsultancy layoutConsultancy) {
 		
 		layoutConsultancy.setId(id++);
 		
@@ -24,13 +27,13 @@ public class LayoutConsultancyRepository {
 		}
 	}
 	
-	public static LayoutConsultancy removeLayoutConsultancy(Integer layoutId) {
+	public LayoutConsultancy removeLayoutConsultancy(Integer layoutId) {
 		
 		return mapLayoutList.remove(layoutId);
 		
 	}
 	
-	public static Collection<LayoutConsultancy> getLayoutConsultancyList() {
+	public Collection<LayoutConsultancy> getLayoutConsultancyList() {
 		return mapLayoutList.values();
 	}
 

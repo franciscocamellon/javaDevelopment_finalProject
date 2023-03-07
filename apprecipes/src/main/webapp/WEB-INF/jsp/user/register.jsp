@@ -39,74 +39,38 @@
                         </div>
 
                         <!-- title-->
-                        <h4 class="mt-3">User register</h4>
-                        <p class="text-muted mb-4">Don't have an account? Create your account, it takes less than a minute</p>
+                        <h4 class="mt-3">Registro de usuário</h4>
+                        <p class="text-muted mb-4">Não tem uma conta? Crie sua conta, leva menos de um minuto!</p>
 
                         <!-- form -->
                         <form action="/user/add" method="post">
                             <div class="mb-3">
-                                <label class="form-label">Full Name</label>
-                                <input class="form-control" type="text" name="name" value="Francisco Camello" placeholder="Enter your name" required>
+                                <label class="form-label">Nome completo</label>
+                                <input class="form-control" type="text" name="name" value="Francisco Camello" placeholder="Digite seu nome" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Password</label>
-                                <input class="form-control" type="text" name="password"  value="123456"  placeholder="Enter your password" required>
+                                <label class="form-label">Senha</label>
+                                <input class="form-control" type="text" name="password"  value="123456"  placeholder="Digite sua senha" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Email address</label>
-                                <input class="form-control" type="email" name="email" value="chicobala@email.com" required placeholder="Enter your email">
+                                <label class="form-label">Email</label>
+                                <input class="form-control" type="email" name="email" value="chicobala@email.com" required placeholder="Digite seu email">
                             </div>
                             <div class="row g-2 mb-3">
                             	<div class="col-md">
-	                                <label class="form-label">Age</label>
-	                                <input class="form-control" type="text" name="age" value="42" required placeholder="Enter your age">
+	                                <label class="form-label">Idade</label>
+	                                <input class="form-control" type="text" name="age" value="42" required placeholder="Digite sua idade">
                                 </div>
                                 <div class="col-md">
-	                                <label class="form-label">Salary</label>
-	                                <input class="form-control" type="text" name="salary" value="99999" required placeholder="Enter your age">
+	                                <label class="form-label">CEP</label>
+	                                <input class="form-control" type="text" name="zip" value="70745-080" required placeholder="Digite seu CEP">
                                 </div>
                             </div>
-                            <div class="form group mb-3">
-                           		<label class="form-label">Characteristics:</label>
-                           		<div class="row g-2">
-								    <div class="col-md">
-								        <input type="checkbox" name="characteristics" checked class="form-check-input" value="De">
-								        <label class="form-check-label">Developer</label>
-								    </div>
-								    <div class="col-md">
-								        <input type="checkbox" name="characteristics" checked class="form-check-input" value="An">
-								        <label class="form-check-label" for="customCheck2">Analyst</label>
-								    </div>
-								    <div class="col-md">
-								        <input type="checkbox" name="characteristics" class="form-check-input" value="Da">
-								        <label class="form-check-label" for="customCheck2">Database</label>
-								    </div>
-								</div>
-							</div>
-                            <div class="form group mb-3">
-                           		<label class="form-label">Type:</label>
-                           		<div class="row g-2">
-								    <div class="form-check col-md">
-								        <input type="radio" name="type" class="form-check-input" value="P">
-								        <label class="form-check-label">Padrão</label>
-								    </div>
-								    <div class="form-check col-md">
-								        <input type="radio" name="type" checked class="form-check-input" value="D">
-								        <label class="form-check-label" for="customCheck2">Diretor</label>
-								    </div>
-								    <div class="form-check col-md">
-								        <input type="radio" name="type" class="form-check-input" value="A">
-								        <label class="form-check-label" for="customCheck2">Administrador</label>
-								    </div>
-								</div>
-							</div>
-                            <div class="mb-5">
-                            	<label class="form-label">Sector:</label>
-                                <select name="sector" class="form-select mb-3">
-								    <option value="1">Diretoria</option>
-								    <option value="2">Comercial</option>
-								    <option value="3" selected>Desenvolvimento</option>
-								</select>  
+                            <div class="row g-2 mb-3">
+                                <div class="col-md">
+	                                <label class="form-label">Endereço</label>
+	                                <input class="form-control" type="text" name="address" value="SQN 306 Bloco H Apto 602" required placeholder="Digite seu endereço">
+                                </div>
                             </div>
                             <div class="mb-3 d-grid text-center">
                                 <button class="btn btn-primary" type="submit"><i class="mdi mdi-account"></i> Register </button>

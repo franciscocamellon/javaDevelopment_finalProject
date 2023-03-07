@@ -50,14 +50,12 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Password</th>
+                                        <th>Nome</th>
                                         <th>Email</th>
-                                        <th>Characteristics</th>
-                                        <th>Type</th>
-                                        <th>Sector</th>
-                                        <th>Age</th>
-                                        <th>Salary</th>
+                                        <th>Senha</th>
+                                        <th>Idade</th>
+                                        <th>Endereço</th>
+                                        <th>CEP</th>
                                         <th style="width: 75px;">Action</th>
                                     </tr>
                                 </thead>
@@ -69,13 +67,11 @@
                                              <img src="/assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
                                              <a href="javascript:void(0);" class="text-body fw-semibold">${u.name}</a>
                                          </td>
-                                         <td>${u.password}</td>
                                          <td>${u.email}</td>
-                                         <td>${u.characteristics}</td>
-                                         <td>${u.type}</td>
-                                         <td>${u.sector}</td>
+                                         <td>${u.password}</td>
                                          <td>${u.age}</td>
-                                         <td>${u.salary}</td>
+                                         <td>${u.address}</td>
+                                         <td>${u.zip}</td>
                                          <td>
                                              <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                                              <a href="/usuario/${u.id}/excluir" class="action-icon"> <i class="mdi mdi-delete"></i></a>
