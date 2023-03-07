@@ -1,0 +1,16 @@
+user;Administrador;administrador@email.com;administrador@email.com
+user;Timothy Kauper;thykauper@rhyta.com;thykauper@rhyta.com
+user;Margaret D. Evans;margaret.evans@rhyta.com;margaret.evans@rhyta.com
+user;Kathryn S. Collier;collier@jourrapide.com;collier@jourrapide.com
+client;Soren Drouin;Restaurante;hyper.mockup@email.com;Hyper Mockup
+client;Anne Simard;Empreendedor;anne.cantucci@email.com;Cantucci
+client;Nicolas Chartier;Restaurante;chico.bala@email.com;Almeria
+layout;Projeto;30.0;20000.0;Construção;Quente;false
+layout;Indeterminado;1000.0;100000.0;Construção;Mista;false
+layout;Tempo Fixo;100.0;15000.0;Reforma;Quente;true
+menu;Projeto;30;20000;false;Comida;Tailandesa
+menu;Indeterminado;1000;100000;true;Completo;Francesa
+menu;Tempo Fixo;100;15000;false;Bebida;Árabe
+training;Projeto;30.0;20000.0;20;Boas práticas;15
+training;Indeterminado;1000.0;100000.0;5;Mudança de praça;300
+training;Tempo Fixo;100.0;15000.0;30;Novo cardápio;70
