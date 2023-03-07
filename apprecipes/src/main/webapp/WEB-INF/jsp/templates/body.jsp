@@ -64,8 +64,8 @@
 
                         <li class="side-nav-item">
                             <a href="/" class="side-nav-link">
-                                <i class="uil-home-alt"></i>
-                                <span> Home </span>
+                                <i class="uil-tachometer-fast"></i>
+                                <span> Dashboard </span>
                             </a>
                         </li>
                         
