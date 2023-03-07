@@ -52,8 +52,8 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Client type</label>
                                                     <select name="clientType" class="form-select mb-3">
-                                                        <option value="1">Entrepreneur</option>
-                                                        <option value="2" selected>Restaurant</option>
+                                                        <option value="Entrepreneur">Entrepreneur</option>
+                                                        <option value="Restaurant" selected>Restaurant</option>
                                                     </select>
                                                 </div>
                                             </div>
