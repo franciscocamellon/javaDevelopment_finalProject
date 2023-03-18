@@ -1,40 +1,15 @@
 package br.edu.infnet.apprecipes.model.repository;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
 import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
 
-@Repository
-public class MenuConsultancyRepository {
+public interface MenuConsultancyRepository extends CrudRepository<MenuConsultancy, Integer> {
 	
-	private static Integer id = 1;
-	
-	private static Map<Integer, MenuConsultancy> mapLayoutList = new HashMap<Integer, MenuConsultancy>();
-	
-	public boolean addMenuConsultancy(MenuConsultancy menuConsultancy) {
-		
-		menuConsultancy.setId(id++);
-		
-		try {
-			mapLayoutList.put(menuConsultancy.getId(), menuConsultancy);
-			return true;		
-		} catch (Exception e) {
-			return false;
-		}
-	}
-	
-	public MenuConsultancy removeMenuConsultancy(Integer menuId) {
-		
-		return mapLayoutList.remove(menuId);
-		
-	}
-	
-	public Collection<MenuConsultancy> getMenuConsultancyList() {
-		return mapLayoutList.values();
-	}
+	@Query("from MenuConsultancy mc where mc.user.id = :userId")
+	List<MenuConsultancy> getList(Integer userId);
 
 }

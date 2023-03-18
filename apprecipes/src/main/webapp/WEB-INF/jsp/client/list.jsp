@@ -25,50 +25,49 @@
 	</div>
 	<!-- end page title -->
 
-	<div class="row">
-		<div class="col-12">
-			<div class="card">
-				<div class="card-body">
-
-					<c:if test="${empty clients}">
-						<div class="clearfix">
-							<div class="float-start">
-								<h5 class="page-title">Não existem clientes cadastrados!</h5>
-							</div>
-							<div class="float-end">
-								<a href="/client">
-									<button type="button" class="btn btn-primary btn-md">
-										<i class="mdi mdi-plus-thick"></i> Cadastrar
-									</button>
-								</a>
-							</div>
-						</div>
-					</c:if>
-					<c:if test="${not empty clients}">
-						<div class="clearfix">
-							<div class="float-start">
-								<h5 class="page-title">Quantidade de clientes cadastrados:
-									${clients.size()}!</h5>
-							</div>
-							<div class="float-end">
-								<a href="/client">
-									<button type="button" class="btn btn-primary btn-md">
-										<i class="mdi mdi-plus-thick"></i> Cadastrar
-									</button>
-								</a>
-							</div>
-						</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        
+                        <c:if test="${empty clients}">
+                        	<div class="clearfix">
+		                        <div class="float-start">
+		                            <h5 class="page-title">Não existem clientes cadastrados!</h5>
+		                        </div>
+		                        <div class="float-end">
+		                            <a href="/client"> <button type="button" class="btn btn-primary btn-md">
+		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
+		                            </a>
+		                        </div>
+		                    </div>
+                        </c:if>
+                        <c:if test="${not empty clients}">
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+	                            <h5 class="page-title">Quantidade de clientes cadastrados: ${clients.size()}!</h5>
+	                        </div>
+	                        <div class="col-sm-8">
+                                <div class="text-sm-end">
+		                            <a href="/client"> <button type="button" class="btn btn-primary btn-md">
+		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
+		                            </a>
+		                        </div>
+		                    </div>                             
+	                    </div>                             
 
 						<div class="table-responsive">
 							<table class="table table-centered w-100 dt-responsive nowrap"
 								id="products-datatable">
 								<thead class="table-light">
 									<tr>
-										<th>ID</th>
+										<th class="all">ID</th>
 										<th>Nome</th>
 										<th>Tipo</th>
-										<th>Nome do empreendimento</th>
+										<th>Empreendimento</th>
 										<th>Email</th>
+										<th>Consultor</th>
+										<th>Consultor Responsável</th>
 										<th style="width: 75px;">Action</th>
 									</tr>
 								</thead>
@@ -80,10 +79,12 @@
 											<td>${c.clientType}</td>
 											<td>${c.enterpriseName}</td>
 											<td>${c.email}</td>
-											<td><a href="#" class="action-icon"> <i
-													class="mdi mdi-square-edit-outline"></i></a> <a
-												href="/client/${c.id}/delete" class="action-icon"> <i
-													class="mdi mdi-delete"></i></a></td>
+											<td>${c.user.name}</td>
+											<td>${c.user.name}</td>
+											<td>
+												<a href="#" class="action-icon"> <i	class="mdi mdi-square-edit-outline"></i></a> 
+												<a href="/client/${c.id}/delete" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+											</td>
 										</tr>
 									</c:forEach>
 								</tbody>

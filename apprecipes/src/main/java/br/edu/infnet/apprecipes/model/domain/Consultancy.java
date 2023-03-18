@@ -1,13 +1,37 @@
 package br.edu.infnet.apprecipes.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 import br.edu.infnet.apprecipes.model.exceptions.ZeroCostException;
 
+@Entity
+@Table(name = "TableConsultancy")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Consultancy {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String name;
 	private String contractType;
 	private float qtyHours;
 	private float cost;
+	@ManyToOne
+	@JoinColumn(name = "idUser")
+	private AppRecipesUser user;
+	
+	public Consultancy() {
+		
+	}
 	
 	public Consultancy(String contractType, float qtyHours, float cost) throws ZeroCostException, NullOrEmptyAttributeException {
 		
@@ -42,6 +66,22 @@ public abstract class Consultancy {
 		return sb.toString();
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getContractType() {
 		return contractType;
 	}
@@ -64,6 +104,14 @@ public abstract class Consultancy {
 
 	public void setCost(float cost) {
 		this.cost = cost;
+	}
+
+	public AppRecipesUser getUser() {
+		return user;
+	}
+
+	public void setUser(AppRecipesUser user) {
+		this.user = user;
 	}
 
 }

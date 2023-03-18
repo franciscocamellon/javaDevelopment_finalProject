@@ -1,19 +1,17 @@
 package br.edu.infnet.apprecipes.controller;
 
-import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
-
+import org.springframework.web.bind.annotation.SessionAttribute;
+import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.Client;
 import br.edu.infnet.apprecipes.model.service.ClientService;
 
 @Controller
-@SessionAttributes("clients")
 public class ClientController {
 	
 	@Autowired
@@ -27,11 +25,11 @@ public class ClientController {
 	}
 	
 	@GetMapping(value = "/client/list")
-	public String clientList(Model model) {
+	public String clientList(Model model, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		Collection<Client> clients = clientService.getClientList();
+		//Collection<Client> clients = clientService.getClientList();
 		
-		model.addAttribute("clients", clients);
+		model.addAttribute("clients", clientService.getClientList(loggedUser));
 		
 		model.addAttribute("message", msg);
 		
@@ -41,9 +39,9 @@ public class ClientController {
 	}
 	
 	@PostMapping(value = "/client/add")
-	public String addClient(Client client) {
+	public String addClient(Client client, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		System.out.println("Inclusão realizada com sucesso!" + client);
+		client.setUser(loggedUser);
 		
 		clientService.addClient(client);
 		

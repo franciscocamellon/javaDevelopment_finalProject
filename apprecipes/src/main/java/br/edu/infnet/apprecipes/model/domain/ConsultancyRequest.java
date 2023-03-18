@@ -7,10 +7,10 @@ import java.util.List;
 import br.edu.infnet.apprecipes.model.exceptions.RequestWithoutClientException;
 import br.edu.infnet.apprecipes.model.exceptions.RequestWithoutConsultancyException;
 
+
 public class ConsultancyRequest {
 	
 	private Integer id;
-	//private List<Consultancy> service;
 	private List<String> service;
 	private float totalCost;
 	private Client client;

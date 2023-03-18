@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
 import br.edu.infnet.apprecipes.model.service.MenuConsultancyService;
 
@@ -26,9 +28,9 @@ public class MenuConsultancyController {
 	}
 	
 	@GetMapping(value = "/consultancy/menu/list")
-	public String menuConsultancyList(Model model) {
+	public String menuConsultancyList(Model model, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		model.addAttribute("menus", menuService.getMenuConsultancyList());
+		model.addAttribute("menus", menuService.getMenuConsultancyList(loggedUser));
 		
 		model.addAttribute("message", msg);
 		
@@ -38,13 +40,13 @@ public class MenuConsultancyController {
 	}
 	
 	@PostMapping(value = "/consultancy/menu/add")
-	public String addMenuConsultancy(MenuConsultancy menuConsultancy) {
+	public String addMenuConsultancy(MenuConsultancy menuConsultancy, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		System.out.println("Inclusão realizada com sucesso!" + menuConsultancy);
+		menuConsultancy.setUser(loggedUser);
 		
 		menuService.addMenuConsultancy(menuConsultancy);
 		
-		msg = "A consultoria de menu "+menuConsultancy+" foi adicionada com sucesso!";
+		msg = "A consultoria de menu "+menuConsultancy.getName()+" foi adicionada com sucesso!";
 		
 		return "redirect:/consultancy/menu/list";
 	}
@@ -52,9 +54,9 @@ public class MenuConsultancyController {
 	@GetMapping(value = "/consultancy/menu/{id}/delete")
 	public String removeMenuConsultancy(@PathVariable Integer id) {
 		
-		MenuConsultancy menu = menuService.removeMenuConsultancy(id);
+		menuService.removeMenuConsultancy(id);
 		
-		msg = "A consultoria de menu "+menu+" foi deletada com sucesso!";
+		msg = "A consultoria de menu "+id+" foi deletada com sucesso!";
 		
 		return "redirect:/consultancy/menu/list";
 	}

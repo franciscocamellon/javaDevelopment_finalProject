@@ -14,16 +14,20 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public boolean addUser(AppRecipesUser user) {
-		return userRepository.addUser(user);
+	public AppRecipesUser authenticate(AppRecipesUser user) {
+		return userRepository.authentication(user.getEmail(), user.getPassword());
 	}
 	
-	public AppRecipesUser removeUser(Integer key) {
-		return userRepository.removeUser(key);
+	public AppRecipesUser addUser(AppRecipesUser user) {
+		return userRepository.save(user);
+	}
+	
+	public void removeUser(Integer key) {
+		userRepository.deleteById(key);
 	}
 	
 	public Collection<AppRecipesUser> getUserList() {
-		return userRepository.getUserList();
+		return (Collection<AppRecipesUser>) userRepository.findAll();
 	}
 	
 }

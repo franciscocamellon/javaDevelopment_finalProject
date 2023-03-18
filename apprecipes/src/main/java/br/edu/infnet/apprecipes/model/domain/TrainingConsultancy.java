@@ -1,14 +1,22 @@
 package br.edu.infnet.apprecipes.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 import br.edu.infnet.apprecipes.model.exceptions.ZeroCostException;
 
+@Entity
+@Table(name = "TableTrainingConsultancy")
 public class TrainingConsultancy extends Consultancy {
 	
-	private Integer id;
 	private String trainingType;
 	private int qtyPeople;
 	private float qtyTrainingHours;
+
+	public TrainingConsultancy() {
+		super();
+	}
 
 	public TrainingConsultancy(String contractType, float qtyHours, float cost, float qtyTrainingHours) throws ZeroCostException, NullOrEmptyAttributeException {
 		super(contractType, qtyHours, cost);
@@ -39,14 +47,6 @@ public class TrainingConsultancy extends Consultancy {
 		sb.append(qtyTrainingHours);
 		
 		return sb.toString();
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getTrainingType() {

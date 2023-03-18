@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 import br.edu.infnet.apprecipes.model.repository.TrainingConsultancyRepository;
 
@@ -14,17 +15,25 @@ public class TrainingConsultancyService {
 	@Autowired
 	private TrainingConsultancyRepository trainingRepository;
 	
-	public boolean addTrainingConsultancy(TrainingConsultancy trainingConsultancy) {
-		return trainingRepository.addTrainingConsultancy(trainingConsultancy);
+	public TrainingConsultancy addTrainingConsultancy(TrainingConsultancy trainingConsultancy) {
+		return trainingRepository.save(trainingConsultancy);
 	}
 	
-	public TrainingConsultancy removeTrainingConsultancy(Integer menuId) {
-		return trainingRepository.removeTrainingConsultancy(menuId);
+	public void removeTrainingConsultancy(Integer menuId) {
+		trainingRepository.deleteById(menuId);
 		
+	}
+
+	public TrainingConsultancy getById(Integer id) {
+		return trainingRepository.findById(id).orElse(null);
 	}
 	
 	public Collection<TrainingConsultancy> getTrainingConsultancyList() {
-		return trainingRepository.getTrainingConsultancyList();
+		return (Collection<TrainingConsultancy>) trainingRepository.findAll();
+	}
+	
+	public Collection<TrainingConsultancy> getTrainingConsultancyList(AppRecipesUser user) {
+		return trainingRepository.getList(user.getId());
 	}
 
 }

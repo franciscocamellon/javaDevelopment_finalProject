@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.Client;
 import br.edu.infnet.apprecipes.model.repository.ClientRepository;
 
@@ -25,6 +26,10 @@ public class ClientService {
 	
 	public Collection<Client> getClientList() {
 		return (Collection<Client>) clientRepository.findAll();
+	}
+	
+	public Collection<Client> getClientList(AppRecipesUser user) {
+		return clientRepository.getList(user.getId());
 	}
 
 }

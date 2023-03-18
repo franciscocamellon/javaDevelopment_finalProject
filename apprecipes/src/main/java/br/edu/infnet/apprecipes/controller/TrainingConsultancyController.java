@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 import br.edu.infnet.apprecipes.model.service.TrainingConsultancyService;
 
@@ -26,9 +28,9 @@ public class TrainingConsultancyController {
 	}
 	
 	@GetMapping(value = "/consultancy/training/list")
-	public String trainingConsultancyList(Model model) {
+	public String trainingConsultancyList(Model model, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		model.addAttribute("trainings", trainingService.getTrainingConsultancyList());
+		model.addAttribute("trainings", trainingService.getTrainingConsultancyList(loggedUser));
 		
 		model.addAttribute("message", msg);
 		
@@ -38,13 +40,13 @@ public class TrainingConsultancyController {
 	}
 	
 	@PostMapping(value = "/consultancy/training/add")
-	public String addTrainingConsultancy(TrainingConsultancy trainingConsultancy) {
+	public String addTrainingConsultancy(TrainingConsultancy trainingConsultancy, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		System.out.println("Inclusão realizada com sucesso!" + trainingConsultancy);
+		trainingConsultancy.setUser(loggedUser);
 		
 		trainingService.addTrainingConsultancy(trainingConsultancy);
 		
-		msg = "A consultoria de treinamento "+trainingConsultancy+" foi adicionada com sucesso!";
+		msg = "A consultoria de treinamento "+trainingConsultancy.getName()+" foi adicionada com sucesso!";
 		
 		return "redirect:/consultancy/training/list";
 	}
@@ -52,9 +54,9 @@ public class TrainingConsultancyController {
 	@GetMapping(value = "/consultancy/training/{id}/delete")
 	public String removeTrainingConsultancy(@PathVariable Integer id) {
 		
-		TrainingConsultancy training = trainingService.removeTrainingConsultancy(id);
+		trainingService.removeTrainingConsultancy(id);
 		
-		msg = "A consultoria de treinamento "+training+" foi deletada com sucesso!";
+		msg = "A consultoria de treinamento "+id+" foi deletada com sucesso!";
 		
 		return "redirect:/consultancy/menu/list";
 	}
