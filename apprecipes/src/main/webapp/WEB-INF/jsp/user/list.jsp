@@ -32,7 +32,7 @@
                         <c:if test="${empty users}">
                         	<div class="clearfix">
 		                        <div class="float-start">
-		                            <h5 class="page-title">N√£o existem consultorias cadastradas!</h5>
+		                            <h5 class="page-title">N„o existem consultorias cadastradas!</h5>
 		                        </div>
 		                        <div class="float-end">
 		                            <a href="/user"> <button type="button" class="btn btn-primary btn-md">
@@ -45,7 +45,7 @@
                         <c:if test="${not empty users}">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-	                        	<h5 class="page-title">Quantidade de usu√°rios cadastrados: ${users.size()}!</h5>                                        
+	                        	<h5 class="page-title">Quantidade de usu·rios cadastrados: ${users.size()}!</h5>                                        
 							</div>
 	                    </div>
                         <div class="table-responsive">
@@ -56,7 +56,7 @@
                                         <th>Nome</th>
                                         <th>Email</th>
                                         <th>Senha</th>
-                                        <th>Endere√ßo</th>
+                                        <th>EndereÁo</th>
                                         <th>CEP</th>
                                         <th>Clientes</th>
                                         <th>Consultorias</th>

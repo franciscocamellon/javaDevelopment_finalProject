@@ -33,7 +33,7 @@
                         <c:if test="${empty clients}">
                         	<div class="clearfix">
 		                        <div class="float-start">
-		                            <h5 class="page-title">NÃ£o existem clientes cadastrados!</h5>
+		                            <h5 class="page-title">Não existem clientes cadastrados!</h5>
 		                        </div>
 		                        <div class="float-end">
 		                            <a href="/client"> <button type="button" class="btn btn-primary btn-md">
@@ -43,16 +43,18 @@
 		                    </div>
                         </c:if>
                         <c:if test="${not empty clients}">
-                        <div class="clearfix">
-		                        <div class="float-start">
-		                            <h5 class="page-title">Quantidade de clientes cadastrados: ${clients.size()}!</h5>
-		                        </div>
-		                        <div class="float-end">
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+	                            <h5 class="page-title">Quantidade de clientes cadastrados: ${clients.size()}!</h5>
+	                        </div>
+	                        <div class="col-sm-8">
+                                <div class="text-sm-end">
 		                            <a href="/client"> <button type="button" class="btn btn-primary btn-md">
 		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
 		                            </a>
 		                        </div>
 		                    </div>                             
+	                    </div>                             
 
 						<div class="table-responsive">
 							<table class="table table-centered w-100 dt-responsive nowrap"
@@ -65,7 +67,7 @@
 										<th>Empreendimento</th>
 										<th>Email</th>
 										<th>Consultor</th>
-										<th>Consultor Responsï¿½vel</th>
+										<th>Consultor Responsável</th>
 										<th style="width: 75px;">Action</th>
 									</tr>
 								</thead>

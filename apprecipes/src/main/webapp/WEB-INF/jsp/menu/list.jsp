@@ -33,7 +33,7 @@
                         <c:if test="${empty menus}">
                         	<div class="clearfix">
 		                        <div class="float-start">
-		                            <h5 class="page-title">NÃ£o existem consultorias cadastradas!</h5>
+		                            <h5 class="page-title">Não existem consultorias cadastradas!</h5>
 		                        </div>
 		                        <div class="float-end">
 		                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
@@ -44,14 +44,16 @@
                         </c:if>
                         
                         <c:if test="${not empty menus}">
-                       	<div class="clearfix">
-	                        <div class="float-start">
+                       	<div class="row mb-2">
+                            <div class="col-sm-4">
 	                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${menus.size()}!</h5>
 	                        </div>
-	                        <div class="float-end">
-	                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
-	                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
-	                            </a>
+	                        <div class="col-sm-8">
+                                <div class="text-sm-end">
+		                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
+		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
+		                            </a>
+	                        	</div>
 	                        </div>
 	                    </div>
 	                    
@@ -60,11 +62,11 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Tipo de CardÃ¡pio</th>
+                                        <th>Tipo de Cardápio</th>
                                         <th>Cozinha</th>
                                         <th>Vegano</th>
                                         <th>Tipo de contrato</th>
-                                        <th>NÃºmero de horas</th>
+                                        <th>Número de horas</th>
                                         <th>Custo da consultoria</th>
                                         <th style="width: 75px;">Action</th>
                                     </tr>
@@ -76,7 +78,7 @@
                                          <td>${u.menuType}</td>
                                          <td>${u.cuisine}</td>
                                          <c:if test="${not u.vegan}">
-                                         	<td>NÃ£o</td>
+                                         	<td>Não</td>
                                          </c:if>
                                          <c:if test="${u.vegan}">
                                          	<td>Sim</td>
