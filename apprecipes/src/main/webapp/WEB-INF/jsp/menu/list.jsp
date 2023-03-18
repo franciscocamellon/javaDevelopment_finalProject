@@ -1,28 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
 <c:import url="/WEB-INF/jsp/templates/body.jsp"></c:import>
-    
-    <!-- Start Content-->
-    <div class="container-fluid">
 
-        <!-- start page title -->
-        <div class="row">
-             <div class="col-12">
-                 <div class="page-title-box">
-                     <div class="page-title-right">
-                         <ol class="breadcrumb m-0">
-                             <li class="breadcrumb-item"><a href="javascript: void(0);">App</a></li>
-                             <li class="breadcrumb-item"><a href="javascript: void(0);">Consultancy</a></li>
-                             <li class="breadcrumb-item active">Menu</li>
-                         </ol>
-                     </div>
-                     <h4 class="page-title">Lista das Consultorias de Menu</h4>
-                 </div>
-             </div>
-         </div>
-        <!-- end page title -->
+<!-- Start Content-->
+<div class="container-fluid">
+
+	<!-- start page title -->
+	<div class="row">
+		<div class="col-12">
+			<div class="page-title-box">
+				<div class="page-title-right">
+					<ol class="breadcrumb m-0">
+						<li class="breadcrumb-item"><a href="javascript: void(0);">App</a></li>
+						<li class="breadcrumb-item"><a href="javascript: void(0);">Consultancy</a></li>
+						<li class="breadcrumb-item active">Menu</li>
+					</ol>
+				</div>
+				<h4 class="page-title">Lista das Consultorias de Menu</h4>
+			</div>
+		</div>
+	</div>
+	<!-- end page title -->
 
         <div class="row">
             <div class="col-12">
@@ -32,7 +33,7 @@
                         <c:if test="${empty menus}">
                         	<div class="clearfix">
 		                        <div class="float-start">
-		                            <h5 class="page-title">Não existem consultorias cadastradas!</h5>
+		                            <h5 class="page-title">NÃ£o existem consultorias cadastradas!</h5>
 		                        </div>
 		                        <div class="float-end">
 		                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
@@ -43,16 +44,14 @@
                         </c:if>
                         
                         <c:if test="${not empty menus}">
-                       	<div class="row mb-2">
-                            <div class="col-sm-4">
+                       	<div class="clearfix">
+	                        <div class="float-start">
 	                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${menus.size()}!</h5>
 	                        </div>
-	                        <div class="col-sm-8">
-                                <div class="text-sm-end">
-		                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
-		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
-		                            </a>
-		                        </div>
+	                        <div class="float-end">
+	                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
+	                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
+	                            </a>
 	                        </div>
 	                    </div>
 	                    
@@ -61,11 +60,11 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Tipo de Cardápio</th>
+                                        <th>Tipo de CardÃ¡pio</th>
                                         <th>Cozinha</th>
                                         <th>Vegano</th>
                                         <th>Tipo de contrato</th>
-                                        <th>Número de horas</th>
+                                        <th>NÃºmero de horas</th>
                                         <th>Custo da consultoria</th>
                                         <th style="width: 75px;">Action</th>
                                     </tr>
@@ -77,7 +76,7 @@
                                          <td>${u.menuType}</td>
                                          <td>${u.cuisine}</td>
                                          <c:if test="${not u.vegan}">
-                                         	<td>Não</td>
+                                         	<td>NÃ£o</td>
                                          </c:if>
                                          <c:if test="${u.vegan}">
                                          	<td>Sim</td>
@@ -101,7 +100,7 @@
         </div>
         <!-- end row -->
 
-    </div>
-    <!-- container -->
+</div>
+<!-- container -->
 
 <c:import url="/WEB-INF/jsp/templates/footer.jsp"></c:import>
