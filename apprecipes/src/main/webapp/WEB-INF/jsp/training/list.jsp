@@ -43,14 +43,16 @@
                         </c:if>
                         
                         <c:if test="${not empty trainings}">
-                        <div class="clearfix">
-	                        <div class="float-start">
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
 	                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${trainings.size()}!</h5>
 	                        </div>
-	                        <div class="float-end">
-	                            <a href="/consultancy/training"> <button type="button" class="btn btn-primary btn-md">
-	                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
-	                            </a>
+	                        <div class="col-sm-8">
+                                <div class="text-sm-end">
+		                            <a href="/consultancy/training"> <button type="button" class="btn btn-primary btn-md">
+		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
+		                            </a>
+		                        </div>
 	                        </div>
 	                    </div>
 	                    
@@ -59,12 +61,12 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th class="all">ID</th>
-                                        <th>Tipo de treinamento</th>
-                                        <th>Quantidade de pessoas</th>
-                                        <th>Quantidade de horas de treinamento</th>
+                                        <th>Tipo</th>
+                                        <th>Qtd de pessoas</th>
+                                        <th>Horas de treinamento</th>
                                         <th>Tipo de contrato</th>
                                         <th>Número de horas</th>
-                                        <th>Custo da consultoria</th>
+                                        <th>Custo</th>
                                         <th style="width: 75px;">Action</th>
                                     </tr>
                                 </thead>

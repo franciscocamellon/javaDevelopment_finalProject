@@ -43,14 +43,16 @@
                         </c:if>
                         
                         <c:if test="${not empty menus}">
-                       	<div class="clearfix">
-	                        <div class="float-start">
+                       	<div class="row mb-2">
+                            <div class="col-sm-4">
 	                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${menus.size()}!</h5>
 	                        </div>
-	                        <div class="float-end">
-	                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
-	                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
-	                            </a>
+	                        <div class="col-sm-8">
+                                <div class="text-sm-end">
+		                            <a href="/consultancy/menu"> <button type="button" class="btn btn-primary btn-md">
+		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
+		                            </a>
+		                        </div>
 	                        </div>
 	                    </div>
 	                    

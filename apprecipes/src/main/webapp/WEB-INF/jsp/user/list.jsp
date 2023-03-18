@@ -14,7 +14,7 @@
                    <div class="page-title-right">
                        <ol class="breadcrumb m-0">
                            <li class="breadcrumb-item"><a href="javascript: void(0);">App</a></li>
-                           <li class="breadcrumb-item"><a href="javascript: void(0);">Client</a></li>
+                           <li class="breadcrumb-item"><a href="javascript: void(0);">Cliente</a></li>
                            <li class="breadcrumb-item active">List</li>
                        </ol>
                    </div>
@@ -32,7 +32,7 @@
                         <c:if test="${empty users}">
                         	<div class="clearfix">
 		                        <div class="float-start">
-		                            <h5 class="page-title">N„o existem usu·rios cadastrados!</h5>
+		                            <h5 class="page-title">N√£o existem consultorias cadastradas!</h5>
 		                        </div>
 		                        <div class="float-end">
 		                            <a href="/user"> <button type="button" class="btn btn-primary btn-md">
@@ -43,8 +43,11 @@
                         </c:if>
                         
                         <c:if test="${not empty users}">
-                        <h5 class="page-title">Quantidade de usu·rios cadastrados: ${users.size()}!</h5>                                        
-
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+	                        	<h5 class="page-title">Quantidade de usu√°rios cadastrados: ${users.size()}!</h5>                                        
+							</div>
+	                    </div>
                         <div class="table-responsive">
                             <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
                                 <thead class="table-light">
@@ -53,9 +56,10 @@
                                         <th>Nome</th>
                                         <th>Email</th>
                                         <th>Senha</th>
-                                        <th>Idade</th>
-                                        <th>EndereÁo</th>
+                                        <th>Endere√ßo</th>
                                         <th>CEP</th>
+                                        <th>Clientes</th>
+                                        <th>Consultorias</th>
                                         <th style="width: 75px;">Action</th>
                                     </tr>
                                 </thead>
@@ -69,9 +73,10 @@
                                          </td>
                                          <td>${u.email}</td>
                                          <td>${u.password}</td>
-                                         <td>${u.age}</td>
                                          <td>${u.address}</td>
                                          <td>${u.zip}</td>
+                                         <td>${u.clients.size()}</td>
+                                         <td>${u.consultancies.size()}</td>
                                          <td>
                                              <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                                              <a href="/usuario/${u.id}/excluir" class="action-icon"> <i class="mdi mdi-delete"></i></a>
