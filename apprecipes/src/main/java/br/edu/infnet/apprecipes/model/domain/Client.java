@@ -1,11 +1,11 @@
 package br.edu.infnet.apprecipes.model.domain;
 
-import java.lang.reflect.Constructor;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
@@ -17,10 +17,13 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	public String name;
-	public String enterpriseName;
-	public String clientType;
-	public String email;
+	private String name;
+	private String enterpriseName;
+	private String clientType;
+	private String email;
+	@ManyToOne
+	@JoinColumn(name = "idUser")
+	private AppRecipesUser user;
 	
 	public Client() {
 		
@@ -101,6 +104,14 @@ public class Client {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public AppRecipesUser getUser() {
+		return user;
+	}
+
+	public void setUser(AppRecipesUser user) {
+		this.user = user;
 	}
 
 }

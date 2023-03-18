@@ -48,6 +48,9 @@ public class DataLoader implements ApplicationRunner {
 				String fileLine = reader.readLine();
 				String[] fields = null;
 				
+				AppRecipesUser user = new AppRecipesUser();
+				user.setId(1);
+				
 				while (fileLine != null) {
 					
 					fields = fileLine.split(";");
@@ -59,63 +62,75 @@ public class DataLoader implements ApplicationRunner {
 						
 						userService.addUser(appRecipesUser);
 						
-						System.out.println("Inclusão do usuário "+appRecipesUser.getName()+" realizada com sucesso!");
+						System.out.println("Usuário "+appRecipesUser.getName()+" incluído com sucesso!");
 						
 						break;
 						
 					case "client":
 						
 						Client client = new Client(fields[1], fields[2], fields[3], fields[4]);
+						client.setUser(user);
 						
 						clientService.addClient(client);
 						
-						System.out.println("Inclusão do cliente "+client.getName()+" realizada com sucesso!");
+						System.out.println("Cliente "+client.getName()+" incluído com sucesso!");
 						
 						break;
 						
 					case "layout":
 						
 						LayoutConsultancy layoutConsultancy = new LayoutConsultancy(
-								fields[1], 
-								Float.parseFloat(fields[2]), 
+								fields[2], 
 								Float.parseFloat(fields[3]), 
-								Boolean.parseBoolean(fields[4]), 
-								fields[5], 
-								fields[6]);
+								Float.parseFloat(fields[4]), 
+								Boolean.parseBoolean(fields[5]), 
+								fields[6], 
+								fields[7]);
+						
+						layoutConsultancy.setName(fields[1]);
+						layoutConsultancy.setUser(user);
 						
 						layoutService.addLayoutConsultancy(layoutConsultancy);
 						
-						System.out.println("Inclusão de consultoria de layout realizada com sucesso!");
+						System.out.println("Consultoria "+layoutConsultancy.getName()+" incluída com sucesso!");
 						
 						break;
 						
 					case "menu":
 						
 						MenuConsultancy menuConsultancy = new MenuConsultancy(
-								fields[1], 
-								Float.parseFloat(fields[2]), 
+								fields[2], 
 								Float.parseFloat(fields[3]), 
-								Boolean.parseBoolean(fields[4]), 
-								fields[5], 
-								fields[6]);
+								Float.parseFloat(fields[4]), 
+								Boolean.parseBoolean(fields[5]), 
+								fields[6], 
+								fields[7]);
+						
+						menuConsultancy.setName(fields[1]);
+						menuConsultancy.setUser(user);
 						
 						menuService.addMenuConsultancy(menuConsultancy);
 						
-						System.out.println("Inclusão de consultoria de menu realizada com sucesso!");
+						System.out.println("Consultoria "+menuConsultancy.getName()+" incluída com sucesso!");
 						
 						break;
 						
 					case "training":
 						
 						TrainingConsultancy trainingConsultancy = new TrainingConsultancy(
-								fields[1], 
-								Float.parseFloat(fields[2]), 
-								Float.parseFloat(fields[3]),
+								fields[2], 
+								Float.parseFloat(fields[3]), 
 								Float.parseFloat(fields[4]),
-								fields[5],
-								Integer.parseInt(fields[6]));
+								Float.parseFloat(fields[5]),
+								fields[6],
+								Integer.parseInt(fields[7]));
+						
+						trainingConsultancy.setName(fields[1]);
+						trainingConsultancy.setUser(user);
 						
 						trainingService.addTrainingConsultancy(trainingConsultancy);
+						
+						System.out.println("Consultoria "+trainingConsultancy.getName()+" incluída com sucesso!");
 						
 						break; 
 

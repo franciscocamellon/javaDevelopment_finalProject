@@ -6,11 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.service.UserService;
 
 @Controller
+@SessionAttributes("user")
 public class UserController {
 	
 	@Autowired
@@ -49,9 +51,9 @@ public class UserController {
 	@GetMapping(value = "/usuario/{id}/excluir")
 	public String removeUser(@PathVariable Integer id) {
 		
-		AppRecipesUser user = userService.removeUser(id);
+		userService.removeUser(id);
 		
-		msg = "A exclusão do usuário "+user.getName()+" foi realizada com sucesso!";
+		msg = "A exclusão do usuário "+id+" foi realizada com sucesso!";
 		
 		return "redirect:/user/list";
 	}

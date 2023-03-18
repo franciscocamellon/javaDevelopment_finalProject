@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
 import br.edu.infnet.apprecipes.model.repository.MenuConsultancyRepository;
 
@@ -14,17 +15,25 @@ public class MenuConsultancyService {
 	@Autowired
 	private MenuConsultancyRepository menuRepository;
 	
-	public boolean addMenuConsultancy(MenuConsultancy menuConsultancy) {
-		return menuRepository.addMenuConsultancy(menuConsultancy);
+	public MenuConsultancy addMenuConsultancy(MenuConsultancy menuConsultancy) {
+		return menuRepository.save(menuConsultancy);
 	}
 	
-	public MenuConsultancy removeMenuConsultancy(Integer menuId) {
-		return menuRepository.removeMenuConsultancy(menuId);
+	public void removeMenuConsultancy(Integer menuId) {
+		menuRepository.deleteById(menuId);
 		
 	}
 	
+	public MenuConsultancy getById(Integer id) {
+		return menuRepository.findById(id).orElse(null);
+	}
+	
 	public Collection<MenuConsultancy> getMenuConsultancyList() {
-		return menuRepository.getMenuConsultancyList();
+		return (Collection<MenuConsultancy>) menuRepository.findAll();
+	}
+	
+	public Collection<MenuConsultancy> getMenuConsultancyList(AppRecipesUser user) {
+		return menuRepository.getList(user.getId());
 	}
 
 }

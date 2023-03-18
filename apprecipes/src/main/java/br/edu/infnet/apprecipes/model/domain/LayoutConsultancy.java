@@ -1,14 +1,22 @@
 package br.edu.infnet.apprecipes.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 import br.edu.infnet.apprecipes.model.exceptions.ZeroCostException;
 
+@Entity
+@Table(name = "TableLayoutConsultancy")
 public class LayoutConsultancy extends Consultancy {
 
-	private Integer id;
 	private String layoutType;
 	private String kitchenType;
 	private boolean delivery;
+	
+	public LayoutConsultancy() {
+		super();
+	}
 	
 	public LayoutConsultancy(String contractType, float qtyHours, float cost, boolean delivery) throws ZeroCostException, NullOrEmptyAttributeException {
 		super(contractType, qtyHours, cost);
@@ -42,14 +50,6 @@ public class LayoutConsultancy extends Consultancy {
 		sb.append(delivery ? "Delivery" : "Restaurante");
 		
 		return sb.toString();
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getLayoutType() {

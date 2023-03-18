@@ -41,6 +41,9 @@
                                                             register a new client.</p>
 
                                                         <form action="/consultancy/layout/add" method="post">
+                                                        
+                                                        	<c:import url="/WEB-INF/jsp/consultancy/register.jsp"></c:import>
+                                                        
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
@@ -53,7 +56,7 @@
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
-                                                                       <label class="form-label">Typo da cozinha</label>
+                                                                       <label class="form-label">Tipo da cozinha</label>
                                                                         <select class="form-select mb-3" name="kitchenType">
                                                                             <option value="Quente">Quente</option>
                                                                             <option value="Fria">Fria</option>
@@ -72,31 +75,6 @@
 																	        <input type="checkbox" value="false" name="delivery"  checked class="form-check-input" id="customCheck3">
 																	        <label class="form-check-label" for="customCheck3">Não</label>
 																	    </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div> <!-- end row -->
-                                                            
-                                                            <div class="row">
-                                                            	<div class="col-md-4">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Tipo de contrato</label>
-                                                                        <select class="form-select mb-3" name="contractType">
-                                                                            <option value="Projeto">Projeto</option>
-                                                                            <option value="Tempo certo">Tempo certo</option>
-                                                                            <option value="Tempo indeterminado">Tempo indeterminado</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                	<div class="mb-3">
-																	    <label class="form-label">Número de horas <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" value="55" name="qtyHours">
-                                                                    </div>
-                                                               	</div>
-                                                                <div class="col-md-4">
-                                                                    <div class="mb-3">
-                                                                         <label class="form-label">Custo da consultoria <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" value="55000" name="cost">
                                                                     </div>
                                                                 </div>
                                                             </div> <!-- end row -->

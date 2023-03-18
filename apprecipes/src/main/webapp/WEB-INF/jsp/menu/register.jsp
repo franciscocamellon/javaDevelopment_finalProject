@@ -41,6 +41,9 @@
                                                             register a new client.</p>
 
                                                         <form action="/consultancy/menu/add" method="post">
+                                                        
+                                                        	<c:import url="/WEB-INF/jsp/consultancy/register.jsp"></c:import>
+                                                        
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
@@ -75,30 +78,6 @@
 																	        <input type="radio" id="customRadio4" value="false" name="vegan" checked class="form-check-input">
 																	        <label class="form-check-label" for="customRadio4">Não</label>
 																	    </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div> <!-- end row -->
-                                                            <div class="row">
-                                                            	<div class="col-md-4">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">Tipo de contrato</label>
-                                                                        <select class="form-select mb-3" name="contractType">
-                                                                            <option value="Projeto">Projeto</option>
-                                                                            <option value="Tempo certo">Tempo certo</option>
-                                                                            <option value="Tempo indeterminado">Tempo indeterminado</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-4">
-                                                                	<div class="mb-3">
-																	    <label class="form-label">Número de horas <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" value="55" name="qtyHours">
-                                                                    </div>
-                                                               	</div>
-                                                                <div class="col-md-4">
-                                                                    <div class="mb-3">
-                                                                         <label class="form-label">Custo da consultoria <span class="text-danger">*</span></label>
-																	    <input class="form-control" id="example-number" type="number" value="55000" name="cost">
                                                                     </div>
                                                                 </div>
                                                             </div> <!-- end row -->

@@ -1,14 +1,33 @@
 package br.edu.infnet.apprecipes.model.domain;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TableUser")
 public class AppRecipesUser {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
 	private String password;
 	private String email;
-	private int age;
 	private String zip;
 	private String address;
+	@OneToMany
+	@JoinColumn(name = "idUser")
+	private List<Client> clients;
+	@OneToMany
+	@JoinColumn(name = "idUser")
+	private List<Consultancy> consultancies;
 	
 	public AppRecipesUser() {
 		
@@ -35,7 +54,6 @@ public class AppRecipesUser {
 				name,
 				email,
 				password,
-				age,
 				address,
 				zip
 			);
@@ -78,16 +96,6 @@ public class AppRecipesUser {
 		this.email = email;
 	}
 
-	
-	public int getAge() {
-		return age;
-	}
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 	public String getZip() {
 		return zip;
 	}
@@ -102,5 +110,21 @@ public class AppRecipesUser {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public List<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
+	}
+
+	public List<Consultancy> getConsultancies() {
+		return consultancies;
+	}
+
+	public void setConsultancies(List<Consultancy> consultancies) {
+		this.consultancies = consultancies;
 	}
 }

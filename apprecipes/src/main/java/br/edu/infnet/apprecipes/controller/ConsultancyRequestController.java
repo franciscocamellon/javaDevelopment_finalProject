@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.edu.infnet.apprecipes.model.domain.Client;
-import br.edu.infnet.apprecipes.model.domain.Consultancy;
 import br.edu.infnet.apprecipes.model.domain.ConsultancyRequest;
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
 import br.edu.infnet.apprecipes.model.exceptions.RequestWithoutClientException;
