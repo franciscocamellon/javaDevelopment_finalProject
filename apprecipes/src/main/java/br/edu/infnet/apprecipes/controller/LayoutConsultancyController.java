@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.LayoutConsultancy;
 import br.edu.infnet.apprecipes.model.service.LayoutConsultancyService;
 
@@ -26,9 +28,9 @@ public class LayoutConsultancyController {
 	}
 
 	@GetMapping(value = "/consultancy/layout/list")
-	public String layoutConsultancyList(Model model) {
+	public String layoutConsultancyList(Model model, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		model.addAttribute("layouts", layoutService.getLayoutConsultancyList());
+		model.addAttribute("layouts", layoutService.getLayoutConsultancyList(loggedUser));
 		
 		model.addAttribute("message", msg);
 		
@@ -38,13 +40,13 @@ public class LayoutConsultancyController {
 	}
 	
 	@PostMapping(value = "/consultancy/layout/add")
-	public String addLayoutConsultancy(LayoutConsultancy layoutConsultancy) {
+	public String addLayoutConsultancy(LayoutConsultancy layoutConsultancy, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		System.out.println("Inclusão realizada com sucesso!" + layoutConsultancy);
+		layoutConsultancy.setUser(loggedUser);
 		
 		layoutService.addLayoutConsultancy(layoutConsultancy);
 		
-		msg = "A consultoria de layout "+layoutConsultancy+" foi adicionada com sucesso!";
+		msg = "A consultoria de layout "+layoutConsultancy.getName()+" foi adicionada com sucesso!";
 		
 		return "redirect:/consultancy/layout/list";
 	}
@@ -52,9 +54,9 @@ public class LayoutConsultancyController {
 	@GetMapping(value = "/consultancy/layout/{id}/delete")
 	public String removeLayoutConsultancy(@PathVariable Integer id) {
 		
-		LayoutConsultancy layout = layoutService.removeLayoutConsultancy(id);
+		layoutService.removeLayoutConsultancy(id);
 		
-		msg = "A consultoria de layout "+layout+" foi deletada com sucesso!";
+		msg = "A consultoria de layout "+id+" foi deletada com sucesso!";
 		
 		return "redirect:/consultancy/layout/list";
 	}

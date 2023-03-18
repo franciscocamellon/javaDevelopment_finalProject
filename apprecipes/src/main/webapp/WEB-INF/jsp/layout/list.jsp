@@ -42,16 +42,18 @@
 		                    </div>
                         </c:if>
                         <c:if test="${not empty layouts}">
-                        <div class="clearfix">
-		                        <div class="float-start">
-		                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${layouts.size()}!</h5>
-		                        </div>
-		                        <div class="float-end">
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+	                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${layouts.size()}!</h5>
+	                        </div>
+	                        <div class="col-sm-8">
+                                <div class="text-sm-end">
 		                            <a href="/consultancy/layout"> <button type="button" class="btn btn-primary btn-md">
 		                                <i class="mdi mdi-plus-thick"></i> Cadastrar </button>
 		                            </a>
 		                        </div>
-		                    </div>
+	                        </div>
+	                    </div>
                                                                 
 
                         <div class="table-responsive">
