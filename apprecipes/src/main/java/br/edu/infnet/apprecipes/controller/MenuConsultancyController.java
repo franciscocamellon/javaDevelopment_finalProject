@@ -54,9 +54,11 @@ public class MenuConsultancyController {
 	@GetMapping(value = "/consultancy/menu/{id}/delete")
 	public String removeMenuConsultancy(@PathVariable Integer id) {
 		
+		MenuConsultancy menuConsultancy = menuService.getById(id);
+		
 		menuService.removeMenuConsultancy(id);
 		
-		msg = "A consultoria de menu "+id+" foi deletada com sucesso!";
+		msg = "A consultoria de menu "+menuConsultancy.getName()+" foi deletada com sucesso!";
 		
 		return "redirect:/consultancy/menu/list";
 	}

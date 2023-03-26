@@ -65,7 +65,9 @@
 	                                        </th>
 	                                        <th class="all">ID</th>
 	                                        <th>Cliente</th>
-	                                        <th>Consultoria</th>
+	                                        <th>Qte Consultoria</th>
+	                                        <th>Consultorias</th>
+	                                        <th>Consultor</th>
 	                                        <th>Custo total</th>
 	                                        <th>Data da requisição</th>
 	                                        <th style="width: 75px;">Action</th>
@@ -74,18 +76,20 @@
 	                                <tbody>
 	                                	<c:forEach var="u" items="${requests}">
 	                                     <tr>
-	                                     		<td>
+                                     		<td>
 	                                            <div class="form-check">
 	                                                <input type="checkbox" class="form-check-input" id="customCheck2">
 	                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
 	                                            </div>
-	                                        	</td>
+                                        	</td>
 	                                     	<td>${u.id}</td>
 	                                         <td class="table-user">
 	                                             <img src="/assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
 	                                             <a href="javascript:void(0);" class="text-body fw-semibold">${u.client.name}</a>
 	                                         </td>
-	                                         <td>${u.service}</td>
+	                                         <td>${u.consultancies.size()}</td>
+	                                         <td>${u.consultancies}</td>
+	                                         <td>${u.user.name}</td>
 	                                         <td>${u.totalCost}</td>
 	                                         <td>${u.requestDate}</td>
 	                                         <td>

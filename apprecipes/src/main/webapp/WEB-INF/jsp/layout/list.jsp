@@ -53,8 +53,7 @@
 		                            </a>
 		                        </div>
 	                        </div>
-	                    </div>
-                                                                
+	                    </div>                                 
 
                         <div class="table-responsive">
                             <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
@@ -87,9 +86,31 @@
                                          <td>${u.cost}</td>
                                          <td>
                                              <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                             <a href="/consultancy/layout/${u.id}/delete" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                             <a href="#danger-alert-modal-${u.id}" data-bs-toggle="modal" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                          </td>
                                      </tr>
+                                     
+                                     <!-- Danger Alert Modal -->
+									 <div id="danger-alert-modal-${u.id}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+									    <div class="modal-dialog modal-sm">
+									        <div class="modal-content modal-filled bg-danger">
+									            <div class="modal-body p-4">
+									                <div class="text-center">
+									                    <i class="dripicons-wrong h1"></i>
+									                    <h4 class="mt-2">Atenção!</h4>
+									                    <p class="mt-3">A ${u.name} será deletada, confirma?</p>
+									                    
+									                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+									                    <a href="/consultancy/layout/${u.id}/delete">
+									                    	<button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Confirma</button>
+								                    	</a>
+								                    	
+									                </div>
+									            </div>
+									        </div><!-- /.modal-content -->
+									    </div><!-- /.modal-dialog -->
+									 </div><!-- /.modal -->
+                                     
                                     </c:forEach>
                                 </tbody>
                             </table>
@@ -103,5 +124,7 @@
 
     </div>
     <!-- container -->
+    
+    
 
 <c:import url="/WEB-INF/jsp/templates/footer.jsp"></c:import>
