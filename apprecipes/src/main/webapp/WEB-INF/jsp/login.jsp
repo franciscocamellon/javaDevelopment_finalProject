@@ -51,12 +51,12 @@
                         <form action="/login" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Email address</label>
-                                <input class="form-control" type="email" name="email" value="chicobala@mail.com" required placeholder="Enter your email">
+                                <input class="form-control" type="email" name="email" value="administrador@email.com" required placeholder="Enter your email">
                             </div>
                             <div class="mb-3">
                                 <a href="#" class="text-muted float-end"><small>Forgot your password?</small></a>
                                 <label class="form-label">Password</label>
-                                <input class="form-control" type="password" name="password" value="chicobala@mail.com" required  placeholder="Enter your password">
+                                <input class="form-control" type="password" name="password" value="123456" required  placeholder="Enter your password">
                             </div>
                             <div class="mb-3">
                                 <div class="form-check">
