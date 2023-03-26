@@ -1,5 +1,7 @@
 package br.edu.infnet.apprecipes.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,6 +31,8 @@ public abstract class Consultancy {
 	@ManyToOne
 	@JoinColumn(name = "idUser")
 	private AppRecipesUser user;
+	@ManyToMany(mappedBy = "consultancies")
+	private List<ConsultancyRequest> consultancyRequests;
 	
 	public Consultancy() {
 		
@@ -113,5 +118,14 @@ public abstract class Consultancy {
 	public void setUser(AppRecipesUser user) {
 		this.user = user;
 	}
+
+	public List<ConsultancyRequest> getConsultancyRequests() {
+		return consultancyRequests;
+	}
+
+	public void setConsultancyRequests(List<ConsultancyRequest> consultancyRequests) {
+		this.consultancyRequests = consultancyRequests;
+	}
+
 
 }

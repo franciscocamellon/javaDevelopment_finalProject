@@ -28,6 +28,9 @@ public class AppRecipesUser {
 	@OneToMany
 	@JoinColumn(name = "idUser")
 	private List<Consultancy> consultancies;
+	@OneToMany
+	@JoinColumn(name = "idUser")
+	private List<ConsultancyRequest> consultancyRequests;
 	
 	public AppRecipesUser() {
 		
@@ -126,5 +129,13 @@ public class AppRecipesUser {
 
 	public void setConsultancies(List<Consultancy> consultancies) {
 		this.consultancies = consultancies;
+	}
+
+	public List<ConsultancyRequest> getConsultancyRequests() {
+		return consultancyRequests;
+	}
+
+	public void setConsultancyRequests(List<ConsultancyRequest> consultancyRequests) {
+		this.consultancyRequests = consultancyRequests;
 	}
 }
