@@ -73,6 +73,8 @@
                                                 </div>
                                             </div>
                                         </div> <!-- end row -->
+                                        
+                                        <c:import url="/WEB-INF/jsp/address/register.jsp"></c:import>
 
                                         <div class="row mt-4">
                                             <div class="col-sm-6">
@@ -88,6 +90,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                     </form>
                                 </div>
                             </div>

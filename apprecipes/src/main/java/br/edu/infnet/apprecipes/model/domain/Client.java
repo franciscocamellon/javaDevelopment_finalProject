@@ -1,11 +1,13 @@
 package br.edu.infnet.apprecipes.model.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
@@ -24,6 +26,9 @@ public class Client {
 	@ManyToOne
 	@JoinColumn(name = "idUser")
 	private AppRecipesUser user;
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idAddress")
+	private Address address;
 	
 	public Client() {
 		
@@ -112,6 +117,14 @@ public class Client {
 
 	public void setUser(AppRecipesUser user) {
 		this.user = user;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 }

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.ConsultancyRequest;
+import br.edu.infnet.apprecipes.model.service.ClientService;
 import br.edu.infnet.apprecipes.model.service.ConsultancyRequestService;
+import br.edu.infnet.apprecipes.model.service.ConsultancyService;
 
 @Controller
 @SessionAttributes("requests")
@@ -19,11 +21,20 @@ public class ConsultancyRequestController {
 	
 	@Autowired
 	private ConsultancyRequestService requestService;
+	@Autowired
+	private ClientService clientService;
+	@Autowired
+	private ConsultancyService consultancyService;
 	
 	private String msg;
 	
 	@GetMapping(value = "/consultancy/request")
-	public String consultancyRequestRegister() {
+	public String consultancyRequestRegister(Model model, @SessionAttribute("user") AppRecipesUser loggedUser) {
+		
+		model.addAttribute("clients", clientService.getClientList(loggedUser));
+		
+		model.addAttribute("consultancies", consultancyService.getConsultancyList(loggedUser));
+		
 		return "request/register";
 	}
 	

@@ -74,7 +74,7 @@
                                          <td>${u.email}</td>
                                          <td>${u.password}</td>
                                          <td>${u.address}</td>
-                                         <td>${u.zip}</td>
+                                         <td>${u.address.cep}</td>
                                          <td>${u.clients.size()}</td>
                                          <td>${u.consultancies.size()}</td>
                                          <td>
