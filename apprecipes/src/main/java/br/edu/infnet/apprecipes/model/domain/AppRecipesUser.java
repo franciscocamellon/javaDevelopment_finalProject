@@ -54,12 +54,10 @@ public class AppRecipesUser {
 	public String toString() {
 
 		return String.format(
-				"O usuário %s tem as credenciais %s e %s, %d anos e seu endereço "
-				+ "%s, e seu CEP:", 
+				"O usuário %s tem as credenciais %s e %s", 
 				name,
 				email,
-				password,
-				address
+				password
 			);
 	}
 

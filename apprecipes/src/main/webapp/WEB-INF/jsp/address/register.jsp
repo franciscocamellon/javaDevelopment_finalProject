@@ -9,7 +9,7 @@
 	<div class="col-md-3">
 		 <div class="mb-3">
 	        <label class="form-label">Logradouro</label>
-	        <input type="text" name="logradouro" class="form-control" disabled value="Rua tal">
+	        <input type="text" name="logradouro" class="form-control" value="Rua tal">
 	    </div>
     </div>
 	<div class="col-md-3">
@@ -21,15 +21,15 @@
 	<div class="row g-2">
         <div class="mb-3 col-md-6">
             <label class="form-label">Bairro</label>
-            <input type="text" name="bairro" class="form-control" disabled value="Asa Norte">
+            <input type="text" name="bairro" class="form-control" value="Asa Norte">
         </div>
         <div class="mb-3 col-md-6">
-            <label for="inputCity" class="form-label">Cidade</label>
-            <input type="text" name="localidade" class="form-control" disabled value="Brasolia">
+            <label class="form-label">Cidade</label>
+            <input type="text" name="localidade" class="form-control" value="Brasolia">
         </div>
         <div class="mb-3 col-md-6">
-            <label for="inputCity" class="form-label">UF</label>
-            <input type="text" name="uf" class="form-control"disabled value="DF" id="inputCity">
+            <label class="form-label">UF</label>
+            <input type="text" name="uf" class="form-control" value="DF">
         </div>
     </div>
 </div> <!-- end row -->                         
