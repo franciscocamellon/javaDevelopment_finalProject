@@ -52,15 +52,18 @@
                             <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>ID</th>
+                                        <th class="all">ID</th>
                                         <th>Nome</th>
                                         <th>Email</th>
                                         <th>Senha</th>
+                                        <th>Admin</th>
                                         <th>Endereço</th>
-                                        <th>CEP</th>
                                         <th>Clientes</th>
                                         <th>Consultorias</th>
-                                        <th style="width: 75px;">Action</th>
+                                        <th>Solicitações</th>
+                                        <c:if test="${user.admin}">
+                                        	<th style="width: 75px;">Action</th>
+                                        </c:if>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -73,14 +76,23 @@
                                          </td>
                                          <td>${u.email}</td>
                                          <td>${u.password}</td>
+                                         
+                                         <c:if test="${not u.admin}">
+                                         	<td>Não</td>
+                                         </c:if>
+                                         <c:if test="${u.admin}">
+                                         	<td>Sim</td>
+                                         </c:if>
                                          <td>${u.address}</td>
-                                         <td>${u.address.cep}</td>
                                          <td>${u.clients.size()}</td>
                                          <td>${u.consultancies.size()}</td>
-                                         <td>
-                                             <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                             <a href="/usuario/${u.id}/excluir" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                         </td>
+                                         <td>${u.consultancyRequests.size()}</td>
+                                         <c:if test="${user.admin}">
+	                                         <td>
+	                                             <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+	                                             <a href="/usuario/${u.id}/excluir" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+	                                         </td>
+                                         </c:if>
                                      </tr>
                                     </c:forEach>
                                 </tbody>

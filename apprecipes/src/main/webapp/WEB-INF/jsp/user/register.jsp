@@ -43,6 +43,18 @@
                         <p class="text-muted mb-4">Não tem uma conta? Crie sua conta, leva menos de um minuto!</p>
 
                         <!-- form -->
+                        <form action="/cep" method="post">
+                        	
+                        	<div class="mb-3">
+						        <label class="form-label">CEP</label>
+						        <div class="input-group">
+						            <input type="text" class="form-control" name="cep" value="70745090">
+						            <button class="btn btn-primary" type="submit">Buscar</button>
+						        </div>
+						    </div>
+                        	
+                        </form>
+                        <!-- form -->
                         <form action="/user/add" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Nome completo</label>

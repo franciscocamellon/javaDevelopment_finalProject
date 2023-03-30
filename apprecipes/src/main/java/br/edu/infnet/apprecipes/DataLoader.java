@@ -59,6 +59,7 @@ public class DataLoader implements ApplicationRunner {
 					case "user":
 							
 						AppRecipesUser appRecipesUser = new AppRecipesUser(fields[1], fields[2], fields[3]);
+						appRecipesUser.setAdmin(Boolean.parseBoolean(fields[4]));
 						
 						userService.addUser(appRecipesUser);
 						

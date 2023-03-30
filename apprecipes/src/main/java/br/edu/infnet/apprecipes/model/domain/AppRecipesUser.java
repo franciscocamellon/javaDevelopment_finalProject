@@ -22,18 +22,19 @@ public class AppRecipesUser {
 	private String name;
 	private String password;
 	private String email;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUser")
 	private List<Client> clients;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUser")
 	private List<Consultancy> consultancies;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUser")
 	private List<ConsultancyRequest> consultancyRequests;
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idAddress")
 	private Address address;
+	private boolean admin;
 	
 	public AppRecipesUser() {
 		
@@ -123,5 +124,13 @@ public class AppRecipesUser {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 }

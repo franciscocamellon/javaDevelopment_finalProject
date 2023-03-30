@@ -1,7 +1,7 @@
-user;Administrador;administrador@email.com;123456
-user;Timothy Kauper;thykauper@rhyta.com;thykauper@rhyta.com
-user;Margaret D. Evans;margaret.evans@rhyta.com;margaret.evans@rhyta.com
-user;Kathryn S. Collier;collier@jourrapide.com;collier@jourrapide.com
+user;Administrador;administrador@email.com;123456;true
+user;Timothy Kauper;thykauper@rhyta.com;thykauper@rhyta.com;false
+user;Margaret D. Evans;margaret.evans@rhyta.com;margaret.evans@rhyta.com;false
+user;Kathryn S. Collier;collier@jourrapide.com;collier@jourrapide.com;false
 client;Soren Drouin;Restaurante;hyper.mockup@email.com;Hyper Mockup
 client;Anne Simard;Empreendedor;anne.cantucci@email.com;Cantucci
 client;Nicolas Chartier;Restaurante;chico.bala@email.com;Almeria
