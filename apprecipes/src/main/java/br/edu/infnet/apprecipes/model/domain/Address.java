@@ -26,6 +26,18 @@ public class Address {
 	public Address(Integer id) {
 		this.id = id;
 	}
+	
+	@Override
+	public String toString() {
+		
+		return String.format("%s, %s - %s - %s, %s", 
+				logradouro,
+				complemento,
+				bairro,
+				localidade,
+				cep,
+				uf);
+	}
 
 	public String getCep() {
 		return cep;
