@@ -14,6 +14,7 @@ import br.edu.infnet.apprecipes.model.domain.Client;
 import br.edu.infnet.apprecipes.model.domain.LayoutConsultancy;
 import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
 import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
+import br.edu.infnet.apprecipes.model.service.AddressService;
 import br.edu.infnet.apprecipes.model.service.ClientService;
 import br.edu.infnet.apprecipes.model.service.LayoutConsultancyService;
 import br.edu.infnet.apprecipes.model.service.MenuConsultancyService;
@@ -33,6 +34,8 @@ public class DataLoader implements ApplicationRunner {
 	private MenuConsultancyService menuService;
 	@Autowired
 	private TrainingConsultancyService trainingService;
+	@Autowired
+	private AddressService addressService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -60,6 +63,7 @@ public class DataLoader implements ApplicationRunner {
 							
 						AppRecipesUser appRecipesUser = new AppRecipesUser(fields[1], fields[2], fields[3]);
 						appRecipesUser.setAdmin(Boolean.parseBoolean(fields[4]));
+						appRecipesUser.setAddress(addressService.getByZIP(fields[5]));
 						
 						userService.addUser(appRecipesUser);
 						
@@ -71,6 +75,7 @@ public class DataLoader implements ApplicationRunner {
 						
 						Client client = new Client(fields[1], fields[2], fields[3], fields[4]);
 						client.setUser(user);
+						client.setAddress(addressService.getByZIP(fields[5]));
 						
 						clientService.addClient(client);
 						
