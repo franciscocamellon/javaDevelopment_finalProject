@@ -67,7 +67,7 @@
 										<th>Empreendimento</th>
 										<th>Email</th>
 										<th>Consultor</th>
-										<th>Consultor Responsável</th>
+										<th>Endereço</th>
 										<th style="width: 75px;">Action</th>
 									</tr>
 								</thead>
@@ -80,7 +80,7 @@
 											<td>${c.enterpriseName}</td>
 											<td>${c.email}</td>
 											<td>${c.user.name}</td>
-											<td>${c.user.name}</td>
+											<td>${c.address}</td>
 											<td>
 												<a href="#" class="action-icon"> <i	class="mdi mdi-square-edit-outline"></i></a> 
 												<a href="/client/${c.id}/delete" class="action-icon"> <i class="mdi mdi-delete"></i></a>

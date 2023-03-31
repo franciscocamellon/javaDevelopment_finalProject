@@ -3,6 +3,8 @@ package br.edu.infnet.apprecipes.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
@@ -33,7 +35,7 @@ public class TrainingConsultancyService {
 	}
 	
 	public Collection<TrainingConsultancy> getTrainingConsultancyList(AppRecipesUser user) {
-		return trainingRepository.getList(user.getId());
+		return trainingRepository.getList(user.getId(), Sort.by(Direction.ASC, "name"));
 	}
 
 }

@@ -43,6 +43,18 @@
                         <p class="text-muted mb-4">Não tem uma conta? Crie sua conta, leva menos de um minuto!</p>
 
                         <!-- form -->
+                        <form action="/cep" method="post">
+                        	
+                        	<div class="mb-3">
+						        <label class="form-label">CEP</label>
+						        <div class="input-group">
+						            <input type="text" class="form-control" name="cep" value="70745090">
+						            <button class="btn btn-primary" type="submit">Buscar</button>
+						        </div>
+						    </div>
+                        	
+                        </form>
+                        <!-- form -->
                         <form action="/user/add" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Nome completo</label>
@@ -61,23 +73,17 @@
 	                                <label class="form-label">Idade</label>
 	                                <input class="form-control" type="text" name="age" value="42" required placeholder="Digite sua idade">
                                 </div>
-                                <div class="col-md">
-	                                <label class="form-label">CEP</label>
-	                                <input class="form-control" type="text" name="zip" value="70745-080" required placeholder="Digite seu CEP">
-                                </div>
                             </div>
-                            <div class="row g-2 mb-3">
-                                <div class="col-md">
-	                                <label class="form-label">Endereço</label>
-	                                <input class="form-control" type="text" name="address" value="SQN 306 Bloco H Apto 602" required placeholder="Digite seu endereço">
-                                </div>
-                            </div>
+                            
+                            <c:import url="/WEB-INF/jsp/address/register.jsp"></c:import>
+                            
                             <div class="mb-3 d-grid text-center">
                                 <button class="btn btn-primary" type="submit"><i class="mdi mdi-account"></i> Register </button>
                             </div>
                             <div class="mb-0 d-grid text-center">
                             	<a href="/user/list" class="form-control btn btn-danger" ><i class="mdi mdi-account-cancel"></i> Cancel </a>
                             </div>
+                            
                         </form>
                         <!-- end form-->
 

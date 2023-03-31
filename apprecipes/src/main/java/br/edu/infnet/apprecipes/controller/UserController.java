@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import br.edu.infnet.apprecipes.model.domain.Address;
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.service.UserService;
 
@@ -38,8 +39,11 @@ public class UserController {
 	}
 	
 	@PostMapping(value = "/user/add")
-	public String addUser(AppRecipesUser user) {
+	public String addUser(Address address, AppRecipesUser user) {
+		
 		System.out.println("Inclusão realizada com sucesso!" + user);
+		
+		user.setAddress(address);
 		
 		userService.addUser(user);
 		
@@ -51,9 +55,13 @@ public class UserController {
 	@GetMapping(value = "/usuario/{id}/excluir")
 	public String removeUser(@PathVariable Integer id) {
 		
+		AppRecipesUser deletedUser = new AppRecipesUser();
+		deletedUser.setId(id);
+		System.out.println("Inclusão realizada com sucesso!" + deletedUser.getName());
+		
 		userService.removeUser(id);
 		
-		msg = "A exclusão do usuário "+id+" foi realizada com sucesso!";
+		msg = "A exclusão do usuário "+deletedUser.getName()+" foi realizada com sucesso!";
 		
 		return "redirect:/user/list";
 	}

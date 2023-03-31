@@ -45,12 +45,12 @@
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
                                                             <label class="form-label">Cliente</label>
-                                                            <select name="" class="form-select mb-3">
+                                                            <select name="client.id" class="form-select mb-3" data-placeholder="Escolha uma consultoria">
 
                                                                 <c:if test="${not empty clients}">
 
                                                                     <c:forEach var="u" items="${clients}">
-                                                                        <option value="${u}">${u.name}</option>
+                                                                        <option value="${u.id}">${u.name}</option>
                                                                     </c:forEach>
 
                                                                 </c:if>
@@ -62,79 +62,22 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                </div> <!-- end row -->
-                                                <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="mb-3">
-                                                            <label class="form-label">Consultorias em cardápio</label>
-                                                            <select name="service" class="form-select mb-3">
+                                                            <label class="form-label">Consultorias</label>
+                                                            <select name="consultancies" class="select2 form-control select2-multiple" data-toggle="select2" multiple="multiple" data-placeholder="Escolha uma consultoria">
+															    <c:if test="${not empty consultancies}">
 
-                                                                <c:if test="${not empty menus}">
-
-                                                                    <c:forEach var="u" items="${menus}">
-                                                                        <option value="${u}">${u.menuType} -
-                                                                            ${u.cuisine}</option>
+                                                                    <c:forEach var="u" items="${consultancies}">
+                                                                        <option value="${u.id}">${u.name}</option>
                                                                     </c:forEach>
 
                                                                 </c:if>
 
-                                                                <c:if test="${empty menus}">
+                                                                <c:if test="${empty consultancies}">
                                                                     <option value="null" selected>Não há consultorias cadastradas</option>
                                                                 </c:if>
-
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Consultorias em layout</label>
-                                                            <select name="" class="form-select mb-3">
-
-                                                                <c:if test="${not empty layouts}">
-
-                                                                    <c:forEach var="u" items="${layouts}">
-                                                                        <option value="${u}">${u.layoutType} -
-                                                                            ${u.kitchenType}</option>
-                                                                    </c:forEach>
-
-                                                                </c:if>
-
-                                                                <c:if test="${empty layouts}">
-                                                                    <option value="null" selected>Não há consultorias cadastradas</option>
-                                                                </c:if>
-
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Consultorias em treinamento</label>
-                                                            <select name="" class="form-select mb-3">
-
-                                                                <c:if test="${not empty trainings}">
-
-                                                                    <c:forEach var="u" items="${trainings}">
-                                                                        <option value="${u}">${u.trainingType} - ${u.qtyPeople} pessoas</option>
-                                                                    </c:forEach>
-
-                                                                </c:if>
-
-                                                                <c:if test="${empty trainings}">
-                                                                    <option value="null" selected>Não há consultorias cadastradas</option>
-                                                                </c:if>
-
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Custo total <span
-                                                                    class="text-danger">*</span></label>
-                                                            <input class="form-control" value="20000" type="number"
-                                                                name="totalCost">
+															</select>
                                                         </div>
                                                     </div>
                                                 </div> <!-- end row -->

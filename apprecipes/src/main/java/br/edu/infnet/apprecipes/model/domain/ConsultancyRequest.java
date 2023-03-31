@@ -49,7 +49,7 @@ public class ConsultancyRequest {
 		if (consultancies.size() == 0) {
 			throw new RequestWithoutConsultancyException("Não existem consultorias associados a esta requisição!");
 		}
-		requestDate = LocalDateTime.now();
+		this.requestDate = LocalDateTime.now();
 		this.client = client;
 		this.consultancies = consultancies;
 	}
