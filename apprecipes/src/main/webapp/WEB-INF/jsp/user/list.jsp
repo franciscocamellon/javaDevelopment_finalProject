@@ -45,18 +45,28 @@
                         <c:if test="${not empty users}">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-	                        	<h5 class="page-title">Quantidade de usuários cadastrados: ${users.size()}!</h5>                                        
+                            	<c:if test="${not empty message}">
+	                        		<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+									    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+									    <strong>Success - </strong> ${message}
+									</div>
+	                        	</c:if>
+	                        	<c:if test="${empty message}">
+									<h5 class="page-title">Quantidade de usuários cadastrados: ${users.size()}!</h5> 
+								</c:if>                                
 							</div>
 	                    </div>
                         <div class="table-responsive">
                             <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
                                 <thead class="table-light">
                                     <tr>
-                                        <th class="all">ID</th>
+                                    	<c:if test="${user.admin}"><th class="all">ID</th></c:if>
+                                        <c:if test="${not user.admin}">
+                                        	<th/>
+                                        	<th class="all">ID</th>
+                                   		</c:if>
                                         <th>Nome</th>
                                         <th>Email</th>
-                                        <th>Senha</th>
-                                        <th>Admin</th>
                                         <th>Endereço</th>
                                         <th>Clientes</th>
                                         <th>Consultorias</th>
@@ -69,20 +79,25 @@
                                 <tbody>
                                 	<c:forEach var="u" items="${users}">
                                      <tr>
-                                     	<td>${u.id}</td>
-                                         <td class="table-user">
-                                             <img src="/assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
-                                             <a href="javascript:void(0);" class="text-body fw-semibold">${u.name}</a>
+	                                     <c:if test="${user.admin}"><td>${u.id}</td></c:if>
+	                                        <c:if test="${not user.admin}">
+	                                        	<th></th>
+	                                        	<td>${u.id}</td>
+                                   		 </c:if>
+                                     	
+                                         <td>
+                                         	<div class="d-flex align-items-start">
+                                            	<img src="/assets/images/users/avatar-4.jpg" width="40" class="me-3 rounded-circle">
+                                            	<div class="w-100 overflow-hidden">
+	                                            	<h5 class="mt-0 mb-1">${u.name}</h5>
+	                                            	<span class="text-muted font-13">
+	                                            		<c:if test="${u.admin}">Administrador</c:if>
+	                                            		<c:if test="${not u.admin}">Usuário</c:if>
+	                                            	</span>
+                                            	</div>
+                                            </div>
                                          </td>
                                          <td>${u.email}</td>
-                                         <td>${u.password}</td>
-                                         
-                                         <c:if test="${not u.admin}">
-                                         	<td>Não</td>
-                                         </c:if>
-                                         <c:if test="${u.admin}">
-                                         	<td>Sim</td>
-                                         </c:if>
                                          <td>${u.address}</td>
                                          <td>${u.clients.size()}</td>
                                          <td>${u.consultancies.size()}</td>
@@ -90,10 +105,32 @@
                                          <c:if test="${user.admin}">
 	                                         <td>
 	                                             <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-	                                             <a href="/usuario/${u.id}/excluir" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+	                                             <a href="#danger-alert-modal-${u.id}" data-bs-toggle="modal" class="action-icon"> <i class="mdi mdi-delete"></i></a>
 	                                         </td>
                                          </c:if>
                                      </tr>
+                                     
+                                     <!-- Danger Alert Modal -->
+									 <div id="danger-alert-modal-${u.id}" class="modal fade" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+									    <div class="modal-dialog modal-sm modal-dialog-centered">
+									        <div class="modal-content modal-filled bg-danger">
+									            <div class="modal-body p-4">
+									                <div class="text-center">
+									                    <i class="dripicons-wrong h1"></i>
+									                    <h4 class="mt-2">Atenção!</h4>
+									                    <p class="mt-3">A ${u.name} será deletada, confirma?</p>
+									                    
+									                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+									                    <a href="/usuario/${u.id}/excluir">
+									                    	<button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Confirma</button>
+								                    	</a>
+								                    	
+									                </div>
+									            </div>
+									        </div><!-- /.modal-content -->
+									    </div><!-- /.modal-dialog -->
+									 </div><!-- /.modal -->
+                                     
                                     </c:forEach>
                                 </tbody>
                             </table>

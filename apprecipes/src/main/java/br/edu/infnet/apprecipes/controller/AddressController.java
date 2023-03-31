@@ -15,19 +15,7 @@ public class AddressController {
 	private AddressService addressService;
 	
 	@PostMapping(value = "/cep")
-	public String getClientZip(Model model, @RequestParam String cep) {
-		
-		model.addAttribute("route", "/client/cep");
-		
-		model.addAttribute("address", addressService.getByZIP(cep));
-		
-		return "client/register";
-	}
-	
-	@PostMapping(value = "/user/cep")
 	public String getUserZip(Model model, @RequestParam String cep) {
-		
-		model.addAttribute("route", "/user/cep");
 		
 		model.addAttribute("address", addressService.getByZIP(cep));
 		

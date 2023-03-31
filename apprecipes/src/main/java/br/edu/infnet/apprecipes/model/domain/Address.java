@@ -30,12 +30,12 @@ public class Address {
 	@Override
 	public String toString() {
 		
-		return String.format("%s, %s - %s - %s, %s", 
+		return String.format("%s %s - %s - CEP %s, %s - %s", 
 				logradouro,
 				complemento,
 				bairro,
-				localidade,
 				cep,
+				localidade,
 				uf);
 	}
 

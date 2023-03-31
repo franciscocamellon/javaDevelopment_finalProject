@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
  <div class="row">
-	<div class="col-md-4">
+ 	<div class="col-md-4">
 		<div class="mb-3">
 		    <label class="form-label">CEP</label>
 		    <input type="text" class="form-control" name="cep" value="${address.cep}" data-toggle="input-mask" data-mask-format="00000-000">

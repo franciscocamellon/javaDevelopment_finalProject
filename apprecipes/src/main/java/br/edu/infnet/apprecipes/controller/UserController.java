@@ -55,9 +55,13 @@ public class UserController {
 	@GetMapping(value = "/usuario/{id}/excluir")
 	public String removeUser(@PathVariable Integer id) {
 		
+		AppRecipesUser deletedUser = new AppRecipesUser();
+		deletedUser.setId(id);
+		System.out.println("Inclusão realizada com sucesso!" + deletedUser.getName());
+		
 		userService.removeUser(id);
 		
-		msg = "A exclusão do usuário "+id+" foi realizada com sucesso!";
+		msg = "A exclusão do usuário "+deletedUser.getName()+" foi realizada com sucesso!";
 		
 		return "redirect:/user/list";
 	}
