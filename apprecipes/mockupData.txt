@@ -1,10 +1,10 @@
-user;Administrador;administrador@email.com;123456
-user;Timothy Kauper;thykauper@rhyta.com;thykauper@rhyta.com
-user;Margaret D. Evans;margaret.evans@rhyta.com;margaret.evans@rhyta.com
-user;Kathryn S. Collier;collier@jourrapide.com;collier@jourrapide.com
-client;Soren Drouin;Restaurante;hyper.mockup@email.com;Hyper Mockup
-client;Anne Simard;Empreendedor;anne.cantucci@email.com;Cantucci
-client;Nicolas Chartier;Restaurante;chico.bala@email.com;Almeria
+user;Administrador;administrador@email.com;123456;true;20780170
+user;Timothy Kauper;thykauper@rhyta.com;thykauper@rhyta.com;false;40240007
+user;Margaret D. Evans;margaret.evans@rhyta.com;margaret.evans@rhyta.com;false;68908643
+user;Kathryn S. Collier;collier@jourrapide.com;collier@jourrapide.com;false;81860210
+client;Soren Drouin;Restaurante;hyper.mockup@email.com;Hyper Mockup;76873258
+client;Anne Simard;Empreendedor;anne.cantucci@email.com;Cantucci;88048650
+client;Nicolas Chartier;Restaurante;chico.bala@email.com;Almeria;90670030
 layout;Construção de Cozinha Quente;Projeto;30.0;20000.0;false;Construção;Quente
 layout;Construção de Cozinha Mista;Indeterminado;1000.0;100000.0;false;Construção;Mista
 layout;Reforma de Cozinha Quente;Tempo Fixo;100.0;15000.0;true;Reforma;Quente

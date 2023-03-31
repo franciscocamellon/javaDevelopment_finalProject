@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
+
+import br.edu.infnet.apprecipes.model.domain.Address;
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.Client;
 import br.edu.infnet.apprecipes.model.service.ClientService;
@@ -39,9 +41,11 @@ public class ClientController {
 	}
 	
 	@PostMapping(value = "/client/add")
-	public String addClient(Client client, @SessionAttribute("user") AppRecipesUser loggedUser) {
+	public String addClient(Client client, Address address, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
 		client.setUser(loggedUser);
+		
+		client.setAddress(address);
 		
 		clientService.addClient(client);
 		

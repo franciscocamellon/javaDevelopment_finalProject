@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>AppRecipes</title>
+    <title>Gastronomee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -59,7 +59,7 @@
                     <!--- Sidemenu -->
                     <ul class="side-nav">
 
-                        <li class="side-nav-title side-nav-item">Navigation</li>
+                        <li class="side-nav-title side-nav-item">Navegação</li>
 
                         <li class="side-nav-item">
                             <a href="/" class="side-nav-link">
@@ -75,14 +75,14 @@
                         <li class="side-nav-item">
                             <a href="/user/list" class="side-nav-link">
                                 <i class="mdi mdi-account"></i>
-                                <span> Users </span>
+                                <span> Usuários </span>
                             </a>
                         </li>
 
                         <li class="side-nav-item">
                             <a href="/client/list" class="side-nav-link">
                                 <i class="mdi mdi-chef-hat"></i>
-                                <span> Clients </span>
+                                <span> Clientes </span>
                             </a>
                         </li>
 
@@ -90,7 +90,7 @@
                         <li class="side-nav-item">
                             <a href="/consultancy/request/list" class="side-nav-link">
                                 <i class="mdi mdi-basket-plus"></i>
-                                <span> Consultancy request </span>
+                                <span> Solicitações de consultorias </span>
                             </a>
                         </li>
 
@@ -113,7 +113,7 @@
                                         <a href="/consultancy/layout/list">Layout</a>
                                     </li>
                                     <li>
-                                        <a href="/consultancy/training/list">Training</a>
+                                        <a href="/consultancy/training/list">Treinamento</a>
                                     </li>
                                 </ul>
                             </div>
@@ -166,12 +166,14 @@
                                     data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                                     aria-expanded="false">
                                     <span class="account-user-avatar">
-                                        <img src="/assets/images/users/camellon.jpg" alt="user-image"
-                                            class="rounded-circle">
+                                        <img src="/assets/images/users/camellon.jpg" alt="user-image" class="rounded-circle">
                                     </span>
                                     <span>
                                         <span class="account-user-name">${user.name}</span>
-                                        <span class="account-position">Founder</span>
+                                        <span class="account-position">
+                                        	<c:if test="${user.admin}">Administrador</c:if>
+	                                        <c:if test="${not user.admin}">Usuário</c:if>
+										</span>
                                     </span>
                                 </a>
                                 <div
