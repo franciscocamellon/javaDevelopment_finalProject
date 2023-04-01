@@ -49,46 +49,14 @@ public class ConsultancyRequest {
 		if (consultancies.size() == 0) {
 			throw new RequestWithoutConsultancyException("Não existem consultorias associados a esta requisição!");
 		}
-		this.requestDate = LocalDateTime.now();
 		this.client = client;
 		this.consultancies = consultancies;
-	}
-	
-	public void printReport() {
-		System.out.println("Requisição: " + this);
-		System.out.println("Cliente: " + client);
-		System.out.println("Qtde consultorias: " + consultancies.size());
-		System.out.println("Consultorias: ");
-		for (Consultancy consultancy : consultancies) {
-			System.out.println("- " + consultancy.getClass());
-		}
-	}
-	
-	private float consultancyTotalCostCalculator(List<Consultancy> consultancies) {
-		
-		float cost = 0;
-		
-		for (Consultancy consultancy : consultancies) {
-			
-			//cost = cost + consultancy.costCalculator();
-			cost = consultancy.getCost() + 10000;
-		}
-		return cost;
-	}
-	
-	public String createFileLine() {
-		
-		return "Requisição: " + this + ";" + 
-				"Cliente requisitante: " + this.getClient() + ";" + 
-				"Qtde de consultorias: " + this.getConsultancies().size() + ";" + 
-				"Custo da consultoria: R$" + this.consultancyTotalCostCalculator(consultancies) + "\r\n";
+		this.setTotalCost(consultancies);
 	}
 	
 	@Override
 	public String toString() {
-
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-		return String.format("%s;%s;%s", this.getClient(), "Custo:" + this.consultancyTotalCostCalculator(consultancies), requestDate.format(format));
+		return this.client.getName();
 	}
 
 	public Integer getId() {
@@ -103,7 +71,13 @@ public class ConsultancyRequest {
 		return totalCost;
 	}
 
-	public void setTotalCost(float totalCost) {
+	public void setTotalCost(List<Consultancy> consultancies) {
+		
+		float totalCost = 0;
+		
+		for (Consultancy consultancy : consultancies) {
+			totalCost += consultancy.getCost();
+		}
 		this.totalCost = totalCost;
 	}
 
@@ -111,7 +85,13 @@ public class ConsultancyRequest {
 		return requestDate;
 	}
 
-	public void setRequestDate(LocalDateTime requestDate) {
+	public void setRequestDate() {
+		
+		LocalDateTime requestDate = LocalDateTime.now();
+		
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		requestDate.format(format);
+		
 		this.requestDate = requestDate;
 	}
 

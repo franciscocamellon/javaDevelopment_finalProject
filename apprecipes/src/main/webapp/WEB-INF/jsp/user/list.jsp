@@ -48,7 +48,7 @@
                             	<c:if test="${not empty message}">
 	                        		<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
 									    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-									    <strong>Success - </strong> ${message}
+									    ${message}
 									</div>
 	                        	</c:if>
 	                        	<c:if test="${empty message}">
@@ -118,13 +118,11 @@
 									                <div class="text-center">
 									                    <i class="dripicons-wrong h1"></i>
 									                    <h4 class="mt-2">Atenção!</h4>
-									                    <p class="mt-3">A ${u.name} será deletada, confirma?</p>
-									                    
-									                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+									                    <p class="mt-3">O usuário <em><strong>${u.name}</strong></em> será deletado, confirma?</p>
+									                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Não</button>
 									                    <a href="/usuario/${u.id}/excluir">
-									                    	<button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Confirma</button>
+									                    	<button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Sim</button>
 								                    	</a>
-								                    	
 									                </div>
 									            </div>
 									        </div><!-- /.modal-content -->

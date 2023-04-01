@@ -39,17 +39,7 @@ public class LayoutConsultancy extends Consultancy {
 	
 	@Override
 	public String toString() {
-		
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append(";");
-		sb.append(layoutType);
-		sb.append(";");
-		sb.append(kitchenType);
-		sb.append(";");
-		sb.append(delivery ? "Delivery" : "Restaurante");
-		
-		return sb.toString();
+		return this.getName();
 	}
 
 	public String getLayoutType() {

@@ -54,11 +54,19 @@ public class MenuConsultancyController {
 	@GetMapping(value = "/consultancy/menu/{id}/delete")
 	public String removeMenuConsultancy(@PathVariable Integer id) {
 		
-		MenuConsultancy menuConsultancy = menuService.getById(id);
+		MenuConsultancy menuToDelete = menuService.getById(id);
 		
-		menuService.removeMenuConsultancy(id);
-		
-		msg = "A consultoria de menu "+menuConsultancy.getName()+" foi deletada com sucesso!";
+		try {
+			
+			menuService.removeMenuConsultancy(id);
+			
+			msg = "A consultoria de menu "+menuToDelete.getName()+" foi deletada com sucesso!";
+			
+		} catch (Exception e) {
+			
+			msg = "Erro "+e+". Impossível excluir a consultoria de menu "+menuToDelete.getName()+"!";
+			
+		}
 		
 		return "redirect:/consultancy/menu/list";
 	}

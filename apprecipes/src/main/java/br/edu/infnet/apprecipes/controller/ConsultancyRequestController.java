@@ -55,9 +55,12 @@ public class ConsultancyRequestController {
 		
 		consultancyRequest.setUser(loggedUser);
 		
+		consultancyRequest.setRequestDate();
+		consultancyRequest.setTotalCost(consultancyRequest.getConsultancies());
+		
 		requestService.addConsultancyRequest(consultancyRequest);
 		
-		msg = "A solicitação de consultoria foi adicionada com sucesso!";
+		msg = "A solicitação adicionada com sucesso!";
 		
 		return "redirect:/consultancy/request/list";
 	}
@@ -65,11 +68,19 @@ public class ConsultancyRequestController {
 	@GetMapping(value = "/consultancy/request/{id}/delete")
 	public String removeConsultancyRequest(@PathVariable Integer id) {
 		
-		ConsultancyRequest request = requestService.getById(id);
+		ConsultancyRequest requestToDelete = requestService.getById(id);
 		
-		requestService.removeConsultancyRequest(id);
-		
-		msg = "A requisição do usuário "+request.getClient()+" foi deletada com sucesso!";
+		try {
+			
+			requestService.removeConsultancyRequest(id);
+			
+			msg = "A requisição do usuário "+requestToDelete.getClient().getName()+" foi deletada com sucesso!";
+			
+		} catch (Exception e) {
+			
+			msg = "Erro "+e+". Impossível excluir a requisição do usuário "+requestToDelete.getClient().getName()+"!";
+
+		}
 		
 		return "redirect:/consultancy/request/list";
 	}

@@ -45,7 +45,15 @@
                         <c:if test="${not empty trainings}">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-	                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${trainings.size()}!</h5>
+                            	<c:if test="${not empty message}">
+                            		<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+									    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+									    ${message}
+									</div>
+                            	</c:if>
+                            	<c:if test="${empty message}">
+	                            	<h5 class="page-title">Quantidade de consultorias cadastradas: ${trainings.size()}!</h5>
+	                            </c:if>
 	                        </div>
 	                        <div class="col-sm-8">
                                 <div class="text-sm-end">
@@ -82,9 +90,30 @@
                                          <td>${u.cost}</td>
                                          <td>
                                              <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                             <a href="/consultancy/training/${u.id}/delete" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                             <a href="#danger-alert-modal-${u.id}" data-bs-toggle="modal" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                          </td>
                                      </tr>
+                                     
+                                     <!-- Danger Alert Modal -->
+										 <div id="danger-alert-modal-${u.id}" class="modal fade" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+										    <div class="modal-dialog modal-sm modal-dialog-centered">
+										        <div class="modal-content modal-filled bg-danger">
+										            <div class="modal-body p-4">
+										                <div class="text-center">
+										                    <i class="dripicons-wrong h1"></i>
+										                    <h4 class="mt-2">Atenção!</h4>
+										                    <p class="mt-3">A consultoria <em><strong>${u.name}</strong></em> será deletada, confirma?</p>
+										                    
+										                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Não</button>
+										                    <a href="/consultancy/training/${u.id}/delete">
+										                    	<button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Sim</button>
+									                    	</a>
+										                </div>
+										            </div>
+										        </div><!-- /.modal-content -->
+										    </div><!-- /.modal-dialog -->
+										 </div><!-- /.modal -->
+                                     
                                     </c:forEach>
                                 </tbody>
                             </table>

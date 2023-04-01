@@ -55,13 +55,19 @@ public class UserController {
 	@GetMapping(value = "/usuario/{id}/excluir")
 	public String removeUser(@PathVariable Integer id) {
 		
-		AppRecipesUser deletedUser = new AppRecipesUser();
-		deletedUser.setId(id);
-		System.out.println("Inclusão realizada com sucesso!" + deletedUser.getName());
+		AppRecipesUser userToDelete = userService.getUserById(id);
 		
-		userService.removeUser(id);
-		
-		msg = "A exclusão do usuário "+deletedUser.getName()+" foi realizada com sucesso!";
+		try {
+			
+			userService.removeUser(id);
+			
+			msg = "A exclusão do usuário "+userToDelete.getName()+" foi realizada com sucesso!";
+			
+		} catch (Exception e) {
+			
+			msg = "Erro "+e+". Impossível excluir o usuário "+userToDelete.getName()+"!";
+			
+		}
 		
 		return "redirect:/user/list";
 	}

@@ -23,7 +23,6 @@ public class LayoutConsultancyService {
 	
 	public void removeLayoutConsultancy(Integer layoutId) {
 		layoutRepository.deleteById(layoutId);
-		
 	}
 	
 	public LayoutConsultancy getById(Integer id) {

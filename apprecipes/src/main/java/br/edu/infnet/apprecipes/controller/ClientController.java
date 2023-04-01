@@ -29,8 +29,6 @@ public class ClientController {
 	@GetMapping(value = "/client/list")
 	public String clientList(Model model, @SessionAttribute("user") AppRecipesUser loggedUser) {
 		
-		//Collection<Client> clients = clientService.getClientList();
-		
 		model.addAttribute("clients", clientService.getClientList(loggedUser));
 		
 		model.addAttribute("message", msg);
@@ -49,17 +47,37 @@ public class ClientController {
 		
 		clientService.addClient(client);
 		
-		msg = "A inclusão do usuário "+client.getName()+" foi realizada com sucesso!";
+		msg = "A inclusão do cliente "+client.getName()+" foi realizada com sucesso!";
 		
 		return "redirect:/client/list";
+	}
+	
+	@GetMapping(value = "/client/{id}/update")
+	public String updateClient(Model model, @PathVariable Integer id) {
+		
+		Client clientToUpdate = clientService.getClientById(id);
+		
+		model.addAttribute("clientToUpdate", clientToUpdate);
+		
+		return "redirect:client/register";
 	}
 	
 	@GetMapping(value = "/client/{id}/delete")
 	public String removeClient(@PathVariable Integer id) {
 		
-		clientService.removeClient(id);
+		Client clientToDelete = clientService.getClientById(id);
 		
-		msg = "A exclusão do usuário "+id+" foi realizada com sucesso!";
+		try {
+			
+			clientService.removeClient(id);
+			
+			msg = "A exclusão do cliente "+clientToDelete.getName()+" foi realizada com sucesso!";
+			
+		} catch (Exception e) {
+			
+			msg = "Erro "+e+". Impossível excluir o cliente "+clientToDelete.getName()+"!";
+			
+		}
 		
 		return "redirect:/client/list";
 	}

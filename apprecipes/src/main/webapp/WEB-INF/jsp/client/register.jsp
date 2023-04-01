@@ -36,8 +36,7 @@
                                 <div class="col-lg">
                                     <h4 class="mt-2">Register</h4>
 
-                                    <p class="text-muted mb-4">Fill the form below in order to
-                                        register a new client.</p>
+                                    <p class="text-muted mb-4">Preencha o formulário abaixo para o cadastro de um novo cliente.</p>
 
                                     <form action="/client/add" method="post">
                                         <div class="row">
@@ -50,10 +49,10 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label class="form-label">Client type</label>
+                                                    <label class="form-label">Tipo de cliente</label>
                                                     <select name="clientType" class="form-select mb-3">
-                                                        <option value="Entrepreneur">Entrepreneur</option>
-                                                        <option value="Restaurant" selected>Restaurant</option>
+                                                        <option value="Entrepreneur">Empreendedor</option>
+                                                        <option value="Restaurant" selected>Restaurante</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -79,12 +78,12 @@
                                             <div class="col-sm-6">
                                                 <a href="/"
                                                     class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
-                                                    <i class="mdi mdi-arrow-left"></i> Back </a>
+                                                    <i class="mdi mdi-arrow-left"></i> Voltar </a>
                                             </div> <!-- end col -->
                                             <div class="col-sm-6">
                                                 <div class="text-sm-end">
                                                     <button class="btn btn-primary" type="submit">
-                                                    	<i class="mdi mdi-content-save me-1"></i> Save
+                                                    	<i class="mdi mdi-content-save me-1"></i> Salvar
                                                     </button>
                                                 </div>
                                             </div>

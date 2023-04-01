@@ -46,9 +46,9 @@
                                                         <div class="mb-3">
                                                             <label class="form-label">Cliente</label>
                                                             <select name="client.id" class="form-select mb-3" data-placeholder="Escolha uma consultoria">
-
+																
                                                                 <c:if test="${not empty clients}">
-
+																	<option value="">Selecione um cliente</option>
                                                                     <c:forEach var="u" items="${clients}">
                                                                         <option value="${u.id}">${u.name}</option>
                                                                     </c:forEach>
@@ -67,7 +67,7 @@
                                                             <label class="form-label">Consultorias</label>
                                                             <select name="consultancies" class="select2 form-control select2-multiple" data-toggle="select2" multiple="multiple" data-placeholder="Escolha uma consultoria">
 															    <c:if test="${not empty consultancies}">
-
+																	
                                                                     <c:forEach var="u" items="${consultancies}">
                                                                         <option value="${u.id}">${u.name}</option>
                                                                     </c:forEach>

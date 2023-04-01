@@ -23,7 +23,6 @@ public class MenuConsultancyService {
 	
 	public void removeMenuConsultancy(Integer menuId) {
 		menuRepository.deleteById(menuId);
-		
 	}
 	
 	public MenuConsultancy getById(Integer id) {

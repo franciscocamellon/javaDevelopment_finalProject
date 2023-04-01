@@ -23,7 +23,6 @@ public class TrainingConsultancyService {
 	
 	public void removeTrainingConsultancy(Integer menuId) {
 		trainingRepository.deleteById(menuId);
-		
 	}
 
 	public TrainingConsultancy getById(Integer id) {

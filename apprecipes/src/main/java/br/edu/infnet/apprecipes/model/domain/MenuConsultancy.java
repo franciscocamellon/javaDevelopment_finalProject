@@ -39,17 +39,7 @@ public class MenuConsultancy extends Consultancy {
 	
 	@Override
 	public String toString() {
-		
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append(" - ");
-		sb.append(vegan ? "Menu Vegano" : "Menu Normal");
-		sb.append(" - ");
-		sb.append(menuType);
-		sb.append(" - ");
-		sb.append(cuisine);
-		
-		return sb.toString();
+		return this.getName();
 	}
 
 	public String getMenuType() {

@@ -22,8 +22,12 @@ public class UserService {
 		return userRepository.save(user);
 	}
 	
-	public void removeUser(Integer key) {
-		userRepository.deleteById(key);
+	public void removeUser(Integer id) {
+		userRepository.deleteById(id);
+	}
+	
+	public AppRecipesUser getUserById(Integer id) {
+		return userRepository.findById(id).orElse(null);
 	}
 	
 	public Collection<AppRecipesUser> getUserList() {

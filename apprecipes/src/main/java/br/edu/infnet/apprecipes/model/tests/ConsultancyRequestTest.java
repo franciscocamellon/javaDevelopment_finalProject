@@ -3,10 +3,10 @@ package br.edu.infnet.apprecipes.model.tests;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.infnet.apprecipes.model.domain.LayoutConsultancy;
 import br.edu.infnet.apprecipes.model.domain.Client;
 import br.edu.infnet.apprecipes.model.domain.Consultancy;
 import br.edu.infnet.apprecipes.model.domain.ConsultancyRequest;
+import br.edu.infnet.apprecipes.model.domain.LayoutConsultancy;
 import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
 import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 import br.edu.infnet.apprecipes.model.exceptions.NullOrEmptyAttributeException;
@@ -178,8 +178,7 @@ public class ConsultancyRequestTest {
 			Client s6 = new Client("Francisco", "Pizza Dominos", "chico.bala@email.com");
 			
 			ConsultancyRequest r6 = new ConsultancyRequest(s6, null);
-			r6.setTotalCost(150000);
-			r6.printReport();
+			
 		} catch (NullOrEmptyAttributeException | RequestWithoutClientException | RequestWithoutConsultancyException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}

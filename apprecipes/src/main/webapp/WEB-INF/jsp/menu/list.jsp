@@ -46,7 +46,15 @@
                         <c:if test="${not empty menus}">
                        	<div class="row mb-2">
                             <div class="col-sm-4">
+                            	<c:if test="${not empty message}">
+                            		<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+									    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+									    ${message}
+									</div>
+                            	</c:if>
+                            	<c:if test="${empty message}">
 	                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${menus.size()}!</h5>
+	                            </c:if>
 	                        </div>
 	                        <div class="col-sm-8">
                                 <div class="text-sm-end">
@@ -61,12 +69,12 @@
                             <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>ID</th>
+                                        <th class="all">ID</th>
+                                        <th>Nome</th>
                                         <th>Tipo de Cardápio</th>
                                         <th>Cozinha</th>
                                         <th>Vegano</th>
                                         <th>Tipo de contrato</th>
-                                        <th>Número de horas</th>
                                         <th>Custo da consultoria</th>
                                         <th style="width: 75px;">Action</th>
                                     </tr>
@@ -74,7 +82,8 @@
                                 <tbody>
                                 	<c:forEach var="u" items="${menus}">
                                      <tr>
-                                     	<td>${u.id}</td>
+                                     	 <td>${u.id}</td>
+                                     	 <td>${u.name}</td>
                                          <td>${u.menuType}</td>
                                          <td>${u.cuisine}</td>
                                          <c:if test="${not u.vegan}">
@@ -84,13 +93,33 @@
                                          	<td>Sim</td>
                                          </c:if>
                                          <td>${u.contractType}</td>
-                                         <td>${u.qtyHours}</td>
                                          <td>${u.cost}</td>
                                          <td>
                                              <a href="#" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                             <a href="/consultancy/menu/${u.id}/delete" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                             <a href="#danger-alert-modal-${u.id}" data-bs-toggle="modal" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                          </td>
                                      </tr>
+                                     
+                                     <!-- Danger Alert Modal -->
+										 <div id="danger-alert-modal-${u.id}" class="modal fade" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+										    <div class="modal-dialog modal-sm modal-dialog-centered">
+										        <div class="modal-content modal-filled bg-danger">
+										            <div class="modal-body p-4">
+										                <div class="text-center">
+										                    <i class="dripicons-wrong h1"></i>
+										                    <h4 class="mt-2">Atenção!</h4>
+										                    <p class="mt-3">A consultoria <em><strong>${u.name}</strong></em> será deletada, confirma?</p>
+										                    
+										                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Não</button>
+										                    <a href="/consultancy/menu/${u.id}/delete">
+										                    	<button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Sim</button>
+									                    	</a>
+										                </div>
+										            </div>
+										        </div><!-- /.modal-content -->
+										    </div><!-- /.modal-dialog -->
+										 </div><!-- /.modal -->
+                                     
                                     </c:forEach>
                                 </tbody>
                             </table>

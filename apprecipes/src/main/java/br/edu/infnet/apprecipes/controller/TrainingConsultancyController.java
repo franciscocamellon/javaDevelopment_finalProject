@@ -54,11 +54,21 @@ public class TrainingConsultancyController {
 	@GetMapping(value = "/consultancy/training/{id}/delete")
 	public String removeTrainingConsultancy(@PathVariable Integer id) {
 		
-		trainingService.removeTrainingConsultancy(id);
+		TrainingConsultancy trainingToDelete = trainingService.getById(id);
 		
-		msg = "A consultoria de treinamento "+id+" foi deletada com sucesso!";
+		try {
+			
+			trainingService.removeTrainingConsultancy(id);
+			
+			msg = "A consultoria de treinamento "+trainingToDelete.getName()+" foi deletada com sucesso!";
+			
+		} catch (Exception e) {
+			
+			msg = "Erro "+e+". Impossível excluir a consultoria de treinamento "+trainingToDelete.getName()+"!";
+			
+		}
 		
-		return "redirect:/consultancy/menu/list";
+		return "redirect:/consultancy/training/list";
 	}
 
 }

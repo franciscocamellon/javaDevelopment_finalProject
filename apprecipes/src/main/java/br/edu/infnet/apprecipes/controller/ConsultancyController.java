@@ -35,9 +35,19 @@ public class ConsultancyController {
 		
 		Consultancy consultancy = consultancyService.getById(id);
 		
-		consultancyService.removeConsultancy(id);
+		try {
+			
+			consultancyService.removeConsultancy(id);
+			
+			msg = "A consultoria "+consultancy.getName()+" foi deletada com sucesso!";
+			
+		} catch (Exception e) {
+			
+			msg = "Erro "+e+". Impossível excluir a consultoria "+consultancy.getName()+"!";
+
+		}
 		
-		msg = "A consultoria "+consultancy.getName()+" foi deletada com sucesso!";
+		
 		
 		return "redirect:/consultancy/list";
 	}

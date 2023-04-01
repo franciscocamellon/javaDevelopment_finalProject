@@ -26,6 +26,10 @@ public class ClientService {
 		return;
 	}
 	
+	public Client getClientById(Integer clientId) {
+		return clientRepository.findById(clientId).orElse(null);
+	}
+	
 	public Collection<Client> getClientList() {
 		return (Collection<Client>) clientRepository.findAll();
 	}

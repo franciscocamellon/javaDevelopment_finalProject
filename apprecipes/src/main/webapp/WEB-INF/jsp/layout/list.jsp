@@ -43,8 +43,15 @@
                         </c:if>
                         <c:if test="${not empty layouts}">
                         <div class="row mb-2">
-                            <div class="col-sm-4">
+                            <div class="col-sm-4"><c:if test="${not empty message}">
+	                        		<div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+									    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+									    ${message}
+									</div>
+	                        	</c:if>
+	                        	<c:if test="${empty message}">
 	                            <h5 class="page-title">Quantidade de consultorias cadastradas: ${layouts.size()}!</h5>
+	                            </c:if> 
 	                        </div>
 	                        <div class="col-sm-8">
                                 <div class="text-sm-end">
@@ -92,17 +99,17 @@
                                      
                                      <!-- Danger Alert Modal -->
 									 <div id="danger-alert-modal-${u.id}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-									    <div class="modal-dialog modal-sm">
+									    <div class="modal-dialog modal-sm modal-dialog-centered">
 									        <div class="modal-content modal-filled bg-danger">
 									            <div class="modal-body p-4">
 									                <div class="text-center">
 									                    <i class="dripicons-wrong h1"></i>
 									                    <h4 class="mt-2">Atenção!</h4>
-									                    <p class="mt-3">A ${u.name} será deletada, confirma?</p>
+									                    <p class="mt-3">A consultoria <em><strong>${u.name}</strong></em> será deletada, confirma?</p>
 									                    
-									                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+									                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Não</button>
 									                    <a href="/consultancy/layout/${u.id}/delete">
-									                    	<button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Confirma</button>
+									                    	<button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Sim</button>
 								                    	</a>
 								                    	
 									                </div>

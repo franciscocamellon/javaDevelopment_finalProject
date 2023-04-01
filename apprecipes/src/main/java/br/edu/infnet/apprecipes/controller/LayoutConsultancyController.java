@@ -54,9 +54,19 @@ public class LayoutConsultancyController {
 	@GetMapping(value = "/consultancy/layout/{id}/delete")
 	public String removeLayoutConsultancy(@PathVariable Integer id) {
 		
-		layoutService.removeLayoutConsultancy(id);
+		LayoutConsultancy consultancyToDelete = layoutService.getById(id);
 		
-		msg = "A consultoria de layout "+id+" foi deletada com sucesso!";
+		try {
+			
+			layoutService.removeLayoutConsultancy(id);
+			
+			msg = "A consultoria de layout "+consultancyToDelete.getName()+" foi deletada com sucesso!";
+			
+		} catch (Exception e) {
+			
+			msg = "Erro "+e+". Impossível excluir a consultoria de layout "+consultancyToDelete.getName()+"!";
+			
+		}
 		
 		return "redirect:/consultancy/layout/list";
 	}
