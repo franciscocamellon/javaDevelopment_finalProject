@@ -68,12 +68,6 @@
                                 <label class="form-label">Email</label>
                                 <input class="form-control" type="email" name="email" value="chicobala@email.com" required placeholder="Digite seu email">
                             </div>
-                            <div class="row g-2 mb-3">
-                            	<div class="col-md">
-	                                <label class="form-label">Idade</label>
-	                                <input class="form-control" type="text" name="age" value="42" required placeholder="Digite sua idade">
-                                </div>
-                            </div>
                             
                             <c:import url="/WEB-INF/jsp/address/register.jsp"></c:import>
                             

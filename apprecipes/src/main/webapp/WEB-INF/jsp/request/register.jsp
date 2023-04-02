@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
-        <c:import url="/WEB-INF/jsp/templates/body.jsp"></c:import>
+<c:set var="button" value="" />
+<c:import url="/WEB-INF/jsp/templates/body.jsp"></c:import>
 
 
         <div class="container-fluid">
@@ -17,7 +17,7 @@
                                 <li class="breadcrumb-item active">Request</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Request</h4>
+                        <h4 class="page-title">Solicitação de consultoria</h4>
                     </div>
                 </div>
             </div>
@@ -35,10 +35,9 @@
                                 <div class="tab-pane show active" id="billing-information">
                                     <div class="row">
                                         <div class="col-lg">
-                                            <h4 class="mt-2">Register</h4>
+                                            <h4 class="mt-2">Registro</h4>
 
-                                            <p class="text-muted mb-4">Fill the form below in order to
-                                                register a new consultancy request.</p>
+                                            <p class="text-muted mb-4">Preencha o formulário para o cadstro de uma solicitação de consultoria.</p>
 
                                             <form action="/consultancy/request/add" method="post">
                                                 <div class="row">
@@ -56,7 +55,8 @@
                                                                 </c:if>
 
                                                                 <c:if test="${empty clients}">
-                                                                    <option value="null" selected>Não há solicitações cadastrados</option>
+                                                                	<c:set var="button" value="disabled" />
+                                                                    <option value="null" selected>Não há clientes cadastrados</option>
                                                                 </c:if>
 
                                                             </select>
@@ -75,6 +75,7 @@
                                                                 </c:if>
 
                                                                 <c:if test="${empty consultancies}">
+                                                                	<c:set var="button" value="disabled" />
                                                                     <option value="null" selected>Não há consultorias cadastradas</option>
                                                                 </c:if>
 															</select>
@@ -86,12 +87,12 @@
                                                     <div class="col-sm-6">
                                                         <a href="/"
                                                             class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
-                                                            <i class="mdi mdi-arrow-left"></i> Back </a>
+                                                            <i class="mdi mdi-arrow-left"></i> Voltar </a>
                                                     </div> <!-- end col -->
                                                     <div class="col-sm-6">
                                                         <div class="text-sm-end">
-                                                            <button class="btn btn-primary" type="submit"><i
-                                                                    class="mdi mdi-content-save me-1"></i> Save
+                                                            <button ${button} class="btn btn-primary" type="submit">
+                                                            	<i class="mdi mdi-content-save me-1"></i> Salvar
                                                             </button>
                                                         </div>
                                                     </div> <!-- end col -->

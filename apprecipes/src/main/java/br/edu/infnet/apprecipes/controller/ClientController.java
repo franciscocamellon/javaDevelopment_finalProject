@@ -75,7 +75,7 @@ public class ClientController {
 			
 		} catch (Exception e) {
 			
-			msg = "Erro "+e+". Impossível excluir o cliente "+clientToDelete.getName()+"!";
+			msg = "<strong>Impossível excluir o cliente "+clientToDelete.getName()+"!</strong><br>Erro: <i>"+e+"</i>";
 			
 		}
 		
