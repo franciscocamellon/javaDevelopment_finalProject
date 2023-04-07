@@ -17,19 +17,19 @@
                                             <li class="breadcrumb-item active">Training</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Training</h4>
+                                    <h4 class="page-title">Treinamento</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- end page title -->
 
 				        <div class="row">
-				            <div class="col-12">
-				                <div class="card">
-				                    <div class="card-body">
-    
-    									<!-- Steps Information -->
-                                        <div class="tab-content">
+				            <div class="col-12 px-sm-3">
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- Steps Information -->
+                    <div class="tab-content px-sm-2">
 
                                             <!-- Billing Content-->
                                             <div class="tab-pane show active" id="billing-information">
@@ -72,13 +72,13 @@
 
                                                             <div class="row mt-4">
                                                                 <div class="col-sm-6">
-                                                                    <a href="/home" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
-                                                                        <i class="mdi mdi-arrow-left"></i> Back to home </a>
+                                                                    <a href="training/list" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
+                                                                        <i class="mdi mdi-arrow-left"></i> Voltar </a>
                                                                 </div> <!-- end col -->
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
                                                                         <button class="btn btn-primary" type="submit">
-                                                                        	<i class="mdi mdi-content-save me-1"></i> Save
+                                                                        	<i class="mdi mdi-content-save me-1"></i> Salvar
                                                                        	</button>
                                                                     </div>
                                                                 </div> <!-- end col -->

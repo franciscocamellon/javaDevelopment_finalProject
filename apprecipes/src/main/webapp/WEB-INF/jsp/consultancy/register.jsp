@@ -3,7 +3,7 @@
 	<div class="col-md-4">
 		<div class="mb-3">
 			<label class="form-label">Nome</label>
-			<input class="form-control" type="text" name="name" value="Consultoria" placeholder="Enter your name" required>
+			<input class="form-control" type="text" name="name" value="Consultoria gastronômica" placeholder="Enter your name" required>
 		</div>
 	</div>
 	

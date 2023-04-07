@@ -14,5 +14,8 @@ public interface ClientRepository extends CrudRepository<Client, Integer>{
 	
 	@Query("from Client c where c.user.id = :userId")
 	List<Client> getList(Integer userId, Sort sort);
+	
+	@Query("select count(c) from Client c where c.user.id = :userId")
+	Long getTotal(Integer userId);
 
 }

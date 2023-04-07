@@ -69,7 +69,8 @@
 								id="products-datatable">
 								<thead class="table-light">
 									<tr>
-										<th class="all">ID</th>
+										<th></th>
+										<th>ID</th>
 										<th>Nome</th>
 										<th>Tipo</th>
 										<th>Empreendimento</th>
@@ -82,6 +83,7 @@
 								<tbody>
 									<c:forEach var="c" items="${clients}">
 										<tr>
+											<td></td>
 											<td>${c.id}</td>
 											<td>${c.name}</td>
 											<td>${c.clientType}</td>
@@ -90,7 +92,7 @@
 											<td>${c.user.name}</td>
 											<td>${c.address}</td>
 											<td>
-												<a href="/client/${c.id}/update" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a> 
+												<%-- <a href="/client/${c.id}/update" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a> --%>
 												<a href="#danger-alert-modal-${c.id}" data-bs-toggle="modal" class="action-icon"> <i class="mdi mdi-delete"></i></a>
 											</td>
 										</tr>

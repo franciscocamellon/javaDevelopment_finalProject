@@ -24,12 +24,12 @@
             <!-- end page title -->
 
             <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
+                <div class="col-12 px-sm-3">
+            <div class="card">
+                <div class="card-body">
 
-                            <!-- Steps Information -->
-                            <div class="tab-content">
+                    <!-- Steps Information -->
+                    <div class="tab-content px-sm-2">
 
                                 <!-- Billing Content-->
                                 <div class="tab-pane show active" id="billing-information">
@@ -85,7 +85,7 @@
 
                                                 <div class="row mt-4">
                                                     <div class="col-sm-6">
-                                                        <a href="/"
+                                                        <a href="request/list"
                                                             class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
                                                             <i class="mdi mdi-arrow-left"></i> Voltar </a>
                                                     </div> <!-- end col -->

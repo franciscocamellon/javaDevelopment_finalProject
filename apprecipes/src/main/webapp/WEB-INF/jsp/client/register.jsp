@@ -16,28 +16,41 @@
                         <li class="breadcrumb-item active">Register</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Client</h4>
+                <h4 class="page-title">Cliente</h4>
             </div>
         </div>
     </div>
     <!-- end page title -->
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 px-sm-3">
             <div class="card">
                 <div class="card-body">
 
                     <!-- Steps Information -->
-                    <div class="tab-content">
+                    <div class="tab-content px-sm-2">
 
                         <!-- Billing Content-->
                         <div class="tab-pane show active" id="billing-information">
                             <div class="row">
-                                <div class="col-lg">
-                                    <h4 class="mt-2">Register</h4>
+                                <div class="col-lg ">
+                                    <h4 class="mt-2">Cadastro</h4>
 
                                     <p class="text-muted mb-4">Preencha o formulário abaixo para o cadastro de um novo cliente.</p>
-
+									
+									<!-- form -->
+			                       <form action="/client/cep" method="post">
+			                       	
+				                       	<div class="mb-3 col-md-4">
+									        <label class="form-label">CEP</label>
+									        <div class="input-group">
+									            <input type="text" class="form-control" name="cep" value="70745080" data-toggle="input-mask" data-mask-format="00000-000">
+									            <button class="btn btn-primary" type="submit">Buscar</button>
+									        </div>
+									    </div>
+			                       	
+			                       </form>
+									
                                     <form action="/client/add" method="post">
                                         <div class="row">
                                             <div class="col-md-6">
@@ -51,8 +64,8 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Tipo de cliente</label>
                                                     <select name="clientType" class="form-select mb-3">
-                                                        <option value="Entrepreneur">Empreendedor</option>
-                                                        <option value="Restaurant" selected>Restaurante</option>
+                                                        <option value="Empreendedor">Empreendedor</option>
+                                                        <option value="Restaurante" selected>Restaurante</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -67,17 +80,18 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label for="billing-email-address" class="form-label">Email<span class="text-danger">*</span></label>
+                                                    <label for="billing-email-address" class="form-label">Email</label>
                                                     <input class="form-control" type="email" name="email" value="botecochicobala@email.com" placeholder="Digite o email"/>
                                                 </div>
                                             </div>
                                         </div> <!-- end row -->
                                         
+                                        <c:import url="/WEB-INF/jsp/address/register.jsp"></c:import>
+                                        
 
                                         <div class="row mt-4">
                                             <div class="col-sm-6">
-                                                <a href="/"
-                                                    class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
+                                                <a href="client/list" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
                                                     <i class="mdi mdi-arrow-left"></i> Voltar </a>
                                             </div> <!-- end col -->
                                             <div class="col-sm-6">

@@ -37,5 +37,14 @@ public class ConsultancyRequestService {
 	public Collection<ConsultancyRequest> getConsultancyRequestList(AppRecipesUser user) {
 		return consultancyRequestRepository.getList(user.getId(), Sort.by(Direction.ASC, "requestDate"));
 	}
+	
+	public Long getTotalRequest(AppRecipesUser user) {
+		
+		if (user.isAdmin()) {
+			return consultancyRequestRepository.count();
+		}
+		
+		return consultancyRequestRepository.getTotal(user.getId());
+	}
 
 }

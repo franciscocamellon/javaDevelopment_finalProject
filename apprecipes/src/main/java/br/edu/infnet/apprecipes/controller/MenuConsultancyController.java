@@ -64,7 +64,7 @@ public class MenuConsultancyController {
 			
 		} catch (Exception e) {
 			
-			msg = "Erro "+e+". Impossível excluir a consultoria de menu "+menuToDelete.getName()+"!";
+			msg = "<strong>Impossível excluir a consultoria de menu "+menuToDelete.getName()+"!</strong><br>Erro: <i>"+e+"</i>";
 			
 		}
 		

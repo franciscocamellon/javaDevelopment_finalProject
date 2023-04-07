@@ -75,6 +75,7 @@
                                         <th>Cozinha</th>
                                         <th>Vegano</th>
                                         <th>Tipo de contrato</th>
+                                        <th>Número de horas</th>
                                         <th>Custo da consultoria</th>
                                         <th style="width: 75px;">Action</th>
                                     </tr>
@@ -93,6 +94,7 @@
                                          	<td>Sim</td>
                                          </c:if>
                                          <td>${u.contractType}</td>
+                                         <td>${u.qtyHours}</td>
                                          <td>${u.cost}</td>
                                          <td>
                                              <a href="#" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>

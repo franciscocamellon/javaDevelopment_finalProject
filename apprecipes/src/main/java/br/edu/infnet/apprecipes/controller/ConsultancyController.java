@@ -43,7 +43,7 @@ public class ConsultancyController {
 			
 		} catch (Exception e) {
 			
-			msg = "Erro "+e+". Impossível excluir a consultoria "+consultancy.getName()+"!";
+			msg = "<strong>Impossível excluir a consultoria "+consultancy.getName()+"!</strong><br>Erro: <i>"+e+"</i>";
 
 		}
 		

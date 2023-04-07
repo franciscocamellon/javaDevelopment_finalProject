@@ -24,21 +24,20 @@
                         <!-- end page title -->
 
 				        <div class="row">
-				            <div class="col-12">
-				                <div class="card">
-				                    <div class="card-body">
-    
-    									<!-- Steps Information -->
-                                        <div class="tab-content">
+				            <div class="col-12 px-sm-3">
+					            <div class="card">
+					                <div class="card-body">
+					
+					                    <!-- Steps Information -->
+					                    <div class="tab-content px-sm-2">
 
                                             <!-- Billing Content-->
                                             <div class="tab-pane show active" id="billing-information">
                                                 <div class="row">
                                                     <div class="col-lg">
-                                                        <h4 class="mt-2">Register</h4>
+                                                        <h4 class="mt-2">Cadastro</h4>
 
-                                                        <p class="text-muted mb-4">Fill the form below in order to
-                                                            register a new client.</p>
+                                                        <p class="text-muted mb-4">Preencha o formulário abaixo para cadastrar uma consultoria de layout.</p>
 
                                                         <form action="/consultancy/layout/add" method="post">
                                                         
@@ -47,7 +46,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="mb-3">
-                                                                        <label class="form-label">Layout type</label>
+                                                                        <label class="form-label">Tipo de Layout</label>
                                                                         <select class="form-select mb-3" name="layoutType">
                                                                             <option value="Construção" selected>Construção</option>
                                                                             <option value="Reforma">Reforma</option>
@@ -81,8 +80,8 @@
 
                                                             <div class="row mt-4">
                                                                 <div class="col-sm-6">
-                                                                    <a href="/" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
-                                                                        <i class="mdi mdi-arrow-left"></i> Back </a>
+                                                                    <a href="layout/list" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
+                                                                        <i class="mdi mdi-arrow-left"></i> Voltar </a>
                                                                 </div> <!-- end col -->
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">

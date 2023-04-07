@@ -33,4 +33,13 @@ public class ConsultancyService {
 		return consultancyRepository.getList(user.getId(), Sort.by(Direction.ASC, "name"));
 	}
 
+	public Long getTotalConsultancies(AppRecipesUser user) {
+		
+		if (user.isAdmin()) {
+			return consultancyRepository.count();
+		}
+		
+		return consultancyRepository.getTotal(user.getId());
+	}
+
 }

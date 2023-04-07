@@ -3,6 +3,8 @@ package br.edu.infnet.apprecipes;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -11,11 +13,14 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
 import br.edu.infnet.apprecipes.model.domain.Client;
+import br.edu.infnet.apprecipes.model.domain.Consultancy;
+import br.edu.infnet.apprecipes.model.domain.ConsultancyRequest;
 import br.edu.infnet.apprecipes.model.domain.LayoutConsultancy;
 import br.edu.infnet.apprecipes.model.domain.MenuConsultancy;
 import br.edu.infnet.apprecipes.model.domain.TrainingConsultancy;
 import br.edu.infnet.apprecipes.model.service.AddressService;
 import br.edu.infnet.apprecipes.model.service.ClientService;
+import br.edu.infnet.apprecipes.model.service.ConsultancyRequestService;
 import br.edu.infnet.apprecipes.model.service.LayoutConsultancyService;
 import br.edu.infnet.apprecipes.model.service.MenuConsultancyService;
 import br.edu.infnet.apprecipes.model.service.TrainingConsultancyService;
@@ -36,6 +41,8 @@ public class DataLoader implements ApplicationRunner {
 	private TrainingConsultancyService trainingService;
 	@Autowired
 	private AddressService addressService;
+	@Autowired
+	private ConsultancyRequestService requestService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -137,6 +144,29 @@ public class DataLoader implements ApplicationRunner {
 						trainingService.addTrainingConsultancy(trainingConsultancy);
 						
 						System.out.println("Consultoria "+trainingConsultancy.getName()+" incluída com sucesso!");
+						
+						break; 
+					
+					case "request":
+						
+						List<Consultancy> consultancies = new ArrayList<Consultancy>();
+						
+						consultancies.add(layoutService.getById(Integer.parseInt(fields[2])));
+						consultancies.add(menuService.getById(Integer.parseInt(fields[3])));
+						consultancies.add(trainingService.getById(Integer.parseInt(fields[4])));
+						
+						AppRecipesUser resquestUser = userService.getUserById(Integer.parseInt(fields[5]));
+						
+						ConsultancyRequest consultancyRequest = new ConsultancyRequest(
+								clientService.getClientById(Integer.parseInt(fields[1])),
+								consultancies
+								);
+						
+						consultancyRequest.setUser(resquestUser);
+						
+						requestService.addConsultancyRequest(consultancyRequest);
+						
+						System.out.println("Requisição do cliente "+consultancyRequest.getClient().getName()+" incluída com sucesso!");
 						
 						break; 
 

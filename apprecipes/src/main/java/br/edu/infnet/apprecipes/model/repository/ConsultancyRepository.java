@@ -14,5 +14,8 @@ public interface ConsultancyRepository extends CrudRepository<Consultancy, Integ
 	
 	@Query("from Consultancy c where c.user.id = :userId")
 	List<Consultancy> getList(Integer userId, Sort sort);
+	
+	@Query("select count(c) from Consultancy c where c.user.id = :userId")
+	Long getTotal(Integer userId);
 
 }

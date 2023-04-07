@@ -38,4 +38,13 @@ public class ClientService {
 		return clientRepository.getList(user.getId(), Sort.by(Direction.ASC, "name"));
 	}
 
+	public Long getTotalClients(AppRecipesUser user) {
+		
+		if (user.isAdmin()) {
+			return clientRepository.count();
+		}
+		
+		return clientRepository.getTotal(user.getId());
+	}
+
 }

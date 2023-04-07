@@ -64,7 +64,7 @@ public class TrainingConsultancyController {
 			
 		} catch (Exception e) {
 			
-			msg = "Erro "+e+". Impossível excluir a consultoria de treinamento "+trainingToDelete.getName()+"!";
+			msg = "<strong>Impossível excluir a consultoria de treinamento "+trainingToDelete.getName()+"!</strong><br>Erro: <i>"+e+"</i>";
 			
 		}
 		

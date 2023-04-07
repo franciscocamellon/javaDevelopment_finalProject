@@ -21,5 +21,13 @@ public class AddressController {
 		
 		return "user/register";
 	}
+	
+	@PostMapping(value = "/client/cep")
+	public String getClientZip(Model model, @RequestParam String cep) {
+		
+		model.addAttribute("address", addressService.getByZIP(cep));
+		
+		return "client/register";
+	}
 
 }

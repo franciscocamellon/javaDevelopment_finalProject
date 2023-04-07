@@ -39,7 +39,7 @@ public class AccessController {
 			return "redirect:/home";
 		}
 		
-		model.addAttribute("mensagem", "As credenciais para o email "+ email + " estão incorretas");
+		model.addAttribute("mensagem", "As credenciais para o email "+ email + " estão incorretas ou são inexistentes.");
 		
 		return loginScreen();
 	}

@@ -6,7 +6,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Register | AppRecipes</title>
+        <title>Cadastro | Gastronomee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -16,95 +16,98 @@
         <!-- App css -->
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app-creative.min.css" rel="stylesheet" type="text/css" id="light-style" />
-        <link href="assets/css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+        <!-- <link href="assets/css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" /> -->
 
     </head>
 
-    <body class="authentication-bg pb-0" data-layout-config='{"darkMode":false}'>
+    <body class="authentication-bg" data-layout-config='{"darkMode":false}'>
+    
+        <div class="account-pages pt-sm-5 pb-4 pb-sm-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-6 col-lg-5">
+                        <div class="card">
 
-        <div class="auth-fluid">
-            <!--Auth fluid left content -->
-            <div class="auth-fluid-form-box">
-                <div class="align-items-center d-flex h-100">
-                    <div class="card-body">
+                            <!-- Logo -->
+                            <div class="card-header pt-4 pb-4 text-center bg-primary">
+                                    <span><img src="/assets/images/logo.png" alt="" height="18"></span>
+                            </div>
 
-                        <!-- Logo -->
-                        <div class="auth-brand text-center text-lg-start">
-                            <a href="index.html" class="logo-dark">
-                                <span><img src="assets/images/logo-dark.png" alt="" height="18"></span>
-                            </a>
-                            <a href="index.html" class="logo-light">
-                                <span><img src="assets/images/logo.png" alt="" height="18"></span>
-                            </a>
-                        </div>
+                            <div class="card-body p-4">
+                                
+                                <div class="text-center w-75 m-auto">
+                                    <h4 class="text-dark-50 text-center mt-0 fw-bold">Registro de usuário</h4>
+                                    <p class="text-muted mb-4">Não tem uma conta? Crie sua conta, leva menos de um minuto!</p>
+                                </div>
 
-                        <!-- title-->
-                        <h4 class="mt-3">Registro de usuário</h4>
-                        <p class="text-muted mb-4">Não tem uma conta? Crie sua conta, leva menos de um minuto!</p>
-
-                        <!-- form -->
-                        <form action="/cep" method="post">
-                        	
-                        	<div class="mb-3">
-						        <label class="form-label">CEP</label>
-						        <div class="input-group">
-						            <input type="text" class="form-control" name="cep" value="70745090">
-						            <button class="btn btn-primary" type="submit">Buscar</button>
-						        </div>
-						    </div>
-                        	
-                        </form>
+                                <!-- form -->
+		                        <form action="/cep" method="post">
+		                        	
+		                        	<div class="mb-3">
+								        <label class="form-label">CEP</label>
+								        <div class="input-group">
+								            <input type="text" class="form-control" name="cep" data-toggle="input-mask" data-mask-format="00000-000" value="20010020">
+								            <button class="btn btn-primary" type="submit">Buscar</button>
+								        </div>
+								    </div>
+		                        	
+		                        </form>
+		                        
                         <!-- form -->
                         <form action="/user/add" method="post">
                             <div class="mb-3">
                                 <label class="form-label">Nome completo</label>
-                                <input class="form-control" type="text" name="name" value="Francisco Camello" placeholder="Digite seu nome" required>
+                                <input class="form-control" type="text" name="name" value="Elberth Moraes" placeholder="Digite seu nome" required>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Senha</label>
-                                <input class="form-control" type="text" name="password"  value="123456"  placeholder="Digite sua senha" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input class="form-control" type="email" name="email" value="chicobala@email.com" required placeholder="Digite seu email">
+                            <div class="row">
+                            	<div class="col-md-6">
+                            		<div class="mb-3">
+		                                <label class="form-label">Email</label>
+		                                <input class="form-control" type="email" name="email" value="elberth@email.com" required placeholder="Digite seu email">
+		                            </div>
+	                            </div>
+		                        <div class="col-md-6">
+		                            <div class="mb-3">
+		                                <label class="form-label">Senha</label>
+		                                <input class="form-control" type="text" name="password"  value="123456"  placeholder="Digite sua senha" required>
+		                            </div>
+                            	</div>
                             </div>
                             
                             <c:import url="/WEB-INF/jsp/address/register.jsp"></c:import>
-                            
-                            <div class="mb-3 d-grid text-center">
-                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-account"></i> Register </button>
-                            </div>
-                            <div class="mb-0 d-grid text-center">
-                            	<a href="/user/list" class="form-control btn btn-danger" ><i class="mdi mdi-account-cancel"></i> Cancel </a>
-                            </div>
-                            
+                            <div class="row">
+                            	<div class="col-md-6">
+                            		<div class="mb-3">
+			                            <div class="mb-3 d-grid text-center">
+			                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-account"></i> Register </button>
+			                            </div>
+		                            </div>
+	                            </div>
+	                            <div class="col-md-6">
+                            		<div class="mb-3">
+			                            <div class="mb-0 d-grid text-center">
+			                            	<a href="/login" class="form-control btn btn-danger" ><i class="mdi mdi-account-cancel"></i> Cancel </a>
+			                            </div>
+                            		</div>
+                            	</div>
+                           	</div>
                         </form>
                         <!-- end form-->
+                            </div> <!-- end card-body -->
+                        </div>
+                        <!-- end card -->
 
-                        <!-- Footer-->
-                        <footer class="footer footer-alt">
-                            
-                        </footer>
-
-                    </div> <!-- end .card-body -->
-                </div> <!-- end .align-items-center.d-flex.h-100-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
             </div>
-            <!-- end auth-fluid-form-box-->
-
-            <!-- Auth fluid right content -->
-            <div class="auth-fluid-right text-center">
-                <div class="auth-user-testimonial">
-                    <h2 class="mb-3">App Recipes</h2>
-                    <p class="lead"><i class="mdi mdi-format-quote-open"></i> An App to manage your delicious recipes. <i class="mdi mdi-format-quote-close"></i>
-                    </p>
-                    <p>
-                        - Francisco Camello - Developer
-                    </p>
-                </div> <!-- end auth-user-testimonial-->
-            </div>
-            <!-- end Auth fluid right content -->
+            <!-- end container -->
         </div>
-        <!-- end auth-fluid-->
+        <!-- end page -->
+
+        <footer class="footer footer-alt text-white">
+            <script>document.write(new Date().getFullYear())</script> © Gastronomee - <a class="text-white" href="https://www.linkedin.com/in/franciscocamellon/">Francisco Camello</a>
+        </footer>
 
         <!-- bundle -->
         <script src="assets/js/vendor.min.js"></script>

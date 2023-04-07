@@ -11,10 +11,10 @@ public class AppController {
 		return "index";
 	}
 	
-	@GetMapping(value = "/home")
-	public String homeScreen() {
-		return "index";
-	}
+	//@GetMapping(value = "/home")
+	//public String homeScreen() {
+		//return "index";
+	//}
 	
 	@GetMapping(value = "/maintenance")
 	public String maintenanceScreen() {

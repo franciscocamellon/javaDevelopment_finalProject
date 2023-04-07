@@ -69,6 +69,7 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th class="all">ID</th>
+                                        <th>Nome</th>
                                         <th>Tipo</th>
                                         <th>Qtd de pessoas</th>
                                         <th>Horas de treinamento</th>
@@ -82,6 +83,7 @@
                                 	<c:forEach var="u" items="${trainings}">
                                      <tr>
                                      	<td>${u.id}</td>
+                                     	<td>${u.name}</td>
                                          <td>${u.trainingType}</td>
                                          <td>${u.qtyPeople}</td>
                                          <td>${u.qtyTrainingHours}</td>

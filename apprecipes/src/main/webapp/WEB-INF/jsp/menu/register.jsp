@@ -14,7 +14,7 @@
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">App</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Consultancy</a></li>
-                                            <li class="breadcrumb-item active">Cardápio</li>
+                                            <li class="breadcrumb-item active">Menu</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Cardápio</h4>
@@ -24,21 +24,20 @@
                         <!-- end page title -->
 
 				        <div class="row">
-				            <div class="col-12">
-				                <div class="card">
-				                    <div class="card-body">
-    
-    									<!-- Steps Information -->
-                                        <div class="tab-content">
+				            <div class="col-12 px-sm-3">
+					            <div class="card">
+					                <div class="card-body">
+					
+					                    <!-- Steps Information -->
+					                    <div class="tab-content px-sm-2">
 
                                             <!-- Billing Content-->
                                             <div class="tab-pane show active" id="billing-information">
                                                 <div class="row">
                                                     <div class="col-lg">
-                                                        <h4 class="mt-2">Register</h4>
+                                                        <h4 class="mt-2">Cadastro</h4>
 
-                                                        <p class="text-muted mb-4">Fill the form below in order to
-                                                            register a new client.</p>
+                                                        <p class="text-muted mb-4">Preencha o formulário abaixo para cadastrar uma consultoria de cardápio.</p>
 
                                                         <form action="/consultancy/menu/add" method="post">
                                                         
@@ -84,13 +83,13 @@
 
                                                             <div class="row mt-4">
                                                                 <div class="col-sm-6">
-                                                                    <a href="/" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
-                                                                        <i class="mdi mdi-arrow-left"></i> Back </a>
+                                                                    <a href="menu/list" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
+                                                                        <i class="mdi mdi-arrow-left"></i> Voltar </a>
                                                                 </div> <!-- end col -->
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
                                                                         <button class="btn btn-primary" type="submit">
-                                                                        	<i class="mdi mdi-content-save me-1"></i> Save
+                                                                        	<i class="mdi mdi-content-save me-1"></i> Salvar
                                                                        	</button>
                                                                     </div>
                                                                 </div> <!-- end col -->

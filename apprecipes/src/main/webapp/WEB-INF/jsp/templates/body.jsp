@@ -26,14 +26,14 @@
 </head>
 
 <body class="loading"
-    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": false'>
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
         <div class="leftside-menu">
 
             <!-- LOGO -->
-            <a href="/" class="logo text-center logo-light">
+            <a href="/home" class="logo text-center logo-light">
                 <span class="logo-lg">
                     <img src="/assets/images/logo.png" alt="" height="16">
                 </span>
@@ -43,7 +43,7 @@
             </a>
 
             <!-- LOGO -->
-            <a href="/" class="logo text-center logo-dark">
+            <a href="/home" class="logo text-center logo-dark">
                 <span class="logo-lg">
                     <img src="/assets/images/logo-dark.png" alt="" height="16">
                 </span>
@@ -59,14 +59,14 @@
                     <!--- Sidemenu -->
                     <ul class="side-nav">
 
-                        <!--- <li class="side-nav-title side-nav-item">Navegação</li>
+                        <li class="side-nav-title side-nav-item">Navegação</li>
 
                         <li class="side-nav-item">
-                            <a href="/" class="side-nav-link">
+                            <a href="/home" class="side-nav-link">
                                 <i class="uil-tachometer-fast"></i>
                                 <span> Dashboard </span>
                             </a>
-                        </li> -->
+                        </li>
                         
                         <c:if test="${not empty user}">
 

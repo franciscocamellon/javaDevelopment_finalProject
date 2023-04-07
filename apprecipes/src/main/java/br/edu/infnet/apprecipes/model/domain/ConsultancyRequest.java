@@ -52,6 +52,7 @@ public class ConsultancyRequest {
 		this.client = client;
 		this.consultancies = consultancies;
 		this.setTotalCost(consultancies);
+		this.setRequestDate();
 	}
 	
 	@Override
@@ -76,8 +77,11 @@ public class ConsultancyRequest {
 		float totalCost = 0;
 		
 		for (Consultancy consultancy : consultancies) {
-			totalCost += consultancy.getCost();
+			if (consultancy != null) {
+				totalCost += consultancy.getCost();
+			}
 		}
+		
 		this.totalCost = totalCost;
 	}
 

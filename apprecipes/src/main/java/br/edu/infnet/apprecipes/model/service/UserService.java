@@ -3,6 +3,8 @@ package br.edu.infnet.apprecipes.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.apprecipes.model.domain.AppRecipesUser;
@@ -32,6 +34,19 @@ public class UserService {
 	
 	public Collection<AppRecipesUser> getUserList() {
 		return (Collection<AppRecipesUser>) userRepository.findAll();
+	}
+	
+	public Collection<AppRecipesUser> getList() {
+		return userRepository.getList(Sort.by(Direction.ASC, "name"));
+	}
+	
+	public Long getTotalUsers(AppRecipesUser user) {
+		
+		if (user.isAdmin()) {
+			return userRepository.count();
+		}
+		
+		return userRepository.getTotal(user.getId());
 	}
 	
 }

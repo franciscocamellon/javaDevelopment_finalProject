@@ -29,7 +29,7 @@ public class UserController {
 	@GetMapping(value = "/user/list")
 	public String userList(Model model) {
 		
-		model.addAttribute("users", userService.getUserList());
+		model.addAttribute("users", userService.getList());
 		
 		model.addAttribute("message", msg);
 		
@@ -65,7 +65,7 @@ public class UserController {
 			
 		} catch (Exception e) {
 			
-			msg = "Erro "+e+". Impossível excluir o usuário "+userToDelete.getName()+"!";
+			msg = "<strong>Impossível excluir o usuário "+userToDelete.getName()+"!</strong><br>Erro: <i>"+e+"</i>";
 			
 		}
 		

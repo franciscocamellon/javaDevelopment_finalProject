@@ -78,7 +78,7 @@ public class ConsultancyRequestController {
 			
 		} catch (Exception e) {
 			
-			msg = "Erro "+e+". Impossível excluir a requisição do usuário "+requestToDelete.getClient().getName()+"!";
+			msg = "<strong>Impossível excluir a requisição do usuário "+requestToDelete.getClient().getName()+"!</strong><br>Erro: <i>"+e+"</i>";
 
 		}
 		

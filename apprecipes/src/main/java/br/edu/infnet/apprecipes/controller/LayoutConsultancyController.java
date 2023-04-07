@@ -64,7 +64,7 @@ public class LayoutConsultancyController {
 			
 		} catch (Exception e) {
 			
-			msg = "Erro "+e+". Impossível excluir a consultoria de layout "+consultancyToDelete.getName()+"!";
+			msg = "<strong>Impossível excluir a consultoria de layout "+consultancyToDelete.getName()+"!</strong><br>Erro: <i>"+e+"</i>";
 			
 		}
 		

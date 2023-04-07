@@ -67,6 +67,7 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th class="all">ID</th>
+                                        <th>Nome</th>
                                         <th>Tipo do layout</th>
                                         <th>Tipo da cozinha</th>
                                         <th>Delivery</th>
@@ -80,6 +81,7 @@
                                 	<c:forEach var="u" items="${layouts}">
                                      <tr>
                                      	<td>${u.id}</td>
+                                     	<td>${u.name}</td>
                                          <td>${u.layoutType}</td>
                                          <td>${u.kitchenType}</td>
                                          <c:if test="${not u.delivery}">

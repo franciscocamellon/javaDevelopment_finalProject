@@ -14,11 +14,11 @@
                    <div class="page-title-right">
                        <ol class="breadcrumb m-0">
                            <li class="breadcrumb-item"><a href="javascript: void(0);">App</a></li>
-                           <li class="breadcrumb-item"><a href="javascript: void(0);">Cliente</a></li>
+                           <li class="breadcrumb-item"><a href="javascript: void(0);">Users</a></li>
                            <li class="breadcrumb-item active">List</li>
                        </ol>
                    </div>
-                   <h4 class="page-title">Clients</h4>
+                   <h4 class="page-title">Clientes</h4>
                </div>
             </div>
         </div>
@@ -61,12 +61,10 @@
                                 <thead class="table-light">
                                     <tr>
                                     	<c:if test="${user.admin}"><th class="all">ID</th></c:if>
-                                        <c:if test="${not user.admin}">
-                                        	<th/>
-                                        	<th class="all">ID</th>
-                                   		</c:if>
+                                        <c:if test="${not user.admin}"><th></th><th class="all">ID</th></c:if>
                                         <th>Nome</th>
                                         <th>Email</th>
+                                        <th>Senha</th>
                                         <th>Endereço</th>
                                         <th>Clientes</th>
                                         <th>Consultorias</th>
@@ -98,13 +96,14 @@
                                             </div>
                                          </td>
                                          <td>${u.email}</td>
+                                         <td>****</td>
                                          <td>${u.address}</td>
                                          <td>${u.clients.size()}</td>
                                          <td>${u.consultancies.size()}</td>
                                          <td>${u.consultancyRequests.size()}</td>
                                          <c:if test="${user.admin}">
 	                                         <td>
-	                                             <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+	                                             <%-- <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a> --%>
 	                                             <a href="#danger-alert-modal-${u.id}" data-bs-toggle="modal" class="action-icon"> <i class="mdi mdi-delete"></i></a>
 	                                         </td>
                                          </c:if>
